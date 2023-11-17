@@ -15,8 +15,8 @@ namespace Human_management
     public partial class frmTiepNhanVaBanGiaoCV : Form
     {
         private Class_pgdatabase pgdatabase;
-
         private string sql = "";
+
         private string _manhansu, _hoten;
         private frmXuLyQuaTrinhPhongVan _frm_parent;
 

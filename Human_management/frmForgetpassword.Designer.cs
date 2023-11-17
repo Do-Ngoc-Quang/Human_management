@@ -54,7 +54,7 @@ namespace Human_management
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(167, 97);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(351, 34);
             this.txtEmail.TabIndex = 1;
@@ -62,7 +62,7 @@ namespace Human_management
             // btnGuiEmailPassword
             // 
             this.btnGuiEmailPassword.Location = new System.Drawing.Point(201, 157);
-            this.btnGuiEmailPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuiEmailPassword.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuiEmailPassword.Name = "btnGuiEmailPassword";
             this.btnGuiEmailPassword.Size = new System.Drawing.Size(140, 53);
             this.btnGuiEmailPassword.TabIndex = 3;
@@ -83,7 +83,7 @@ namespace Human_management
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(167, 41);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(351, 34);
             this.txtUsername.TabIndex = 5;
@@ -96,9 +96,9 @@ namespace Human_management
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnGuiEmailPassword);
             this.groupBox1.Location = new System.Drawing.Point(13, 40);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(529, 232);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
@@ -107,7 +107,7 @@ namespace Human_management
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(550, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(39, 38);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -119,13 +119,13 @@ namespace Human_management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 289);
+            this.ClientSize = new System.Drawing.Size(582, 285);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmForgetpassword";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
