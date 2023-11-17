@@ -1,0 +1,87 @@
+﻿
+1. Quản lý thông tin ĐÀO TẠO bao gồm:
+
+- Khóa học và chương trình đào tạo: Ghi chép thông tin về các khóa học mà nhân viên đã tham gia hoặc đang tham gia,
+	cũng như thông tin về chương trình đào tạo đã hoàn thành và đang thực hiện.
+
+- Chứng chỉ, bằng cấp và chứng nhận: Quản lý các chứng chỉ và bằng cấp mà nhân viên đạt được thông qua các khóa học và chương trình đào tạo.
+
+- Kế hoạch đào tạo: Xác định các kế hoạch đào tạo cho từng nhân viên dựa trên nhu cầu của họ và của tổ chức. 
+	Điều này bao gồm việc quản lý thời gian, chi phí và nội dung của khóa học.
+
+- Kết quả đào tạo: Đánh giá và ghi lại các kết quả đào tạo của nhân viên sau mỗi khóa học hoặc chương trình đào tạo, 
+	đồng thời cập nhật mức độ hiểu biết và ứng dụng của họ sau khi hoàn thành.
+
+- Theo dõi nâng cao năng lực: Quản lý quá trình phát triển và cải thiện kỹ năng của nhân viên sau mỗi khóa đào tạo.
+
+- Lịch sử đào tạo: Ghi chép lịch sử đào tạo của từng nhân viên để dễ dàng theo dõi và định hướng các hoạt động đào tạo tương lai.
+
+
+2.Quản lý CHẤM CÔNG:
+
+- Thời gian làm việc: Ghi nhận (giờ đến) và (giờ về) của nhân viên.
+
+- Ngày công: (Số giờ) hoặc (ngày) mà nhân viên ---đã làm việc--- trong một khoảng thời gian cụ thể. (tháng)
+
+- Các (loại nghỉ phép): Theo dõi các loại nghỉ phép như [phép năm], [nghỉ ốm, nghỉ có phép, nghỉ không lương].
+
+- Chấm công tự động: Sử dụng hệ thống cho phép nhân viên tự nhập thông tin chấm công bằng cách quét mã QR - lưu danh sách vào gg sheet.
+
+- Quy tắc tính toán (giờ làm thêm) OT: Xác định cách tính giờ làm thêm và tính toán lương tương ứng.
+
+- Xử lý ngoại lệ: Xử lý những trường hợp ngoại lệ như việc làm ca đêm, làm việc trong ngày nghỉ lễ.
+
+
+3. HỢP ĐỒNG LAO ĐỘNG bao gồm:
+
+- Thông tin cá nhân của nhân viên: Bao gồm họ tên, ngày sinh, địa chỉ, số chứng minh nhân dân hoặc số hộ chiếu, số điện thoại, email.
+
+- Thời gian làm việc: Bao gồm giờ làm việc, thời gian nghỉ, lịch làm việc cụ thể, ngày nghỉ phép, nghỉ lễ, ngày làm ca đêm...
+
+- Mô tả công việc: Xác định rõ ràng nhiệm vụ và trách nhiệm của nhân viên, cũng như mô tả vị trí làm việc, quyền lợi và trách nhiệm của cả hai bên.
+
+- Mức lương và các khoản phụ cấp: Ghi rõ lương cơ bản, các khoản phụ cấp, thu nhập thêm, cũng như chính sách lương và các khoản phụ cấp khác.
+
+- Thời hạn hợp đồng: Xác định thời gian có hiệu lực của hợp đồng, điều kiện gia hạn hoặc chấm dứt hợp đồng.
+
+
+4. Quản lý QUYỀN LỢI - PHÚC LỢI bao gồm:
+
+- Bảo hiểm: Ghi chép thông tin về bảo hiểm y tế, bảo hiểm xã hội, bảo hiểm tai nạn lao động và các loại bảo hiểm khác mà nhân viên được hưởng.
+
+- Lương và Thưởng: Quản lý các khoản lương, thưởng và phụ cấp mà nhân viên được nhận, đồng thời theo dõi sự thay đổi trong quá trình thăng chức, nâng lương hay các ưu đãi khác.
+
+- Ngày Nghỉ Phép và Nghỉ Lễ: Ghi chép thông tin về ngày nghỉ phép, ngày nghỉ lễ và chính sách nghỉ phép mà nhân viên được hưởng.
+
+- Chế Độ Nghỉ Phép: Quản lý và theo dõi các chế độ nghỉ phép khác nhau như nghỉ ốm, nghỉ thai sản, nghỉ phép hàng năm, nghỉ lễ...
+
+- Chăm Sóc Sức Khỏe: Cung cấp thông tin về các chương trình chăm sóc sức khỏe cho nhân viên như phòng khám, bác sĩ gia đình hoặc các dịch vụ y tế khác.
+
+- Chương Trình Hỗ Trợ Nhân Viên: Quản lý các chương trình hỗ trợ nhân viên như chăm sóc trẻ em, hỗ trợ học vấn, chăm sóc người cao tuổi...
+
+
+5. Quản lý hiệu suất KPI (Key Performance Indicators) là quá trình theo dõi, đánh giá và quản lý mục tiêu hoặc chỉ số hiệu suất quan trọng của một tổ chức hoặc cá nhân. 
+Đây là một công cụ quan trọng để đo lường và đánh giá hiệu suất làm việc, đồng thời cung cấp cơ hội cho cải thiện và phát triển.
+Để quản lý hiệu suất KPI:
+
+- Xác định mục tiêu cụ thể: Đầu tiên, cần xác định các mục tiêu cụ thể và quan trọng của tổ chức hoặc cá nhân. Đây có thể là mục tiêu doanh số, chất lượng sản phẩm, hiệu quả vận hành, hỗ trợ khách hàng, v.v.
+
+- Lập KPI: Xác định các chỉ số chính (KPI) để đo lường hiệu suất trong việc đạt được mục tiêu đã xác định.
+
+- Thu thập dữ liệu: Quản lý hiệu suất KPI đòi hỏi việc thu thập dữ liệu chính xác liên quan đến các chỉ số đã xác định. Các hệ thống CRM, ERP, hoặc các công cụ quản lý dự án có thể hỗ trợ việc này.
+
+- Đánh giá và Theo dõi: Đánh giá và theo dõi hiệu suất, so sánh dữ liệu thu thập với mục tiêu đã đặt ra, cũng như theo dõi sự tiến triển qua thời gian.
+
+- Phản hồi và Cải thiện: Dựa trên các KPI, cung cấp phản hồi cho nhân viên hoặc đội ngũ để hỗ trợ cải thiện và phát triển. Các biện pháp cần thiết có thể bao gồm huấn luyện, thay đổi quy trình làm việc, hoặc điều chỉnh mục tiêu.
+
+- Báo cáo và Tổng hợp: Tổng hợp dữ liệu và báo cáo về hiệu suất KPI để cung cấp cái nhìn tổng quan về tình hình hoạt động.
+
+
+PHÂN QUYỀN:
+- Phân quyền theo người dùng: [cấp độ: Quản lý, thành viên]
+- Phân quyền theo vai trò: [các chức năng có trong phần mềm này]
+	+ Tạo hồ sơ tiếp nhân sự mới: cấp [xulynhaplieu]
+	+ Xử lý quá trình ứng tuyển nhân sự [xulyquatrinh]
+	+ Cập nhật chi tiết nhân sự theo từng phòng ban [capnhatthongtin]
+	+ Theo dõi quá trình: chấm công, đào tạo, hiệu suất công việc [theodoi]
+	+ Quyền lợi - phúc lợi
