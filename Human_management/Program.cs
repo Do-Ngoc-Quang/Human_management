@@ -16,7 +16,7 @@ namespace Human_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDaoTao());
+            Application.Run(new frmLogin());
             //Application.Run(new frm_demo_phanmemchamcong());
         }   
     }

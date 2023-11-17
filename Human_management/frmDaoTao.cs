@@ -14,7 +14,7 @@ namespace Human_management
     public partial class frmDaoTao : Form
     {
         private Class_pgdatabase pgdatabase;
-        private string sql = "";
+        
 
         public frmDaoTao()
         {
@@ -55,26 +55,35 @@ namespace Human_management
         {
             string maphongban = cbb_phongban.SelectedValue.ToString();
 
+
+            txt_dadaotao.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT COUNT(id_ctdt) FROM public.tbd_chitietdaotao " +
+                "WHERE maphongban_ctdt = '"+ maphongban +"' AND ketqua ;");
+            txt_chuadaotao.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT COUNT(id_ctdt) FROM public.tbd_chitietdaotao " +
+                "WHERE maphongban_ctdt = '"+ maphongban +"' AND ketqua = false;");
+
             load_dsnhansu(maphongban);
         }
+
+
 
         private void dGVNhanSu_Click(object sender, EventArgs e)
         {
             string manhansu = dGVNhanSu.CurrentRow.Cells["manhansu"].Value.ToString();
+            string maphongban = dGVNhanSu.CurrentRow.Cells["maphongban"].Value.ToString();
 
-            load_kehoachdaotao(manhansu);
+            load_kehoachdaotao(maphongban, manhansu);
             load_ketquadaotao(manhansu);
         }
 
 
-        private void load_kehoachdaotao(string manhansu)
+        private void load_kehoachdaotao(string maphongban, string manhansu)
         {
             dGV_kehoachdaotao.DataSource = null;
-            string sql = "SELECT khdt.id_khdt, dt.tendaotao, (ctns.ngaybatdau + khdt.ycau_sothanglamviec * 30) AS dukiendaotao " +
-                "FROM public.tbd_kehoachdaotao AS khdt INNER JOIN public.tbl_daotao AS dt ON dt.madaotao = khdt.madaotao" +
-                " INNER JOIN public.tbd_chitietdaotao AS ctdt ON ctdt.madaotao_ctdt = khdt.madaotao" +
-                " INNER JOIN public.tbd_chitietnhansu AS ctns ON ctns.manhansu = ctdt.manhansu_ctdt " +
-                "WHERE ctdt.ketqua = false AND ctdt.manhansu_ctdt = '" + manhansu + "';";
+            string sql = "SELECT dt.id_daotao, dt.tendaotao, (ctns.ngaybatdau + khdt.ycau_sothanglamviec * 30) AS dukiendaotao " +
+                "FROM public.tbl_daotao AS dt INNER JOIN public.tbd_chitietdaotao AS ctdt ON dt.maphongban = ctdt.maphongban_ctdt " +
+                "INNER JOIN public.tbd_chitietnhansu AS ctns ON ctdt.manhansu_ctdt = ctns.manhansu " +
+                "INNER JOIN public.tbd_kehoachdaotao AS khdt ON dt.madaotao = khdt.madaotao " +
+                "WHERE dt.maphongban = '" + maphongban + "' AND ctns.manhansu = '" + manhansu + "' AND ctdt.ketqua = false;";
             DataTable datatable = new DataTable();
             pgdatabase = new Class_pgdatabase();
             datatable = pgdatabase.getDataTable(Class_connect.connection_pg, sql);

@@ -93,6 +93,11 @@ namespace Human_management
 
                 if (kqua_ctns && kqua_ctpv)
                 {
+                    //Cập nhật kế hoạch đào tạo cho nhân sự
+                    sql = string.Format("INSERT INTO public.tbd_chitietdaotao(manhansu_ctdt, ketqua, maphongban_ctdt) " +
+                        "VALUES ('{0}', '{1}', '{2}');;", _manhansu, false, cbb_phongban.SelectedValue.ToString());
+                    pgdatabase.Runsql(Class_connect.connection_pg, sql);
+
                     _frm_parent.load_dsnhansu();
                     this.Close();
                 }
