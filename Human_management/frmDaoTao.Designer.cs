@@ -29,11 +29,10 @@ namespace Human_management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDaoTao));
             this.cbb_phongban = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.dGVNhanSu = new System.Windows.Forms.DataGridView();
@@ -92,6 +91,7 @@ namespace Human_management
             this.txt_dadaotao = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_ghinhandaotao = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVNhanSu)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -128,14 +128,14 @@ namespace Human_management
             this.dGVNhanSu.AllowUserToAddRows = false;
             this.dGVNhanSu.AllowUserToDeleteRows = false;
             this.dGVNhanSu.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGVNhanSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVNhanSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dGVNhanSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVNhanSu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -565,27 +565,19 @@ namespace Human_management
             this.dGV_kehoachdaotao.AllowUserToAddRows = false;
             this.dGV_kehoachdaotao.AllowUserToDeleteRows = false;
             this.dGV_kehoachdaotao.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGV_kehoachdaotao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGV_kehoachdaotao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dGV_kehoachdaotao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_kehoachdaotao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_daotao,
             this.tendaotao,
             this.dukiendaotao});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGV_kehoachdaotao.DefaultCellStyle = dataGridViewCellStyle8;
             this.dGV_kehoachdaotao.Location = new System.Drawing.Point(7, 34);
             this.dGV_kehoachdaotao.Name = "dGV_kehoachdaotao";
             this.dGV_kehoachdaotao.ReadOnly = true;
@@ -637,27 +629,19 @@ namespace Human_management
             this.dGV_hoanthanhdaotao.AllowUserToAddRows = false;
             this.dGV_hoanthanhdaotao.AllowUserToDeleteRows = false;
             this.dGV_hoanthanhdaotao.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGV_hoanthanhdaotao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGV_hoanthanhdaotao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dGV_hoanthanhdaotao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_hoanthanhdaotao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_ctdt,
             this.tendaodao_ctdt,
             this.chungnhan});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGV_hoanthanhdaotao.DefaultCellStyle = dataGridViewCellStyle10;
             this.dGV_hoanthanhdaotao.Location = new System.Drawing.Point(6, 34);
             this.dGV_hoanthanhdaotao.Name = "dGV_hoanthanhdaotao";
             this.dGV_hoanthanhdaotao.ReadOnly = true;
@@ -749,12 +733,27 @@ namespace Human_management
             this.label1.TabIndex = 0;
             this.label1.Text = "Số lượng nhân sự đã đào tạo";
             // 
+            // btn_ghinhandaotao
+            // 
+            this.btn_ghinhandaotao.Image = ((System.Drawing.Image)(resources.GetObject("btn_ghinhandaotao.Image")));
+            this.btn_ghinhandaotao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ghinhandaotao.Location = new System.Drawing.Point(281, 665);
+            this.btn_ghinhandaotao.Name = "btn_ghinhandaotao";
+            this.btn_ghinhandaotao.Size = new System.Drawing.Size(200, 35);
+            this.btn_ghinhandaotao.TabIndex = 43;
+            this.btn_ghinhandaotao.Text = "GHI NHẬN ĐÀO TẠO";
+            this.btn_ghinhandaotao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_ghinhandaotao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_ghinhandaotao.UseVisualStyleBackColor = true;
+            this.btn_ghinhandaotao.Click += new System.EventHandler(this.btn_ghinhandaotao_Click);
+            // 
             // frmDaoTao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1530, 750);
+            this.Controls.Add(this.btn_ghinhandaotao);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -842,5 +841,6 @@ namespace Human_management
         private System.Windows.Forms.DataGridViewTextBoxColumn id_daotao;
         private System.Windows.Forms.DataGridViewTextBoxColumn tendaotao;
         private System.Windows.Forms.DataGridViewTextBoxColumn dukiendaotao;
+        private System.Windows.Forms.Button btn_ghinhandaotao;
     }
 }

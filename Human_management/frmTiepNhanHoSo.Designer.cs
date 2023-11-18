@@ -484,7 +484,7 @@ namespace Human_management
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(280, -1);
+            this.groupBox2.Location = new System.Drawing.Point(280, 0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1226, 324);
             this.groupBox2.TabIndex = 41;

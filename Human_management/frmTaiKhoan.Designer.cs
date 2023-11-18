@@ -32,7 +32,6 @@ namespace Human_management
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTaiKhoan));
             this.tabP_doimatkhau = new System.Windows.Forms.TabPage();
             this.tabP_thongtincanhan = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.btnHienThiAnh = new System.Windows.Forms.Button();
             this.btnTaiAnh = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -54,10 +53,11 @@ namespace Human_management
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.picAnhNhanSu = new System.Windows.Forms.PictureBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabP_thongtincanhan.SuspendLayout();
-            this.tabControl1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhNhanSu)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabP_doimatkhau
@@ -80,20 +80,9 @@ namespace Human_management
             this.tabP_thongtincanhan.Location = new System.Drawing.Point(4, 37);
             this.tabP_thongtincanhan.Name = "tabP_thongtincanhan";
             this.tabP_thongtincanhan.Padding = new System.Windows.Forms.Padding(3);
-            this.tabP_thongtincanhan.Size = new System.Drawing.Size(1534, 857);
+            this.tabP_thongtincanhan.Size = new System.Drawing.Size(1505, 363);
             this.tabP_thongtincanhan.TabIndex = 0;
             this.tabP_thongtincanhan.Text = "Thông tin tài khoản";
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabP_thongtincanhan);
-            this.tabControl1.Controls.Add(this.tabP_doimatkhau);
-            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1542, 898);
-            this.tabControl1.TabIndex = 0;
             // 
             // btnHienThiAnh
             // 
@@ -320,12 +309,23 @@ namespace Human_management
             this.picAnhNhanSu.TabIndex = 39;
             this.picAnhNhanSu.TabStop = false;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabP_thongtincanhan);
+            this.tabControl1.Controls.Add(this.tabP_doimatkhau);
+            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(5, 5);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1513, 404);
+            this.tabControl1.TabIndex = 0;
+            // 
             // frmTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1619, 944);
+            this.ClientSize = new System.Drawing.Size(1530, 750);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -335,10 +335,10 @@ namespace Human_management
             this.Text = "TÀI KHOẢN";
             this.Load += new System.EventHandler(this.frmTaiKhoan_Load);
             this.tabP_thongtincanhan.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhNhanSu)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

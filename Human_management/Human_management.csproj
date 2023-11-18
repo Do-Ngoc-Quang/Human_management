@@ -200,6 +200,12 @@
     <Compile Include="frmDaoTao.Designer.cs">
       <DependentUpon>frmDaoTao.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGhiNhanDaoTao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGhiNhanDaoTao.Designer.cs">
+      <DependentUpon>frmGhiNhanDaoTao.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHieuSuatCongViecKPI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDaoTao.resx">
       <DependentUpon>frmDaoTao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGhiNhanDaoTao.resx">
+      <DependentUpon>frmGhiNhanDaoTao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHieuSuatCongViecKPI.resx">
       <DependentUpon>frmHieuSuatCongViecKPI.cs</DependentUpon>

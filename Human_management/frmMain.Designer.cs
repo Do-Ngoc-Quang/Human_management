@@ -72,7 +72,7 @@ namespace Human_management
             this.toolStripLabel3});
             this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
             this.toolStripMenu.Name = "toolStripMenu";
-            this.toolStripMenu.Size = new System.Drawing.Size(1764, 35);
+            this.toolStripMenu.Size = new System.Drawing.Size(1532, 35);
             this.toolStripMenu.TabIndex = 1;
             this.toolStripMenu.Text = "toolStrip1";
             // 
@@ -206,7 +206,7 @@ namespace Human_management
             // 
             this.ttmnu_TaiKhoan.Image = ((System.Drawing.Image)(resources.GetObject("ttmnu_TaiKhoan.Image")));
             this.ttmnu_TaiKhoan.Name = "ttmnu_TaiKhoan";
-            this.ttmnu_TaiKhoan.Size = new System.Drawing.Size(221, 32);
+            this.ttmnu_TaiKhoan.Size = new System.Drawing.Size(224, 32);
             this.ttmnu_TaiKhoan.Text = "TÀI KHOẢN";
             this.ttmnu_TaiKhoan.Click += new System.EventHandler(this.ttmnu_TaiKhoan_Click);
             // 
@@ -214,7 +214,7 @@ namespace Human_management
             // 
             this.ttmnu_PhanQuyen.Image = ((System.Drawing.Image)(resources.GetObject("ttmnu_PhanQuyen.Image")));
             this.ttmnu_PhanQuyen.Name = "ttmnu_PhanQuyen";
-            this.ttmnu_PhanQuyen.Size = new System.Drawing.Size(221, 32);
+            this.ttmnu_PhanQuyen.Size = new System.Drawing.Size(224, 32);
             this.ttmnu_PhanQuyen.Text = "PHÂN QUYỀN";
             this.ttmnu_PhanQuyen.Click += new System.EventHandler(this.ttmnu_PhanQuyen_Click);
             // 
@@ -222,7 +222,7 @@ namespace Human_management
             // 
             this.ttmnu_dangxuat.Image = ((System.Drawing.Image)(resources.GetObject("ttmnu_dangxuat.Image")));
             this.ttmnu_dangxuat.Name = "ttmnu_dangxuat";
-            this.ttmnu_dangxuat.Size = new System.Drawing.Size(221, 32);
+            this.ttmnu_dangxuat.Size = new System.Drawing.Size(224, 32);
             this.ttmnu_dangxuat.Text = "ĐĂNG XUẤT";
             this.ttmnu_dangxuat.Click += new System.EventHandler(this.ttmnu_dangxuat_Click);
             // 
@@ -235,7 +235,7 @@ namespace Human_management
             this.tabControl.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1764, 1020);
+            this.tabControl.Size = new System.Drawing.Size(1532, 668);
             this.tabControl.TabIndex = 3;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
@@ -264,7 +264,7 @@ namespace Human_management
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1764, 1055);
+            this.ClientSize = new System.Drawing.Size(1532, 703);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.toolStripMenu);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

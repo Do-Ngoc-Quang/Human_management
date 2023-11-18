@@ -84,7 +84,7 @@ namespace Human_management
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(90, 84);
+            this.label4.Location = new System.Drawing.Point(90, 79);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 28);
             this.label4.TabIndex = 1;
@@ -93,7 +93,7 @@ namespace Human_management
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 128);
+            this.label5.Location = new System.Drawing.Point(14, 115);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(171, 28);
             this.label5.TabIndex = 2;
@@ -120,7 +120,7 @@ namespace Human_management
             // txtPassword
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassword.Location = new System.Drawing.Point(199, 81);
+            this.txtPassword.Location = new System.Drawing.Point(199, 76);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -130,7 +130,7 @@ namespace Human_management
             // txtComfimPassword
             // 
             this.txtComfimPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtComfimPassword.Location = new System.Drawing.Point(199, 125);
+            this.txtComfimPassword.Location = new System.Drawing.Point(199, 112);
             this.txtComfimPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtComfimPassword.Name = "txtComfimPassword";
             this.txtComfimPassword.PasswordChar = '*';
@@ -140,7 +140,7 @@ namespace Human_management
             // 
             // btnDangky
             // 
-            this.btnDangky.Location = new System.Drawing.Point(126, 172);
+            this.btnDangky.Location = new System.Drawing.Point(126, 154);
             this.btnDangky.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDangky.Name = "btnDangky";
             this.btnDangky.Size = new System.Drawing.Size(250, 63);
@@ -160,7 +160,7 @@ namespace Human_management
             // returnLogin
             // 
             this.returnLogin.Image = ((System.Drawing.Image)(resources.GetObject("returnLogin.Image")));
-            this.returnLogin.Location = new System.Drawing.Point(184, 261);
+            this.returnLogin.Location = new System.Drawing.Point(184, 234);
             this.returnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.returnLogin.Name = "returnLogin";
             this.returnLogin.Size = new System.Drawing.Size(32, 31);
@@ -176,7 +176,7 @@ namespace Human_management
             "Nam",
             "Nữ",
             "Khác"});
-            this.cbbGioiTinh.Location = new System.Drawing.Point(557, 43);
+            this.cbbGioiTinh.Location = new System.Drawing.Point(557, 42);
             this.cbbGioiTinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbGioiTinh.Name = "cbbGioiTinh";
             this.cbbGioiTinh.Size = new System.Drawing.Size(83, 36);
@@ -195,7 +195,7 @@ namespace Human_management
             // 
             this.linklblDangNhap.AutoSize = true;
             this.linklblDangNhap.LinkColor = System.Drawing.Color.DarkCyan;
-            this.linklblDangNhap.Location = new System.Drawing.Point(217, 259);
+            this.linklblDangNhap.Location = new System.Drawing.Point(217, 232);
             this.linklblDangNhap.Name = "linklblDangNhap";
             this.linklblDangNhap.Size = new System.Drawing.Size(108, 28);
             this.linklblDangNhap.TabIndex = 5;
@@ -225,7 +225,7 @@ namespace Human_management
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 127);
+            this.label7.Location = new System.Drawing.Point(19, 120);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 28);
             this.label7.TabIndex = 6;
@@ -234,7 +234,7 @@ namespace Human_management
             // txtDiaChi
             // 
             this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDiaChi.Location = new System.Drawing.Point(159, 124);
+            this.txtDiaChi.Location = new System.Drawing.Point(159, 117);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(748, 34);
@@ -243,7 +243,7 @@ namespace Human_management
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(443, 87);
+            this.label8.Location = new System.Drawing.Point(443, 84);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 28);
             this.label8.TabIndex = 5;
@@ -252,7 +252,7 @@ namespace Human_management
             // txtEmail
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Location = new System.Drawing.Point(515, 84);
+            this.txtEmail.Location = new System.Drawing.Point(515, 81);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(391, 34);
@@ -261,7 +261,7 @@ namespace Human_management
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(19, 87);
+            this.label9.Location = new System.Drawing.Point(19, 84);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(128, 28);
             this.label9.TabIndex = 4;
@@ -270,7 +270,7 @@ namespace Human_management
             // txtSoDienThoai
             // 
             this.txtSoDienThoai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSoDienThoai.Location = new System.Drawing.Point(159, 84);
+            this.txtSoDienThoai.Location = new System.Drawing.Point(159, 81);
             this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(205, 34);
@@ -287,11 +287,11 @@ namespace Human_management
             this.groupBox1.Controls.Add(this.btnDangky);
             this.groupBox1.Controls.Add(this.returnLogin);
             this.groupBox1.Controls.Add(this.linklblDangNhap);
-            this.groupBox1.Location = new System.Drawing.Point(250, 194);
+            this.groupBox1.Location = new System.Drawing.Point(250, 168);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(461, 311);
+            this.groupBox1.Size = new System.Drawing.Size(461, 276);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "TẠO TÀI KHOẢN";
@@ -310,11 +310,11 @@ namespace Human_management
             this.groupBox2.Controls.Add(this.dTP_ngaysinh);
             this.groupBox2.Controls.Add(this.txtDiaChi);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(12, 15);
+            this.groupBox2.Location = new System.Drawing.Point(12, 3);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(927, 179);
+            this.groupBox2.Size = new System.Drawing.Size(927, 164);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "THÔNG TIN CÁ NHÂN";
@@ -323,11 +323,11 @@ namespace Human_management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(961, 535);
+            this.ClientSize = new System.Drawing.Size(961, 463);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.HelpButton = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmRegister";

@@ -73,7 +73,8 @@ namespace Human_management
             
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+
+        private void pic_Close_Click(object sender, EventArgs e)
         {
             this.Close();
         }

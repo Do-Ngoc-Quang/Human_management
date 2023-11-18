@@ -127,7 +127,7 @@ namespace Human_management
             // 
             this.btn_hienthianh.Image = ((System.Drawing.Image)(resources.GetObject("btn_hienthianh.Image")));
             this.btn_hienthianh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_hienthianh.Location = new System.Drawing.Point(80, 242);
+            this.btn_hienthianh.Location = new System.Drawing.Point(80, 238);
             this.btn_hienthianh.Name = "btn_hienthianh";
             this.btn_hienthianh.Size = new System.Drawing.Size(130, 35);
             this.btn_hienthianh.TabIndex = 55;
@@ -178,7 +178,7 @@ namespace Human_management
             this.hostname,
             this.anhnhansu,
             this.ishienthi});
-            this.dGVNhanSu.Location = new System.Drawing.Point(51, 373);
+            this.dGVNhanSu.Location = new System.Drawing.Point(51, 369);
             this.dGVNhanSu.Name = "dGVNhanSu";
             this.dGVNhanSu.RowHeadersWidth = 51;
             this.dGVNhanSu.RowTemplate.Height = 24;
@@ -466,7 +466,7 @@ namespace Human_management
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(280, 3);
+            this.groupBox2.Location = new System.Drawing.Point(280, 0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1226, 324);
             this.groupBox2.TabIndex = 53;
@@ -904,7 +904,7 @@ namespace Human_management
             this.panel1.Controls.Add(this.btn_reloadDGV);
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.txtTimMaNhanSu);
-            this.panel1.Location = new System.Drawing.Point(51, 337);
+            this.panel1.Location = new System.Drawing.Point(51, 333);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1455, 52);
             this.panel1.TabIndex = 57;
@@ -945,7 +945,7 @@ namespace Human_management
             // picAnhNhanSu
             // 
             this.picAnhNhanSu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picAnhNhanSu.Location = new System.Drawing.Point(57, 32);
+            this.picAnhNhanSu.Location = new System.Drawing.Point(57, 28);
             this.picAnhNhanSu.Name = "picAnhNhanSu";
             this.picAnhNhanSu.Size = new System.Drawing.Size(175, 200);
             this.picAnhNhanSu.TabIndex = 54;
