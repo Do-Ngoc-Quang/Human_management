@@ -34,12 +34,34 @@ namespace Human_management
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtSoDienThoai = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dTP_ngayketthuc = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.dTP_ngaybatdau = new System.Windows.Forms.DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txt_muctrocap = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txt_tentrocap = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbb_trocap = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_luongcoban = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbb_capbac = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txt_thoihan = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txt_tenloaihopdong = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.cbb_loaihopdong = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePickerNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.cbb_maloaihopdong = new System.Windows.Forms.ComboBox();
             this.txtHoTen = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,40 +73,18 @@ namespace Human_management
             this.label6 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txt_tenloaihopdong = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txt_thoihan = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_luongcoban = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbb_macapbac = new System.Windows.Forms.ComboBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txt_tentrocap = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cbb_matrocap = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txt_muctrocap = new System.Windows.Forms.TextBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.dTP_ngaybatdau = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
-            this.dTP_ngayketthuc = new System.Windows.Forms.DateTimePicker();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCapNhat
             // 
             this.btnCapNhat.Image = ((System.Drawing.Image)(resources.GetObject("btnCapNhat.Image")));
             this.btnCapNhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCapNhat.Location = new System.Drawing.Point(647, 540);
+            this.btnCapNhat.Location = new System.Drawing.Point(506, 418);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(208, 35);
             this.btnCapNhat.TabIndex = 23;
@@ -96,6 +96,7 @@ namespace Human_management
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.groupBox2.Controls.Add(this.btnCapNhat);
             this.groupBox2.Controls.Add(this.txtSoDienThoai);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.groupBox5);
@@ -125,7 +126,7 @@ namespace Human_management
             // txtSoDienThoai
             // 
             this.txtSoDienThoai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSoDienThoai.Location = new System.Drawing.Point(1014, 57);
+            this.txtSoDienThoai.Location = new System.Drawing.Point(990, 57);
             this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(189, 34);
@@ -135,11 +136,267 @@ namespace Human_management
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(904, 60);
+            this.label10.Location = new System.Drawing.Point(880, 60);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(128, 28);
             this.label10.TabIndex = 32;
             this.label10.Text = "Số điện thoại";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.dTP_ngayketthuc);
+            this.groupBox5.Controls.Add(this.label14);
+            this.groupBox5.Controls.Add(this.dTP_ngaybatdau);
+            this.groupBox5.Controls.Add(this.label13);
+            this.groupBox5.Location = new System.Drawing.Point(77, 348);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(1061, 64);
+            this.groupBox5.TabIndex = 52;
+            this.groupBox5.TabStop = false;
+            // 
+            // dTP_ngayketthuc
+            // 
+            this.dTP_ngayketthuc.Enabled = false;
+            this.dTP_ngayketthuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dTP_ngayketthuc.Location = new System.Drawing.Point(629, 19);
+            this.dTP_ngayketthuc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dTP_ngayketthuc.Name = "dTP_ngayketthuc";
+            this.dTP_ngayketthuc.Size = new System.Drawing.Size(133, 34);
+            this.dTP_ngayketthuc.TabIndex = 4;
+            this.dTP_ngayketthuc.Value = new System.DateTime(2023, 10, 14, 10, 41, 9, 0);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(542, 22);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(95, 28);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "Đến ngày";
+            // 
+            // dTP_ngaybatdau
+            // 
+            this.dTP_ngaybatdau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dTP_ngaybatdau.Location = new System.Drawing.Point(290, 19);
+            this.dTP_ngaybatdau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dTP_ngaybatdau.Name = "dTP_ngaybatdau";
+            this.dTP_ngaybatdau.Size = new System.Drawing.Size(153, 34);
+            this.dTP_ngaybatdau.TabIndex = 4;
+            this.dTP_ngaybatdau.Value = new System.DateTime(2023, 10, 14, 10, 41, 9, 0);
+            this.dTP_ngaybatdau.ValueChanged += new System.EventHandler(this.dTP_ngaybatdau_ValueChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(203, 22);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(82, 28);
+            this.label13.TabIndex = 25;
+            this.label13.Text = "Từ ngày";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txt_muctrocap);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.txt_tentrocap);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.cbb_trocap);
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Location = new System.Drawing.Point(77, 273);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(1061, 69);
+            this.groupBox4.TabIndex = 52;
+            this.groupBox4.TabStop = false;
+            // 
+            // txt_muctrocap
+            // 
+            this.txt_muctrocap.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_muctrocap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_muctrocap.Location = new System.Drawing.Point(894, 23);
+            this.txt_muctrocap.Name = "txt_muctrocap";
+            this.txt_muctrocap.ReadOnly = true;
+            this.txt_muctrocap.Size = new System.Drawing.Size(121, 34);
+            this.txt_muctrocap.TabIndex = 16;
+            this.txt_muctrocap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(793, 25);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(118, 28);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Mức trợ cấp";
+            // 
+            // txt_tentrocap
+            // 
+            this.txt_tentrocap.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_tentrocap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_tentrocap.Location = new System.Drawing.Point(425, 23);
+            this.txt_tentrocap.Name = "txt_tentrocap";
+            this.txt_tentrocap.ReadOnly = true;
+            this.txt_tentrocap.Size = new System.Drawing.Size(333, 34);
+            this.txt_tentrocap.TabIndex = 16;
+            this.txt_tentrocap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(311, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 28);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Tên trọ cấp";
+            // 
+            // cbb_trocap
+            // 
+            this.cbb_trocap.BackColor = System.Drawing.SystemColors.Window;
+            this.cbb_trocap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_trocap.FormattingEnabled = true;
+            this.cbb_trocap.Location = new System.Drawing.Point(86, 22);
+            this.cbb_trocap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbb_trocap.Name = "cbb_trocap";
+            this.cbb_trocap.Size = new System.Drawing.Size(202, 36);
+            this.cbb_trocap.TabIndex = 3;
+            this.cbb_trocap.SelectedValueChanged += new System.EventHandler(this.cbb_trocap_SelectedValueChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(16, 27);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 28);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Trợ cấp";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txt_luongcoban);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.cbb_capbac);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Location = new System.Drawing.Point(77, 203);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1061, 69);
+            this.groupBox1.TabIndex = 52;
+            this.groupBox1.TabStop = false;
+            // 
+            // txt_luongcoban
+            // 
+            this.txt_luongcoban.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_luongcoban.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_luongcoban.Location = new System.Drawing.Point(425, 28);
+            this.txt_luongcoban.Name = "txt_luongcoban";
+            this.txt_luongcoban.ReadOnly = true;
+            this.txt_luongcoban.Size = new System.Drawing.Size(201, 34);
+            this.txt_luongcoban.TabIndex = 16;
+            this.txt_luongcoban.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(311, 30);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(132, 28);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Lương cơ bản";
+            // 
+            // cbb_capbac
+            // 
+            this.cbb_capbac.BackColor = System.Drawing.SystemColors.Window;
+            this.cbb_capbac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_capbac.FormattingEnabled = true;
+            this.cbb_capbac.Location = new System.Drawing.Point(86, 24);
+            this.cbb_capbac.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbb_capbac.Name = "cbb_capbac";
+            this.cbb_capbac.Size = new System.Drawing.Size(202, 36);
+            this.cbb_capbac.TabIndex = 3;
+            this.cbb_capbac.SelectedValueChanged += new System.EventHandler(this.cbb_capbac_SelectedValueChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(16, 27);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(82, 28);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Cấp bậc";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txt_thoihan);
+            this.groupBox3.Controls.Add(this.label23);
+            this.groupBox3.Controls.Add(this.txt_tenloaihopdong);
+            this.groupBox3.Controls.Add(this.label22);
+            this.groupBox3.Controls.Add(this.cbb_loaihopdong);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Location = new System.Drawing.Point(77, 133);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1061, 69);
+            this.groupBox3.TabIndex = 52;
+            this.groupBox3.TabStop = false;
+            // 
+            // txt_thoihan
+            // 
+            this.txt_thoihan.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_thoihan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_thoihan.Location = new System.Drawing.Point(988, 25);
+            this.txt_thoihan.Name = "txt_thoihan";
+            this.txt_thoihan.ReadOnly = true;
+            this.txt_thoihan.Size = new System.Drawing.Size(56, 34);
+            this.txt_thoihan.TabIndex = 16;
+            this.txt_thoihan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_thoihan.TextChanged += new System.EventHandler(this.txt_thoihan_TextChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(908, 28);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(87, 28);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Thời hạn";
+            // 
+            // txt_tenloaihopdong
+            // 
+            this.txt_tenloaihopdong.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_tenloaihopdong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_tenloaihopdong.Location = new System.Drawing.Point(519, 25);
+            this.txt_tenloaihopdong.Name = "txt_tenloaihopdong";
+            this.txt_tenloaihopdong.ReadOnly = true;
+            this.txt_tenloaihopdong.Size = new System.Drawing.Size(374, 34);
+            this.txt_tenloaihopdong.TabIndex = 16;
+            this.txt_tenloaihopdong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(481, 28);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(41, 28);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Tên";
+            // 
+            // cbb_loaihopdong
+            // 
+            this.cbb_loaihopdong.BackColor = System.Drawing.SystemColors.Window;
+            this.cbb_loaihopdong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_loaihopdong.FormattingEnabled = true;
+            this.cbb_loaihopdong.Location = new System.Drawing.Point(126, 24);
+            this.cbb_loaihopdong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbb_loaihopdong.Name = "cbb_loaihopdong";
+            this.cbb_loaihopdong.Size = new System.Drawing.Size(335, 36);
+            this.cbb_loaihopdong.TabIndex = 3;
+            this.cbb_loaihopdong.SelectedValueChanged += new System.EventHandler(this.cbb_loaihopdong_SelectedValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(140, 28);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Loại hợp đồng";
             // 
             // txtEmail
             // 
@@ -163,46 +420,26 @@ namespace Human_management
             // dateTimePickerNgaySinh
             // 
             this.dateTimePickerNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerNgaySinh.Location = new System.Drawing.Point(1014, 20);
+            this.dateTimePickerNgaySinh.Location = new System.Drawing.Point(990, 20);
             this.dateTimePickerNgaySinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePickerNgaySinh.Name = "dateTimePickerNgaySinh";
             this.dateTimePickerNgaySinh.Size = new System.Drawing.Size(189, 34);
             this.dateTimePickerNgaySinh.TabIndex = 4;
             this.dateTimePickerNgaySinh.Value = new System.DateTime(2023, 10, 14, 10, 41, 9, 0);
             // 
-            // cbb_maloaihopdong
-            // 
-            this.cbb_maloaihopdong.BackColor = System.Drawing.SystemColors.Window;
-            this.cbb_maloaihopdong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_maloaihopdong.FormattingEnabled = true;
-            this.cbb_maloaihopdong.Location = new System.Drawing.Point(158, 23);
-            this.cbb_maloaihopdong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbb_maloaihopdong.Name = "cbb_maloaihopdong";
-            this.cbb_maloaihopdong.Size = new System.Drawing.Size(317, 36);
-            this.cbb_maloaihopdong.TabIndex = 3;
-            // 
             // txtHoTen
             // 
             this.txtHoTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtHoTen.Location = new System.Drawing.Point(374, 20);
+            this.txtHoTen.Location = new System.Drawing.Point(448, 17);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(316, 34);
+            this.txtHoTen.Size = new System.Drawing.Size(391, 34);
             this.txtHoTen.TabIndex = 2;
             this.txtHoTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 28);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Loại hợp đồng";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(316, 23);
+            this.label2.Location = new System.Drawing.Point(400, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 28);
             this.label2.TabIndex = 0;
@@ -211,9 +448,9 @@ namespace Human_management
             // txtCCCD
             // 
             this.txtCCCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCCCD.Location = new System.Drawing.Point(91, 57);
+            this.txtCCCD.Location = new System.Drawing.Point(109, 57);
             this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(245, 34);
+            this.txtCCCD.Size = new System.Drawing.Size(263, 34);
             this.txtCCCD.TabIndex = 5;
             this.txtCCCD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -231,7 +468,7 @@ namespace Human_management
             this.txtMaSoThue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaSoThue.Location = new System.Drawing.Point(109, 93);
             this.txtMaSoThue.Name = "txtMaSoThue";
-            this.txtMaSoThue.Size = new System.Drawing.Size(227, 34);
+            this.txtMaSoThue.Size = new System.Drawing.Size(263, 34);
             this.txtMaSoThue.TabIndex = 13;
             this.txtMaSoThue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -240,13 +477,13 @@ namespace Human_management
             this.txtDCTamTru.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDCTamTru.Location = new System.Drawing.Point(448, 93);
             this.txtDCTamTru.Name = "txtDCTamTru";
-            this.txtDCTamTru.Size = new System.Drawing.Size(754, 34);
+            this.txtDCTamTru.Size = new System.Drawing.Size(731, 34);
             this.txtDCTamTru.TabIndex = 18;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(384, 96);
+            this.label18.Location = new System.Drawing.Point(400, 96);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(71, 28);
             this.label18.TabIndex = 0;
@@ -255,9 +492,9 @@ namespace Human_management
             // txtMaNhanSu
             // 
             this.txtMaNhanSu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMaNhanSu.Location = new System.Drawing.Point(91, 20);
+            this.txtMaNhanSu.Location = new System.Drawing.Point(109, 20);
             this.txtMaNhanSu.Name = "txtMaNhanSu";
-            this.txtMaNhanSu.Size = new System.Drawing.Size(169, 34);
+            this.txtMaNhanSu.Size = new System.Drawing.Size(151, 34);
             this.txtMaNhanSu.TabIndex = 1;
             this.txtMaNhanSu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -273,7 +510,7 @@ namespace Human_management
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(927, 23);
+            this.label6.Location = new System.Drawing.Point(903, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 28);
             this.label6.TabIndex = 25;
@@ -282,7 +519,7 @@ namespace Human_management
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(17, 96);
+            this.label16.Location = new System.Drawing.Point(15, 96);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(109, 28);
             this.label16.TabIndex = 0;
@@ -298,243 +535,12 @@ namespace Human_management
             this.label28.TabIndex = 53;
             this.label28.Text = "HỢP ĐỒNG LAO ĐỘNG";
             // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(481, 27);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(41, 28);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "Tên";
-            // 
-            // txt_tenloaihopdong
-            // 
-            this.txt_tenloaihopdong.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_tenloaihopdong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_tenloaihopdong.Location = new System.Drawing.Point(524, 24);
-            this.txt_tenloaihopdong.Name = "txt_tenloaihopdong";
-            this.txt_tenloaihopdong.ReadOnly = true;
-            this.txt_tenloaihopdong.Size = new System.Drawing.Size(363, 34);
-            this.txt_tenloaihopdong.TabIndex = 16;
-            this.txt_tenloaihopdong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(893, 27);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(87, 28);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Thời hạn";
-            // 
-            // txt_thoihan
-            // 
-            this.txt_thoihan.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_thoihan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_thoihan.Location = new System.Drawing.Point(982, 24);
-            this.txt_thoihan.Name = "txt_thoihan";
-            this.txt_thoihan.ReadOnly = true;
-            this.txt_thoihan.Size = new System.Drawing.Size(119, 34);
-            this.txt_thoihan.TabIndex = 16;
-            this.txt_thoihan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.txt_thoihan);
-            this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Controls.Add(this.txt_tenloaihopdong);
-            this.groupBox3.Controls.Add(this.label22);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.cbb_maloaihopdong);
-            this.groupBox3.Location = new System.Drawing.Point(56, 133);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1107, 69);
-            this.groupBox3.TabIndex = 52;
-            this.groupBox3.TabStop = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txt_luongcoban);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.cbb_macapbac);
-            this.groupBox1.Location = new System.Drawing.Point(56, 208);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1107, 69);
-            this.groupBox1.TabIndex = 52;
-            this.groupBox1.TabStop = false;
-            // 
-            // txt_luongcoban
-            // 
-            this.txt_luongcoban.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_luongcoban.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_luongcoban.Location = new System.Drawing.Point(420, 24);
-            this.txt_luongcoban.Name = "txt_luongcoban";
-            this.txt_luongcoban.ReadOnly = true;
-            this.txt_luongcoban.Size = new System.Drawing.Size(363, 34);
-            this.txt_luongcoban.TabIndex = 16;
-            this.txt_luongcoban.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(286, 27);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(132, 28);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Lương cơ bản";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 27);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 28);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Cấp bậc";
-            // 
-            // cbb_macapbac
-            // 
-            this.cbb_macapbac.BackColor = System.Drawing.SystemColors.Window;
-            this.cbb_macapbac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_macapbac.FormattingEnabled = true;
-            this.cbb_macapbac.Location = new System.Drawing.Point(101, 23);
-            this.cbb_macapbac.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbb_macapbac.Name = "cbb_macapbac";
-            this.cbb_macapbac.Size = new System.Drawing.Size(169, 36);
-            this.cbb_macapbac.TabIndex = 3;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.txt_muctrocap);
-            this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.txt_tentrocap);
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Controls.Add(this.cbb_matrocap);
-            this.groupBox4.Location = new System.Drawing.Point(56, 283);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1107, 69);
-            this.groupBox4.TabIndex = 52;
-            this.groupBox4.TabStop = false;
-            // 
-            // txt_tentrocap
-            // 
-            this.txt_tentrocap.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_tentrocap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_tentrocap.Location = new System.Drawing.Point(392, 24);
-            this.txt_tentrocap.Name = "txt_tentrocap";
-            this.txt_tentrocap.ReadOnly = true;
-            this.txt_tentrocap.Size = new System.Drawing.Size(363, 34);
-            this.txt_tentrocap.TabIndex = 16;
-            this.txt_tentrocap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(286, 27);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 28);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Tên trọ cấp";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(16, 27);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 28);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Trợ cấp";
-            // 
-            // cbb_matrocap
-            // 
-            this.cbb_matrocap.BackColor = System.Drawing.SystemColors.Window;
-            this.cbb_matrocap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_matrocap.FormattingEnabled = true;
-            this.cbb_matrocap.Location = new System.Drawing.Point(101, 23);
-            this.cbb_matrocap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbb_matrocap.Name = "cbb_matrocap";
-            this.cbb_matrocap.Size = new System.Drawing.Size(169, 36);
-            this.cbb_matrocap.TabIndex = 3;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(814, 27);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(118, 28);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Mức trợ cấp";
-            // 
-            // txt_muctrocap
-            // 
-            this.txt_muctrocap.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_muctrocap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_muctrocap.Location = new System.Drawing.Point(934, 24);
-            this.txt_muctrocap.Name = "txt_muctrocap";
-            this.txt_muctrocap.ReadOnly = true;
-            this.txt_muctrocap.Size = new System.Drawing.Size(167, 34);
-            this.txt_muctrocap.TabIndex = 16;
-            this.txt_muctrocap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.dTP_ngayketthuc);
-            this.groupBox5.Controls.Add(this.label14);
-            this.groupBox5.Controls.Add(this.dTP_ngaybatdau);
-            this.groupBox5.Controls.Add(this.label13);
-            this.groupBox5.Location = new System.Drawing.Point(56, 365);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1107, 69);
-            this.groupBox5.TabIndex = 52;
-            this.groupBox5.TabStop = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(155, 31);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(82, 28);
-            this.label13.TabIndex = 25;
-            this.label13.Text = "Từ ngày";
-            // 
-            // dTP_ngaybatdau
-            // 
-            this.dTP_ngaybatdau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dTP_ngaybatdau.Location = new System.Drawing.Point(242, 28);
-            this.dTP_ngaybatdau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dTP_ngaybatdau.Name = "dTP_ngaybatdau";
-            this.dTP_ngaybatdau.Size = new System.Drawing.Size(189, 34);
-            this.dTP_ngaybatdau.TabIndex = 4;
-            this.dTP_ngaybatdau.Value = new System.DateTime(2023, 10, 14, 10, 41, 9, 0);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(694, 31);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(95, 28);
-            this.label14.TabIndex = 25;
-            this.label14.Text = "Đến ngày";
-            // 
-            // dTP_ngayketthuc
-            // 
-            this.dTP_ngayketthuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dTP_ngayketthuc.Location = new System.Drawing.Point(781, 28);
-            this.dTP_ngayketthuc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dTP_ngayketthuc.Name = "dTP_ngayketthuc";
-            this.dTP_ngayketthuc.Size = new System.Drawing.Size(189, 34);
-            this.dTP_ngayketthuc.TabIndex = 4;
-            this.dTP_ngayketthuc.Value = new System.DateTime(2023, 10, 14, 10, 41, 9, 0);
-            // 
             // frmHopDongLaoDong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1512, 703);
-            this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -546,14 +552,14 @@ namespace Human_management
             this.Load += new System.EventHandler(this.frmHopDongLaoDong_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -567,7 +573,7 @@ namespace Human_management
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePickerNgaySinh;
-        private System.Windows.Forms.ComboBox cbb_maloaihopdong;
+        private System.Windows.Forms.ComboBox cbb_loaihopdong;
         private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -590,14 +596,14 @@ namespace Human_management
         private System.Windows.Forms.TextBox txt_luongcoban;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbb_macapbac;
+        private System.Windows.Forms.ComboBox cbb_capbac;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox txt_muctrocap;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_tentrocap;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cbb_matrocap;
+        private System.Windows.Forms.ComboBox cbb_trocap;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DateTimePicker dTP_ngayketthuc;
         private System.Windows.Forms.Label label14;
