@@ -57,11 +57,11 @@ namespace Human_management
         {
             string maphongban = cbb_phongban.SelectedValue.ToString();
 
-            txt_dadaotao.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT COUNT(id_ctdt) FROM public.tbd_chitietdaotao " +
-                "WHERE maphongban_ctdt = '"+ maphongban +"' AND ketqua ;");
-            txt_chuadaotao.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT COUNT(id_ctdt) FROM public.tbd_chitietdaotao " +
-                "WHERE maphongban_ctdt = '"+ maphongban +"' AND ketqua = false;");
-
+            txt_dadaotao.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT COUNT(DISTINCT manhansu_ctdt) " +
+                "FROM public.tbd_chitietdaotao WHERE manhansu_ctdt IS NOT NULL AND madaotao_ctdt IS NOT NULL AND ketqua AND maphongban_ctdt = '" + maphongban + "'");
+            txt_chuadaotao.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT COUNT(manhansu_ctdt) " +
+                "FROM public.tbd_chitietdaotao WHERE manhansu_ctdt IS NOT NULL AND madaotao_ctdt IS NULL AND ketqua = false AND maphongban_ctdt = '" + maphongban + "'");
+            // đang fix đoạn này, sửa số nhân sự chưa thực hiện đào tạo
             load_dsnhansu(maphongban);
         }
 
@@ -79,7 +79,7 @@ namespace Human_management
             load_ketquadaotao(manhansu);
         }
 
-        private void load_kehoachdaotao(string maphongban, string manhansu)
+        public void load_kehoachdaotao(string maphongban, string manhansu)
         {
             dGV_kehoachdaotao.DataSource = null;
 
@@ -100,7 +100,7 @@ namespace Human_management
             }
         }
 
-        private void load_ketquadaotao(string manhansu)
+        public void load_ketquadaotao(string manhansu)
         {
             dGV_hoanthanhdaotao.DataSource = null;
 
@@ -120,8 +120,9 @@ namespace Human_management
 
         private void btn_ghinhandaotao_Click(object sender, EventArgs e)
         {
-            frmGhiNhanDaoTao frm = new frmGhiNhanDaoTao(_maphongban, _manhansu);
+            frmGhiNhanDaoTao frm = new frmGhiNhanDaoTao(this, _maphongban, _manhansu);
             frm.Show();
+
         }
     }
 }

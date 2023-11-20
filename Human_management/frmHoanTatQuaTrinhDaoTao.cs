@@ -18,6 +18,7 @@ namespace Human_management
         private Class_pgdatabase pgdatabase;
         private string sql = "";
 
+        frmGhiNhanDaoTao _frm;
         private string _manhansu;
         private string _madaotao;
         private string _tendaotao;
@@ -34,9 +35,10 @@ namespace Human_management
         public Cloudinary cloudinary = null;
         Account account = new Account("hrmcloudinary", "336624331362197", "HR8ln3AxXVA05sAmpMi7pBLDAHA");
 
-        public frmHoanTatQuaTrinhDaoTao(string mns, string mdt, string tendaotao, string maphongban)
+        public frmHoanTatQuaTrinhDaoTao(frmGhiNhanDaoTao frm, string mns, string mdt, string tendaotao, string maphongban)
         {
             InitializeComponent();
+            _frm = frm;
             _manhansu = mns;
             _madaotao = mdt;
             _tendaotao = tendaotao;
@@ -70,6 +72,7 @@ namespace Human_management
                 if (kqua)
                 {
                     updateKeHoachDaoTao(_manhansu, _maphongban);
+                    _frm.load_dsdaotao();
                     this.Close();
                 }
             }            

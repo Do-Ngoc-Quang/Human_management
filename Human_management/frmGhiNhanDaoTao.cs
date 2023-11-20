@@ -16,12 +16,14 @@ namespace Human_management
         private Class_pgdatabase pgdatabase;
         private string sql = "";
 
+        frmDaoTao _frm;
         protected string _maphongban;
         protected string _manhansu;
 
-        public frmGhiNhanDaoTao(string maphongban, string manhansu)
+        public frmGhiNhanDaoTao(frmDaoTao frm, string maphongban, string manhansu)
         {
             InitializeComponent();
+            _frm = frm;
             _maphongban = maphongban;
             _manhansu = manhansu;
         }
@@ -31,7 +33,7 @@ namespace Human_management
             load_dsdaotao();
         }
 
-        private void load_dsdaotao()
+        public void load_dsdaotao()
         {
             dGV_dsdaotao.DataSource = null;
 
@@ -62,12 +64,9 @@ namespace Human_management
                     string mdt = (string)dGV_dsdaotao.Rows[e.RowIndex].Cells[2].Value;
                     string tendaotao = (string)dGV_dsdaotao.Rows[e.RowIndex].Cells[3].Value;
 
-                    frmHoanTatQuaTrinhDaoTao frm = new frmHoanTatQuaTrinhDaoTao(mns, mdt, tendaotao, _maphongban);
+                    frmHoanTatQuaTrinhDaoTao frm = new frmHoanTatQuaTrinhDaoTao(this, mns, mdt, tendaotao, _maphongban);
                     frm.Show();
 
-                    //MessageBox.Show($"manhansu: {mns}, madaotao: {mdt}");
-
-                    load_dsdaotao();
                 }
                 else
                 {
@@ -75,6 +74,12 @@ namespace Human_management
                 }
             }
 
+        }
+
+        private void frmGhiNhanDaoTao_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _frm.load_kehoachdaotao(_maphongban, _manhansu);
+            _frm.load_ketquadaotao(_manhansu);
         }
     }
 }

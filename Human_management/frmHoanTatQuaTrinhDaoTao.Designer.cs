@@ -62,9 +62,11 @@ namespace Human_management
             // 
             // txt_tendaotao
             // 
+            this.txt_tendaotao.BackColor = System.Drawing.SystemColors.Window;
             this.txt_tendaotao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_tendaotao.Location = new System.Drawing.Point(12, 11);
             this.txt_tendaotao.Name = "txt_tendaotao";
+            this.txt_tendaotao.ReadOnly = true;
             this.txt_tendaotao.Size = new System.Drawing.Size(701, 34);
             this.txt_tendaotao.TabIndex = 46;
             // 

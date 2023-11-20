@@ -29,7 +29,6 @@ namespace Human_management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dGV_dsdaotao = new System.Windows.Forms.DataGridView();
             this.id_daotao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,6 +36,7 @@ namespace Human_management
             this.mdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tendaotao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ketqua = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_dsdaotao)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,14 +45,14 @@ namespace Human_management
             this.dGV_dsdaotao.AllowUserToAddRows = false;
             this.dGV_dsdaotao.AllowUserToDeleteRows = false;
             this.dGV_dsdaotao.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGV_dsdaotao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGV_dsdaotao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dGV_dsdaotao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_dsdaotao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_daotao,
@@ -60,19 +60,12 @@ namespace Human_management
             this.mdt,
             this.tendaotao,
             this.ketqua});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGV_dsdaotao.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dGV_dsdaotao.Location = new System.Drawing.Point(12, 12);
+            this.dGV_dsdaotao.Location = new System.Drawing.Point(13, 14);
+            this.dGV_dsdaotao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dGV_dsdaotao.Name = "dGV_dsdaotao";
             this.dGV_dsdaotao.RowHeadersWidth = 51;
             this.dGV_dsdaotao.RowTemplate.Height = 24;
-            this.dGV_dsdaotao.Size = new System.Drawing.Size(1024, 279);
+            this.dGV_dsdaotao.Size = new System.Drawing.Size(985, 312);
             this.dGV_dsdaotao.TabIndex = 1;
             this.dGV_dsdaotao.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_dsdaotao_CellValueChanged);
             // 
@@ -119,17 +112,31 @@ namespace Human_management
             this.ketqua.Name = "ketqua";
             this.ketqua.Width = 125;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(457, 336);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(113, 40);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "GHI NHẬN";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmGhiNhanDaoTao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1048, 425);
+            this.ClientSize = new System.Drawing.Size(1014, 381);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dGV_dsdaotao);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmGhiNhanDaoTao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GHI NHẬN THÔNG TIN ĐÀO TẠO";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmGhiNhanDaoTao_FormClosed);
             this.Load += new System.EventHandler(this.frmGhiNhanDaoTao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGV_dsdaotao)).EndInit();
             this.ResumeLayout(false);
@@ -144,5 +151,6 @@ namespace Human_management
         private System.Windows.Forms.DataGridViewTextBoxColumn mdt;
         private System.Windows.Forms.DataGridViewTextBoxColumn tendaotao;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ketqua;
+        private System.Windows.Forms.Button button1;
     }
 }
