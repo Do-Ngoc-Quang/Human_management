@@ -218,6 +218,12 @@
     <Compile Include="frmHoanTatQuaTrinhDaoTao.Designer.cs">
       <DependentUpon>frmHoanTatQuaTrinhDaoTao.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHopDongLaoDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHopDongLaoDong.Designer.cs">
+      <DependentUpon>frmHopDongLaoDong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHuongDanSuDung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,6 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHoanTatQuaTrinhDaoTao.resx">
       <DependentUpon>frmHoanTatQuaTrinhDaoTao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHopDongLaoDong.resx">
+      <DependentUpon>frmHopDongLaoDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHuongDanSuDung.resx">
       <DependentUpon>frmHuongDanSuDung.cs</DependentUpon>

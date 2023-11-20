@@ -59,9 +59,11 @@ namespace Human_management
 
             txt_dadaotao.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT COUNT(DISTINCT manhansu_ctdt) " +
                 "FROM public.tbd_chitietdaotao WHERE manhansu_ctdt IS NOT NULL AND madaotao_ctdt IS NOT NULL AND ketqua AND maphongban_ctdt = '" + maphongban + "'");
-            txt_chuadaotao.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT COUNT(manhansu_ctdt) " +
-                "FROM public.tbd_chitietdaotao WHERE manhansu_ctdt IS NOT NULL AND madaotao_ctdt IS NULL AND ketqua = false AND maphongban_ctdt = '" + maphongban + "'");
-            // đang fix đoạn này, sửa số nhân sự chưa thực hiện đào tạo
+            txt_chuadaotao.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT COUNT(ctdt1.manhansu_ctdt) " +
+                "FROM public.tbd_chitietdaotao AS ctdt1 WHERE ctdt1.manhansu_ctdt IS NOT NULL AND ctdt1.madaotao_ctdt IS NULL AND ctdt1.ketqua = false " +
+                "AND ctdt1.maphongban_ctdt = '"+ maphongban + "' AND NOT EXISTS (SELECT ctdt1.manhansu_ctdt FROM public.tbd_chitietdaotao AS ctdt2 " +
+                "WHERE ctdt1.manhansu_ctdt = ctdt2.manhansu_ctdt HAVING COUNT(manhansu_ctdt) > 1 );");
+
             load_dsnhansu(maphongban);
         }
 
