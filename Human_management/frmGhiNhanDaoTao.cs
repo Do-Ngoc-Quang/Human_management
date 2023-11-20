@@ -36,10 +36,11 @@ namespace Human_management
             dGV_dsdaotao.DataSource = null;
 
             string sql = "SELECT dt.id_daotao, ctns.manhansu AS mns, dt.madaotao AS mdt, dt.tendaotao, ctdt.ketqua " +
-                "FROM public.tbl_daotao AS dt INNER JOIN public.tbd_chitietdaotao AS ctdt ON dt.maphongban = ctdt.maphongban_ctdt " +
+                "FROM public.tbl_daotao AS dt LEFT JOIN public.tbd_chitietdaotao AS ctdt ON dt.maphongban = ctdt.maphongban_ctdt " +
                 "INNER JOIN public.tbd_chitietnhansu AS ctns ON ctdt.manhansu_ctdt = ctns.manhansu " +
-                "INNER JOIN public.tbd_kehoachdaotao AS khdt ON dt.madaotao = khdt.madaotao " +
-                "WHERE dt.maphongban = '" + _maphongban + "' AND ctns.manhansu = '"+ _manhansu +  "' AND ctdt.ketqua = false;";
+                "WHERE dt.maphongban = '" + _maphongban + "' AND ctns.manhansu = '" + _manhansu + "'  AND ctdt.madaotao_ctdt IS NULL " +
+                "AND NOT EXISTS (SELECT ctdt2.madaotao_ctdt FROM public.tbd_chitietdaotao AS ctdt2 " +
+                "WHERE dt.madaotao = ctdt2.madaotao_ctdt AND ctdt2.maphongban_ctdt = '" + _maphongban + "' AND ctdt2.manhansu_ctdt = '" + _manhansu + "');";
             DataTable datatable = new DataTable();
             pgdatabase = new Class_pgdatabase();
             datatable = pgdatabase.getDataTable(Class_connect.connection_pg, sql);
@@ -53,16 +54,20 @@ namespace Human_management
 
         private void dGV_dsdaotao_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+            //Ghi nhận thông tin hoàn tất quá trình đào tạo
             if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
             {
                 if (dGV_dsdaotao.Rows[e.RowIndex].Cells[1].Value is string mns)
                 {
-                    MessageBox.Show($"manhansu của hàng: {mns}");
-                    //mở một form để điền thông tin khóa học và chứng nhận đã hoàn thành
+                    string mdt = (string)dGV_dsdaotao.Rows[e.RowIndex].Cells[2].Value;
+                    string tendaotao = (string)dGV_dsdaotao.Rows[e.RowIndex].Cells[3].Value;
 
-                    //form: frmHoanTatQuaTrinhDaoTao
-                    // - nếu manhansu_ctdt is not null and madaotao_ctdt is null thì update
-                    // - nếu manhansu_ctdt is not null and madaotao_ctdt is not null thì thì insert thêm một dòng mới với cùng mã nhân sự
+                    frmHoanTatQuaTrinhDaoTao frm = new frmHoanTatQuaTrinhDaoTao(mns, mdt, tendaotao, _maphongban);
+                    frm.Show();
+
+                    //MessageBox.Show($"manhansu: {mns}, madaotao: {mdt}");
+
+                    load_dsdaotao();
                 }
                 else
                 {

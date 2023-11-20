@@ -83,11 +83,12 @@ namespace Human_management
         {
             dGV_kehoachdaotao.DataSource = null;
 
-            string sql = "SELECT dt.id_daotao, dt.tendaotao, (ctns.ngaybatdau + khdt.ycau_sothanglamviec * 30) AS dukiendaotao " +
-                "FROM public.tbl_daotao AS dt INNER JOIN public.tbd_chitietdaotao AS ctdt ON dt.maphongban = ctdt.maphongban_ctdt " +
+            string sql = "SELECT dt.id_daotao, dt.tendaotao, (ctns.ngaybatdau + dt.ycau_sothanglamviec * 30) AS dukiendaotao " +
+                "FROM public.tbl_daotao AS dt LEFT JOIN public.tbd_chitietdaotao AS ctdt ON dt.maphongban = ctdt.maphongban_ctdt " +
                 "INNER JOIN public.tbd_chitietnhansu AS ctns ON ctdt.manhansu_ctdt = ctns.manhansu " +
-                "INNER JOIN public.tbd_kehoachdaotao AS khdt ON dt.madaotao = khdt.madaotao " +
-                "WHERE dt.maphongban = '" + maphongban + "' AND ctns.manhansu = '" + manhansu + "' AND ctdt.ketqua = false;";
+                "WHERE dt.maphongban = '" + maphongban + "' AND ctns.manhansu = '" + manhansu + "'  AND ctdt.madaotao_ctdt IS NULL " +
+                "AND NOT EXISTS (SELECT ctdt2.madaotao_ctdt FROM public.tbd_chitietdaotao AS ctdt2 " +
+                "WHERE dt.madaotao = ctdt2.madaotao_ctdt AND ctdt2.maphongban_ctdt = '" + maphongban + "' AND ctdt2.manhansu_ctdt = '" + manhansu + "');";
             DataTable datatable = new DataTable();
             pgdatabase = new Class_pgdatabase();
             datatable = pgdatabase.getDataTable(Class_connect.connection_pg, sql);

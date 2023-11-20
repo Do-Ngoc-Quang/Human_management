@@ -737,7 +737,7 @@ namespace Human_management
             // 
             this.btn_ghinhandaotao.Image = ((System.Drawing.Image)(resources.GetObject("btn_ghinhandaotao.Image")));
             this.btn_ghinhandaotao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ghinhandaotao.Location = new System.Drawing.Point(281, 665);
+            this.btn_ghinhandaotao.Location = new System.Drawing.Point(281, 661);
             this.btn_ghinhandaotao.Name = "btn_ghinhandaotao";
             this.btn_ghinhandaotao.Size = new System.Drawing.Size(200, 35);
             this.btn_ghinhandaotao.TabIndex = 43;
