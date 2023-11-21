@@ -30,7 +30,7 @@ namespace Human_management
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongTinNhanSu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_anhnhansu = new System.Windows.Forms.TextBox();
             this.btnHienThiAnh = new System.Windows.Forms.Button();
             this.btnTaiAnh = new System.Windows.Forms.Button();
@@ -73,7 +73,6 @@ namespace Human_management
             this.sobhyt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isnhanvien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_reloadDGV = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.txtTimMaNhanSu = new System.Windows.Forms.TextBox();
             this.picAnhNhanSu = new System.Windows.Forms.PictureBox();
@@ -191,14 +190,14 @@ namespace Human_management
             this.dGVNhanSu.AllowUserToAddRows = false;
             this.dGVNhanSu.AllowUserToDeleteRows = false;
             this.dGVNhanSu.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGVNhanSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVNhanSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dGVNhanSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVNhanSu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -584,26 +583,12 @@ namespace Human_management
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btn_reloadDGV);
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.txtTimMaNhanSu);
             this.panel1.Location = new System.Drawing.Point(45, 442);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1455, 52);
             this.panel1.TabIndex = 48;
-            // 
-            // btn_reloadDGV
-            // 
-            this.btn_reloadDGV.Image = ((System.Drawing.Image)(resources.GetObject("btn_reloadDGV.Image")));
-            this.btn_reloadDGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_reloadDGV.Location = new System.Drawing.Point(972, 3);
-            this.btn_reloadDGV.Name = "btn_reloadDGV";
-            this.btn_reloadDGV.Size = new System.Drawing.Size(215, 30);
-            this.btn_reloadDGV.TabIndex = 43;
-            this.btn_reloadDGV.Text = "TẢI LÊN DS NHÂN SỰ";
-            this.btn_reloadDGV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_reloadDGV.UseVisualStyleBackColor = true;
-            this.btn_reloadDGV.Click += new System.EventHandler(this.btn_reloadDGV_Click);
             // 
             // label21
             // 
@@ -1380,7 +1365,6 @@ namespace Human_management
         private System.Windows.Forms.DataGridViewTextBoxColumn sobhyt;
         private System.Windows.Forms.DataGridViewTextBoxColumn isnhanvien;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_reloadDGV;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtTimMaNhanSu;
         private System.Windows.Forms.PictureBox picAnhNhanSu;

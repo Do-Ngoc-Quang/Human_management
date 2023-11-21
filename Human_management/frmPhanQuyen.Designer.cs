@@ -35,7 +35,6 @@ namespace Human_management
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhanQuyen));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dGV_vaitro = new System.Windows.Forms.DataGridView();
             this.id_phanquyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +59,6 @@ namespace Human_management
             this.avatar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cccd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_reloadDGV = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.txt_timnguoidung = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
@@ -74,7 +72,7 @@ namespace Human_management
             // 
             this.groupBox3.Controls.Add(this.dGV_vaitro);
             this.groupBox3.Controls.Add(this.panel2);
-            this.groupBox3.Location = new System.Drawing.Point(23, 510);
+            this.groupBox3.Location = new System.Drawing.Point(23, 479);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1504, 171);
             this.groupBox3.TabIndex = 45;
@@ -225,7 +223,7 @@ namespace Human_management
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dGV_nguoidung.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dGV_nguoidung.Location = new System.Drawing.Point(45, 105);
+            this.dGV_nguoidung.Location = new System.Drawing.Point(45, 74);
             this.dGV_nguoidung.Name = "dGV_nguoidung";
             this.dGV_nguoidung.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -362,25 +360,12 @@ namespace Human_management
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btn_reloadDGV);
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.txt_timnguoidung);
-            this.panel1.Location = new System.Drawing.Point(45, 69);
+            this.panel1.Location = new System.Drawing.Point(45, 38);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1455, 52);
             this.panel1.TabIndex = 44;
-            // 
-            // btn_reloadDGV
-            // 
-            this.btn_reloadDGV.Image = ((System.Drawing.Image)(resources.GetObject("btn_reloadDGV.Image")));
-            this.btn_reloadDGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_reloadDGV.Location = new System.Drawing.Point(960, 3);
-            this.btn_reloadDGV.Name = "btn_reloadDGV";
-            this.btn_reloadDGV.Size = new System.Drawing.Size(225, 30);
-            this.btn_reloadDGV.TabIndex = 43;
-            this.btn_reloadDGV.Text = "TẢI LÊN DS NGƯỜI DÙNG";
-            this.btn_reloadDGV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_reloadDGV.UseVisualStyleBackColor = true;
             // 
             // label21
             // 
@@ -398,6 +383,9 @@ namespace Human_management
             this.txt_timnguoidung.Name = "txt_timnguoidung";
             this.txt_timnguoidung.Size = new System.Drawing.Size(256, 34);
             this.txt_timnguoidung.TabIndex = 1;
+            this.txt_timnguoidung.TextChanged += new System.EventHandler(this.txt_timnguoidung_TextChanged);
+            this.txt_timnguoidung.Enter += new System.EventHandler(this.txt_timnguoidung_Enter);
+            this.txt_timnguoidung.Leave += new System.EventHandler(this.txt_timnguoidung_Leave);
             // 
             // frmPhanQuyen
             // 
@@ -451,7 +439,6 @@ namespace Human_management
         private System.Windows.Forms.DataGridViewTextBoxColumn avatar;
         private System.Windows.Forms.DataGridViewTextBoxColumn cccd;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_reloadDGV;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txt_timnguoidung;
     }

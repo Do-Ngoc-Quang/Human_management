@@ -15,19 +15,59 @@ namespace Human_management
     {
         Class_pgdatabase pgdatabase;
         public string sql = "";
+        private string _manhansu;
 
-        public frmHopDongLaoDong()
+        public frmHopDongLaoDong(string manhansu)
         {
             InitializeComponent();
+            _manhansu = manhansu;
         }
 
         private void frmHopDongLaoDong_Load(object sender, EventArgs e)
         {
             pgdatabase = new Class_pgdatabase();
-
             load_loaihopdong();
             load_capbac();
             load_trocap();
+
+            isHDLD();
+            load_nhansu();
+
+        }
+
+        private void isHDLD()
+        {
+            sql = "SELECT id FROM public.tbd_hopdonglaodong WHERE manhansu = '" + _manhansu + "';";
+            int id = pgdatabase.getid(Class_connect.connection_pg, sql);
+            if (id != 0)
+            {
+                btnThietLapHDLD.Enabled = false;
+
+                lbl_thongbao.Text = "(Đã gia hạn hợp đồng)";
+                lbl_thongbao.Visible = true;
+            }
+        }
+
+        private void load_nhansu()
+        {
+            txtMaNhanSu.Text = _manhansu;
+            txtHoTen.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT hoten FROM public.tbd_nhansu WHERE manhansu = '"+ _manhansu + "';");
+            dateTimePickerNgaySinh.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT ngaysinh FROM public.tbd_nhansu WHERE manhansu = '" + _manhansu + "';");
+            txtCCCD.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT cccd FROM public.tbd_nhansu WHERE manhansu = '" + _manhansu + "';");
+            txtEmail.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT email FROM public.tbd_nhansu WHERE manhansu = '" + _manhansu + "';");
+            txtSoDienThoai.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT sodienthoai FROM public.tbd_nhansu WHERE manhansu = '" + _manhansu + "';");
+            txtMaSoThue.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT masothue FROM public.tbd_nhansu WHERE manhansu = '" + _manhansu + "';");
+            txtDCTamTru.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT diachitamtru FROM public.tbd_nhansu WHERE manhansu = '" + _manhansu + "';");
+
+            sql = "SELECT id FROM public.tbd_hopdonglaodong WHERE manhansu = '" + _manhansu + "';";
+            int id = pgdatabase.getid(Class_connect.connection_pg, sql);
+            if (id != 0)
+            {
+                cbb_loaihopdong.SelectedValue = pgdatabase.getValue(Class_connect.connection_pg, "SELECT maloaihopdong FROM public.tbd_hopdonglaodong WHERE manhansu = '" + _manhansu + "';");
+                cbb_capbac.SelectedValue = pgdatabase.getValue(Class_connect.connection_pg, "SELECT macapbac FROM public.tbd_hopdonglaodong WHERE manhansu = '" + _manhansu + "';");
+                cbb_trocap.SelectedValue = pgdatabase.getValue(Class_connect.connection_pg, "SELECT matrocap FROM public.tbd_hopdonglaodong WHERE manhansu = '" + _manhansu + "';");
+            }
+            
         }
 
         private void load_loaihopdong()
@@ -100,11 +140,42 @@ namespace Human_management
 
         private void updateTime()
         {
-            int thoihan = int.Parse(txt_thoihan.Text);
-            DateTime currentDate = dTP_ngaybatdau.Value;
-            DateTime newDate = currentDate.AddMonths(thoihan);
+            int thoihan;
 
-            dTP_ngayketthuc.Value = newDate;
+            if (txt_thoihan.Text == "")
+            {
+                lbl_denngay.Text = "Vô thời hạn";
+                dTP_ngayketthuc.Visible = false;
+                //dTP_ngayketthuc.Value = null;
+            }
+            else
+            {
+                lbl_denngay.Text =  "Đến ngày";
+                dTP_ngayketthuc.Visible = true;
+                thoihan = int.Parse(txt_thoihan.Text);
+                DateTime currentDate = dTP_ngaybatdau.Value;
+                DateTime newDate = currentDate.AddMonths(thoihan);
+                dTP_ngayketthuc.Value = newDate;
+            }
+            
+        }
+
+        private void btnThietLapHDLD_Click(object sender, EventArgs e)
+        {
+            sql = "SELECT id FROM public.tbd_hopdonglaodong WHERE manhansu = '" + _manhansu + "';";
+            int id = pgdatabase.getid(Class_connect.connection_pg, sql);
+            if (id == 0)
+            {
+                sql = string.Format("INSERT INTO public.tbd_hopdonglaodong(manhansu, maloaihopdong, macapbac, matrocap, thoihan, ngaybatdau, ngayketthuc, ishoantat) " +
+                    "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}');", _manhansu, cbb_loaihopdong.SelectedValue.ToString(),
+                    cbb_capbac.SelectedValue.ToString(), cbb_trocap.SelectedValue.ToString(), txt_thoihan.Text, dTP_ngaybatdau.Value, dTP_ngayketthuc.Value, true);
+                bool kqua = pgdatabase.Runsql(Class_connect.connection_pg, sql);
+
+                if (kqua)
+                {
+                    this.Close();
+                }
+            }
         }
     }
 }

@@ -330,10 +330,6 @@ namespace Human_management
             }
         }
 
-        private void btn_reloadDGV_Click(object sender, EventArgs e)
-        {
-            load_dsnhansu();
-        }
 
         private void btn_nhansunghiphep_Click(object sender, EventArgs e)
         {
@@ -349,7 +345,8 @@ namespace Human_management
 
         private void btn_hopdonglaodong_Click(object sender, EventArgs e)
         {
-
+            frmHopDongLaoDong frm = new frmHopDongLaoDong(txtMaNhanSu.Text);
+            frm.Show();
         }
 
 

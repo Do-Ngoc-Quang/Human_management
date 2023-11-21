@@ -87,14 +87,6 @@ namespace Human_management
 
             //Load phân quyền của từng người dùng
             load_chitietphanquyen(username);
-
-        }
-
-
-
-        private void txtTimMaNhanSu_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void dGV_vaitro_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -138,6 +130,38 @@ namespace Human_management
                             break;
                     }
                 }
+            }
+        }
+
+        private void txt_timnguoidung_Enter(object sender, EventArgs e)
+        {
+            if (txt_timnguoidung.Text == "Tìm kiếm theo mã hoặc tên")
+            {
+                txt_timnguoidung.Text = "";
+                txt_timnguoidung.ForeColor = SystemColors.WindowText; // Thay đổi màu chữ khi viết
+            }
+        }
+
+        private void txt_timnguoidung_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txt_timnguoidung.Text))
+            {
+                txt_timnguoidung.Text = "Tìm kiếm theo mã hoặc tên";
+                txt_timnguoidung.ForeColor = SystemColors.GrayText; // Màu chữ mặc định khi không nhập
+            }
+        }
+
+        private void txt_timnguoidung_TextChanged(object sender, EventArgs e)
+        {
+            sql = "SELECT * FROM public.tbl_users WHERE username LIKE '%" + txt_timnguoidung.Text + "%' OR hovaten LIKE '% " + txt_timnguoidung.Text + " %';";
+            DataTable datatable = new DataTable();
+            pgdatabase = new Class_pgdatabase();
+            datatable = pgdatabase.getDataTable(Class_connect.connection_pg, sql);
+
+            if (datatable.Rows.Count > 0)
+            {
+                dGV_nguoidung.DataSource = datatable;
+                dGV_nguoidung.AutoGenerateColumns = false;
             }
         }
     }
