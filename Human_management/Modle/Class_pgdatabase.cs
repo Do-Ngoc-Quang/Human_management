@@ -12,8 +12,6 @@ namespace Human_management.Modle
 {
     public class Class_pgdatabase
     {
-
-        //
         public int getid(string connectionstring, string sql)
         {
             int id = 0;
@@ -110,13 +108,11 @@ namespace Human_management.Modle
                     connection.Close();
 
                     return true;
-
                 }
                 catch (Exception ex)
                 {
                     return false;
                 }
-
             }
         }
 
@@ -154,11 +150,8 @@ namespace Human_management.Modle
                 {
                     return 0;
                 }
-                
                 return 1;
             }
-        }
-
-        
+        } 
     }
 }

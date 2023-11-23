@@ -157,7 +157,6 @@ namespace Human_management
                 DateTime newDate = currentDate.AddMonths(thoihan);
                 dTP_ngayketthuc.Value = newDate;
             }
-            
         }
 
         private void btnThietLapHDLD_Click(object sender, EventArgs e)

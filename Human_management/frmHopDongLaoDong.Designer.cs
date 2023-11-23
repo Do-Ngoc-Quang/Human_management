@@ -406,11 +406,11 @@ namespace Human_management
             // 
             this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Location = new System.Drawing.Point(448, 57);
+            this.txtEmail.Location = new System.Drawing.Point(469, 57);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
-            this.txtEmail.Size = new System.Drawing.Size(391, 34);
+            this.txtEmail.Size = new System.Drawing.Size(370, 34);
             this.txtEmail.TabIndex = 6;
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -437,10 +437,10 @@ namespace Human_management
             // 
             this.txtHoTen.BackColor = System.Drawing.SystemColors.Window;
             this.txtHoTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtHoTen.Location = new System.Drawing.Point(448, 17);
+            this.txtHoTen.Location = new System.Drawing.Point(469, 17);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.ReadOnly = true;
-            this.txtHoTen.Size = new System.Drawing.Size(391, 34);
+            this.txtHoTen.Size = new System.Drawing.Size(370, 34);
             this.txtHoTen.TabIndex = 2;
             this.txtHoTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -488,10 +488,10 @@ namespace Human_management
             // 
             this.txtDCTamTru.BackColor = System.Drawing.SystemColors.Window;
             this.txtDCTamTru.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDCTamTru.Location = new System.Drawing.Point(448, 93);
+            this.txtDCTamTru.Location = new System.Drawing.Point(469, 93);
             this.txtDCTamTru.Name = "txtDCTamTru";
             this.txtDCTamTru.ReadOnly = true;
-            this.txtDCTamTru.Size = new System.Drawing.Size(731, 34);
+            this.txtDCTamTru.Size = new System.Drawing.Size(710, 34);
             this.txtDCTamTru.TabIndex = 18;
             // 
             // label18

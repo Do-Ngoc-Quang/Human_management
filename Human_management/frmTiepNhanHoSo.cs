@@ -52,7 +52,6 @@ namespace Human_management
             //Thanh tìm kiến hiển thị placeholder 
             txtTimMaNhanSu.Text = "Tìm kiếm theo mã hoặc tên nhân sự";
             txtTimMaNhanSu.ForeColor = SystemColors.GrayText;
-
         }
 
         //Load dữ liệu nhân sự vào datagirdview
