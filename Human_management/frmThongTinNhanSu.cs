@@ -43,10 +43,7 @@ namespace Human_management
 
             //Thanh tìm kiến hiển thị placeholder 
             txtTimMaNhanSu.Text = "Tìm kiếm theo mã hoặc tên nhân sự";
-            txtTimMaNhanSu.ForeColor = SystemColors.GrayText;
-
-            //Thiết lập các nút button được phép dùng khi nhân sự được load lên
-            
+            txtTimMaNhanSu.ForeColor = SystemColors.GrayText;            
         }
 
         public void load_dsnhansu()
@@ -330,12 +327,6 @@ namespace Human_management
             }
         }
 
-
-        private void btn_nhansunghiphep_Click(object sender, EventArgs e)
-        {
-            frmNhanSuNghiPhep frm = new frmNhanSuNghiPhep(txtMaNhanSu.Text.ToString());
-            frm.Show();
-        }
 
         private void btn_quatrinhlamviec_Click(object sender, EventArgs e)
         {

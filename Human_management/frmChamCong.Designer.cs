@@ -29,13 +29,12 @@ namespace Human_management
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChamCong));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btn_taobangluong = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChamCong));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dGV_chiitietchamcong = new System.Windows.Forms.DataGridView();
             this.giovao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,19 +106,6 @@ namespace Human_management
             ((System.ComponentModel.ISupportInitialize)(this.dGVNhanSu)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btn_taobangluong
-            // 
-            this.btn_taobangluong.Image = ((System.Drawing.Image)(resources.GetObject("btn_taobangluong.Image")));
-            this.btn_taobangluong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_taobangluong.Location = new System.Drawing.Point(686, 677);
-            this.btn_taobangluong.Name = "btn_taobangluong";
-            this.btn_taobangluong.Size = new System.Drawing.Size(180, 30);
-            this.btn_taobangluong.TabIndex = 48;
-            this.btn_taobangluong.Text = "TẠO BẢNG LƯƠNG";
-            this.btn_taobangluong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_taobangluong.UseVisualStyleBackColor = true;
-            this.btn_taobangluong.Click += new System.EventHandler(this.btn_taobangluong_Click);
             // 
             // groupBox3
             // 
@@ -821,7 +807,6 @@ namespace Human_management
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1550, 750);
-            this.Controls.Add(this.btn_taobangluong);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dGVNhanSu);
@@ -845,8 +830,6 @@ namespace Human_management
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_taobangluong;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dGV_chiitietchamcong;
         private System.Windows.Forms.DataGridViewTextBoxColumn giovao;

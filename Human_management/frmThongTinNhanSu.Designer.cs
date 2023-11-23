@@ -136,7 +136,6 @@ namespace Human_management
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_quatrinhlamviec = new System.Windows.Forms.Button();
-            this.btn_nhansunghiphep = new System.Windows.Forms.Button();
             this.btn_hopdonglaodong = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dGVNhanSu)).BeginInit();
@@ -161,7 +160,7 @@ namespace Human_management
             // 
             this.btnHienThiAnh.Image = ((System.Drawing.Image)(resources.GetObject("btnHienThiAnh.Image")));
             this.btnHienThiAnh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHienThiAnh.Location = new System.Drawing.Point(74, 278);
+            this.btnHienThiAnh.Location = new System.Drawing.Point(80, 278);
             this.btnHienThiAnh.Name = "btnHienThiAnh";
             this.btnHienThiAnh.Size = new System.Drawing.Size(130, 35);
             this.btnHienThiAnh.TabIndex = 46;
@@ -175,7 +174,7 @@ namespace Human_management
             // 
             this.btnTaiAnh.Image = ((System.Drawing.Image)(resources.GetObject("btnTaiAnh.Image")));
             this.btnTaiAnh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaiAnh.Location = new System.Drawing.Point(74, 242);
+            this.btnTaiAnh.Location = new System.Drawing.Point(80, 238);
             this.btnTaiAnh.Name = "btnTaiAnh";
             this.btnTaiAnh.Size = new System.Drawing.Size(130, 35);
             this.btnTaiAnh.TabIndex = 45;
@@ -237,7 +236,7 @@ namespace Human_management
             this.sobhxh,
             this.sobhyt,
             this.isnhanvien});
-            this.dGVNhanSu.Location = new System.Drawing.Point(45, 478);
+            this.dGVNhanSu.Location = new System.Drawing.Point(51, 478);
             this.dGVNhanSu.Name = "dGVNhanSu";
             this.dGVNhanSu.RowHeadersWidth = 51;
             this.dGVNhanSu.RowTemplate.Height = 24;
@@ -585,7 +584,7 @@ namespace Human_management
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.txtTimMaNhanSu);
-            this.panel1.Location = new System.Drawing.Point(45, 442);
+            this.panel1.Location = new System.Drawing.Point(51, 442);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1455, 52);
             this.panel1.TabIndex = 48;
@@ -613,7 +612,7 @@ namespace Human_management
             // picAnhNhanSu
             // 
             this.picAnhNhanSu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picAnhNhanSu.Location = new System.Drawing.Point(51, 32);
+            this.picAnhNhanSu.Location = new System.Drawing.Point(57, 28);
             this.picAnhNhanSu.Name = "picAnhNhanSu";
             this.picAnhNhanSu.Size = new System.Drawing.Size(175, 200);
             this.picAnhNhanSu.TabIndex = 44;
@@ -1038,7 +1037,7 @@ namespace Human_management
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(274, 3);
+            this.groupBox2.Location = new System.Drawing.Point(280, 0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1226, 421);
             this.groupBox2.TabIndex = 43;
@@ -1222,7 +1221,7 @@ namespace Human_management
             // 
             this.btn_quatrinhlamviec.Image = ((System.Drawing.Image)(resources.GetObject("btn_quatrinhlamviec.Image")));
             this.btn_quatrinhlamviec.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_quatrinhlamviec.Location = new System.Drawing.Point(740, 57);
+            this.btn_quatrinhlamviec.Location = new System.Drawing.Point(740, 41);
             this.btn_quatrinhlamviec.Name = "btn_quatrinhlamviec";
             this.btn_quatrinhlamviec.Size = new System.Drawing.Size(190, 35);
             this.btn_quatrinhlamviec.TabIndex = 44;
@@ -1232,25 +1231,11 @@ namespace Human_management
             this.btn_quatrinhlamviec.UseVisualStyleBackColor = true;
             this.btn_quatrinhlamviec.Click += new System.EventHandler(this.btn_quatrinhlamviec_Click);
             // 
-            // btn_nhansunghiphep
-            // 
-            this.btn_nhansunghiphep.Image = ((System.Drawing.Image)(resources.GetObject("btn_nhansunghiphep.Image")));
-            this.btn_nhansunghiphep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_nhansunghiphep.Location = new System.Drawing.Point(740, 21);
-            this.btn_nhansunghiphep.Name = "btn_nhansunghiphep";
-            this.btn_nhansunghiphep.Size = new System.Drawing.Size(190, 35);
-            this.btn_nhansunghiphep.TabIndex = 44;
-            this.btn_nhansunghiphep.Text = "Đăng ký nghỉ phép";
-            this.btn_nhansunghiphep.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_nhansunghiphep.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_nhansunghiphep.UseVisualStyleBackColor = true;
-            this.btn_nhansunghiphep.Click += new System.EventHandler(this.btn_nhansunghiphep_Click);
-            // 
             // btn_hopdonglaodong
             // 
             this.btn_hopdonglaodong.Image = ((System.Drawing.Image)(resources.GetObject("btn_hopdonglaodong.Image")));
             this.btn_hopdonglaodong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_hopdonglaodong.Location = new System.Drawing.Point(740, 93);
+            this.btn_hopdonglaodong.Location = new System.Drawing.Point(740, 77);
             this.btn_hopdonglaodong.Name = "btn_hopdonglaodong";
             this.btn_hopdonglaodong.Size = new System.Drawing.Size(190, 35);
             this.btn_hopdonglaodong.TabIndex = 44;
@@ -1263,7 +1248,6 @@ namespace Human_management
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btn_hopdonglaodong);
-            this.groupBox3.Controls.Add(this.btn_nhansunghiphep);
             this.groupBox3.Controls.Add(this.btn_quatrinhlamviec);
             this.groupBox3.Controls.Add(this.panel4);
             this.groupBox3.Controls.Add(this.panel2);
@@ -1428,7 +1412,6 @@ namespace Human_management
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btn_quatrinhlamviec;
-        private System.Windows.Forms.Button btn_nhansunghiphep;
         private System.Windows.Forms.Button btn_hopdonglaodong;
         private System.Windows.Forms.GroupBox groupBox3;
     }
