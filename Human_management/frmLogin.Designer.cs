@@ -97,6 +97,7 @@ namespace Human_management
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(336, 30);
             this.txtPassword.TabIndex = 0;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // txtUsername
             // 

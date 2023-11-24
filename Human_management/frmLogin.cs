@@ -108,6 +108,13 @@ namespace Human_management
             txtPassword.Text = "";
         }
 
-
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Gọi sự kiện Click của button1
+                btnLogin.PerformClick();
+            }
+        }
     }
 }
