@@ -37,10 +37,9 @@ namespace Human_management
             txtHoTen.Text = _hoten;
         }
 
-        //Load dữ liệu giới tính
         public void load_phongban()
         {
-            string sql = "SELECT maphongban, tenphongban FROM public.tbl_phongban;";
+            string sql = "SELECT maphongban, tenphongban FROM public.tbl_phongban WHERE maphongban<>'all';";
             pgdatabase = new Class_pgdatabase();
             DataTable datatable = pgdatabase.getDataTable(Class_connect.connection_pg, sql);
             cbb_phongban.DataSource = datatable;
@@ -48,7 +47,6 @@ namespace Human_management
             cbb_phongban.ValueMember = "maphongban";
         }
 
-        //Load dữ liệu dân tộc
         public void load_chucdanh()
         {
             string sql = "SELECT machucdanh, tenchucdanh FROM public.tbl_chucdanh;";

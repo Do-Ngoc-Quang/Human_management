@@ -266,6 +266,12 @@
     <Compile Include="frmQuatrinhlamviec.Designer.cs">
       <DependentUpon>frmQuatrinhlamviec.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTaoBangLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaoBangLuong.Designer.cs">
+      <DependentUpon>frmTaoBangLuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmXuLyQuaTrinhPhongVan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -376,6 +382,9 @@
     <EmbeddedResource Include="frmQuatrinhlamviec.resx">
       <DependentUpon>frmQuatrinhlamviec.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTaoBangLuong.resx">
+      <DependentUpon>frmTaoBangLuong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmXuLyQuaTrinhPhongVan.resx">
       <DependentUpon>frmXuLyQuaTrinhPhongVan.cs</DependentUpon>
     </EmbeddedResource>
@@ -422,6 +431,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportBangLuong.rdlc" />
+    <EmbeddedResource Include="ReportBaoCaoNhanSu.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

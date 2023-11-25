@@ -17,14 +17,6 @@ namespace Human_management
         Class_pgdatabase pgdatabase;
         public string sql = "";
 
-        //Khai báo biến toàn cục cho mục đích upload image to cloudinary
-        protected string fullPath_imageUpload = "";
-        private string imageName = "";
-
-        //Cloudinary
-        public Cloudinary cloudinary = null;
-        Account account = new Account("hrmcloudinary", "336624331362197", "HR8ln3AxXVA05sAmpMi7pBLDAHA");
-
         public frmQuyenLoiPhucLoi()
         {
             InitializeComponent();
@@ -117,6 +109,11 @@ namespace Human_management
             frm.Show();
         }
 
+        private void btn_Taobangluong_Click(object sender, EventArgs e)
+        {
 
+            frmTaoBangLuong frm = new frmTaoBangLuong();
+            frm.Show();
+        }
     }
 }

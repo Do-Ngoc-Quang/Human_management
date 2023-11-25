@@ -40,15 +40,17 @@ namespace Human_management
             this.ttmnu_QLDaoTao = new System.Windows.Forms.ToolStripMenuItem();
             this.ttmnu_QLQuyenLoiPhucLoi = new System.Windows.Forms.ToolStripMenuItem();
             this.ttmnu_QLKPI = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.ttmu_BCNhanSu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.ttmnu_phanmemgialapghinhanchamcong = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.ttmnu_TaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.ttmnu_PhanQuyen = new System.Windows.Forms.ToolStripMenuItem();
             this.ttmnu_dangxuat = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.imageListMain = new System.Windows.Forms.ImageList(this.components);
             this.cMnuStrip_rightmouseclick = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -67,9 +69,10 @@ namespace Human_management
             this.toolStripMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
-            this.toolStripDropDownButton1,
+            this.toolStripLabel4,
             this.toolStripLabel2,
-            this.toolStripLabel3});
+            this.toolStripLabel3,
+            this.toolStripDropDownButton1});
             this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
             this.toolStripMenu.Name = "toolStripMenu";
             this.toolStripMenu.Size = new System.Drawing.Size(1532, 35);
@@ -147,31 +150,21 @@ namespace Human_management
             this.ttmnu_QLKPI.Text = "HIỆU SUẤT CÔNG VIỆC (KPI)";
             this.ttmnu_QLKPI.Click += new System.EventHandler(this.ttmnu_QLKPI_Click);
             // 
-            // toolStripDropDownButton1
+            // toolStripLabel4
             // 
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(132, 32);
-            this.toolStripDropDownButton1.Text = "TRỢ GIÚP";
+            this.toolStripLabel4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ttmu_BCNhanSu});
+            this.toolStripLabel4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel4.Image")));
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(130, 32);
+            this.toolStripLabel4.Text = "BÁO CÁO";
             // 
-            // toolStripMenuItem1
+            // ttmu_BCNhanSu
             // 
-            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(309, 32);
-            this.toolStripMenuItem1.Text = "ABOUT";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.ttmnu_About_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem2.Image")));
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(309, 32);
-            this.toolStripMenuItem2.Text = "HƯỚNG DẪN SỬ DỤNG";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.ttmnu_HuongDanSuDung_Click);
+            this.ttmu_BCNhanSu.Name = "ttmu_BCNhanSu";
+            this.ttmu_BCNhanSu.Size = new System.Drawing.Size(274, 32);
+            this.ttmu_BCNhanSu.Text = "BÁO CÁO NHÂN SỰ";
+            this.ttmu_BCNhanSu.Click += new System.EventHandler(this.ttmu_BCNhanSu_Click);
             // 
             // toolStripLabel2
             // 
@@ -206,7 +199,7 @@ namespace Human_management
             // 
             this.ttmnu_TaiKhoan.Image = ((System.Drawing.Image)(resources.GetObject("ttmnu_TaiKhoan.Image")));
             this.ttmnu_TaiKhoan.Name = "ttmnu_TaiKhoan";
-            this.ttmnu_TaiKhoan.Size = new System.Drawing.Size(224, 32);
+            this.ttmnu_TaiKhoan.Size = new System.Drawing.Size(221, 32);
             this.ttmnu_TaiKhoan.Text = "TÀI KHOẢN";
             this.ttmnu_TaiKhoan.Click += new System.EventHandler(this.ttmnu_TaiKhoan_Click);
             // 
@@ -214,7 +207,7 @@ namespace Human_management
             // 
             this.ttmnu_PhanQuyen.Image = ((System.Drawing.Image)(resources.GetObject("ttmnu_PhanQuyen.Image")));
             this.ttmnu_PhanQuyen.Name = "ttmnu_PhanQuyen";
-            this.ttmnu_PhanQuyen.Size = new System.Drawing.Size(224, 32);
+            this.ttmnu_PhanQuyen.Size = new System.Drawing.Size(221, 32);
             this.ttmnu_PhanQuyen.Text = "PHÂN QUYỀN";
             this.ttmnu_PhanQuyen.Click += new System.EventHandler(this.ttmnu_PhanQuyen_Click);
             // 
@@ -222,9 +215,35 @@ namespace Human_management
             // 
             this.ttmnu_dangxuat.Image = ((System.Drawing.Image)(resources.GetObject("ttmnu_dangxuat.Image")));
             this.ttmnu_dangxuat.Name = "ttmnu_dangxuat";
-            this.ttmnu_dangxuat.Size = new System.Drawing.Size(224, 32);
+            this.ttmnu_dangxuat.Size = new System.Drawing.Size(221, 32);
             this.ttmnu_dangxuat.Text = "ĐĂNG XUẤT";
             this.ttmnu_dangxuat.Click += new System.EventHandler(this.ttmnu_dangxuat_Click);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(132, 32);
+            this.toolStripDropDownButton1.Text = "TRỢ GIÚP";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(309, 32);
+            this.toolStripMenuItem1.Text = "ABOUT";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.ttmnu_About_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem2.Image")));
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(309, 32);
+            this.toolStripMenuItem2.Text = "HƯỚNG DẪN SỬ DỤNG";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.ttmnu_HuongDanSuDung_Click);
             // 
             // tabControl
             // 
@@ -307,5 +326,7 @@ namespace Human_management
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem ttmnu_phanmemgialapghinhanchamcong;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripLabel4;
+        private System.Windows.Forms.ToolStripMenuItem ttmu_BCNhanSu;
     }
 }

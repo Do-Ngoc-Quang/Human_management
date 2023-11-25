@@ -137,6 +137,11 @@ namespace Human_management
             OpenChildForm(new frmHieuSuatCongViecKPI());
         }
 
+        //Báo cáo
+        private void ttmu_BCNhanSu_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmBaoCaoNhanSu());
+        }
 
         //Trợ giúp
         private void ttmnu_About_Click(object sender, EventArgs e)
@@ -205,7 +210,7 @@ namespace Human_management
             }
         }
 
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             // Kiểm tra xem form con đã tồn tại trong TabControl hay chưa
             foreach (TabPage tabPage in tabControl.TabPages)
@@ -239,6 +244,7 @@ namespace Human_management
         {
             Application.Exit();
         }
+
 
     }
 }

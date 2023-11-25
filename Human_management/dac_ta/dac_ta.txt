@@ -17,7 +17,7 @@
 - Lịch sử đào tạo: Ghi chép lịch sử đào tạo của từng nhân viên để dễ dàng theo dõi và định hướng các hoạt động đào tạo tương lai.
 
 
-2.Quản lý CHẤM CÔNG:
+2.Quản lý CHẤM CÔNG: in ra bảng lương
 
 - Thời gian làm việc: Ghi nhận (giờ đến) và (giờ về) của nhân viên.
 
