@@ -85,18 +85,15 @@ namespace Human_management
             //----------------------------------------------   -------------------------------------------//
             txtMaNhanSu.Text = dGVNhanSu.CurrentRow.Cells["manhansu"].Value.ToString();
 
-
-            //---------------------------------------------- BHYT -------------------------------------------//
-
-            //---------------------------------------------- BHXH -------------------------------------------//
-
             //---------------------------------------------- NGHỈ PHÉP -------------------------------------------//
-            
             int countDay_start_to_now = int.Parse(pgdatabase.getValue(Class_connect.connection_pg, "SELECT " +
                 "EXTRACT(year FROM AGE(NOW(), ngaybatdau)) * 365 + EXTRACT(month FROM AGE(NOW(), ngaybatdau)) * 30 + EXTRACT(day FROM AGE(NOW(), ngaybatdau)) AS phepnam " +
                 "FROM public.tbd_chitietnhansu WHERE manhansu = '" + dGVNhanSu.CurrentRow.Cells["manhansu"].Value.ToString() + "';"));
             int tongPhepNam = countDay_start_to_now/30;
             txt_TongPhepNam.Text = tongPhepNam.ToString();
+
+            txtPhepnamdanghi.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT SUM(songay) FROM public.tbd_chitietnghiphep " +
+                "WHERE manghiphep = 'phepnam' AND manhansu_ctnp = '" + dGVNhanSu.CurrentRow.Cells["manhansu"].Value.ToString() + "';");
 
             //---------------------------------------------- ĐÀO TẠO -------------------------------------------//
             txt_SLdaotao.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT COUNT(id_ctdt) FROM public.tbd_chitietdaotao " +

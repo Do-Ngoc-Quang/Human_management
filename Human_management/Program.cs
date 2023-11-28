@@ -16,7 +16,7 @@ namespace Human_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmBaoCaoNhanSu());
+            Application.Run(new frmLogin());
         }   
     }
 }

@@ -72,21 +72,16 @@ namespace Human_management
             this.panel1 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
             this.txtTimMaNhanSu = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_Taobangluong = new System.Windows.Forms.Button();
             this.btn_nhansunghiphep = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txt_Dukiendaotao = new System.Windows.Forms.TextBox();
             this.txt_SLdaotao = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPhepnamdanghi = new System.Windows.Forms.TextBox();
             this.txt_TongPhepNam = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -156,7 +151,7 @@ namespace Human_management
             this.dGVNhanSu.Name = "dGVNhanSu";
             this.dGVNhanSu.RowHeadersWidth = 51;
             this.dGVNhanSu.RowTemplate.Height = 24;
-            this.dGVNhanSu.Size = new System.Drawing.Size(1455, 235);
+            this.dGVNhanSu.Size = new System.Drawing.Size(1455, 492);
             this.dGVNhanSu.TabIndex = 49;
             this.dGVNhanSu.Click += new System.EventHandler(this.dGVNhanSu_Click);
             // 
@@ -525,31 +520,13 @@ namespace Human_management
             this.txtTimMaNhanSu.Enter += new System.EventHandler(this.txtTimMaNhanSu_Enter);
             this.txtTimMaNhanSu.Leave += new System.EventHandler(this.txtTimMaNhanSu_Leave);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(40, 298);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(359, 415);
-            this.groupBox1.TabIndex = 51;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "BHYT";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Location = new System.Drawing.Point(408, 298);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(359, 415);
-            this.groupBox2.TabIndex = 51;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "BHXH";
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btn_Taobangluong);
             this.groupBox3.Controls.Add(this.btn_nhansunghiphep);
-            this.groupBox3.Location = new System.Drawing.Point(1145, 298);
+            this.groupBox3.Location = new System.Drawing.Point(968, 555);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(350, 202);
+            this.groupBox3.Size = new System.Drawing.Size(350, 145);
             this.groupBox3.TabIndex = 51;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "TÁC VỤ";
@@ -583,26 +560,15 @@ namespace Human_management
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.txt_Dukiendaotao);
             this.groupBox4.Controls.Add(this.txt_SLdaotao);
-            this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Location = new System.Drawing.Point(1145, 511);
+            this.groupBox4.Location = new System.Drawing.Point(231, 555);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(350, 202);
+            this.groupBox4.Size = new System.Drawing.Size(350, 145);
             this.groupBox4.TabIndex = 51;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "ĐÀO TẠO";
-            // 
-            // txt_Dukiendaotao
-            // 
-            this.txt_Dukiendaotao.Location = new System.Drawing.Point(209, 67);
-            this.txt_Dukiendaotao.Name = "txt_Dukiendaotao";
-            this.txt_Dukiendaotao.Size = new System.Drawing.Size(34, 34);
-            this.txt_Dukiendaotao.TabIndex = 1;
-            this.txt_Dukiendaotao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_SLdaotao
             // 
@@ -612,15 +578,6 @@ namespace Human_management
             this.txt_SLdaotao.TabIndex = 1;
             this.txt_SLdaotao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(18, 70);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(191, 28);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Dự kiến sắp đào tạo:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -629,15 +586,6 @@ namespace Human_management
             this.label4.Size = new System.Drawing.Size(144, 28);
             this.label4.TabIndex = 0;
             this.label4.Text = "Đã hoàn thành:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(238, 70);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 28);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "khóa";
             // 
             // label3
             // 
@@ -651,15 +599,15 @@ namespace Human_management
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.panel2);
-            this.groupBox5.Controls.Add(this.textBox2);
+            this.groupBox5.Controls.Add(this.txtPhepnamdanghi);
             this.groupBox5.Controls.Add(this.txt_TongPhepNam);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.label1);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.label2);
-            this.groupBox5.Location = new System.Drawing.Point(776, 298);
+            this.groupBox5.Location = new System.Drawing.Point(599, 555);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(359, 415);
+            this.groupBox5.Size = new System.Drawing.Size(359, 145);
             this.groupBox5.TabIndex = 51;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "NGHỈ PHÉP";
@@ -672,12 +620,12 @@ namespace Human_management
             this.panel2.Size = new System.Drawing.Size(340, 1);
             this.panel2.TabIndex = 2;
             // 
-            // textBox2
+            // txtPhepnamdanghi
             // 
-            this.textBox2.Location = new System.Drawing.Point(117, 100);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(34, 34);
-            this.textBox2.TabIndex = 1;
+            this.txtPhepnamdanghi.Location = new System.Drawing.Point(117, 100);
+            this.txtPhepnamdanghi.Name = "txtPhepnamdanghi";
+            this.txtPhepnamdanghi.Size = new System.Drawing.Size(34, 34);
+            this.txtPhepnamdanghi.TabIndex = 1;
             // 
             // txt_TongPhepNam
             // 
@@ -741,8 +689,6 @@ namespace Human_management
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dGVNhanSu);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -807,8 +753,6 @@ namespace Human_management
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtTimMaNhanSu;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -822,11 +766,8 @@ namespace Human_management
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPhepnamdanghi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_Dukiendaotao;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
     }
 }
