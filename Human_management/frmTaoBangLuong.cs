@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,6 +45,8 @@ namespace Human_management
         }
         public void show_report(string currentDay, string currentMonth, string currentYear)
         {
+            CultureInfo culture = new CultureInfo("vi-VN");
+
             this.rpV_Bangluong.LocalReport.DataSources.Clear();
 
             rpV_Bangluong.LocalReport.ReportPath = @"C:\Do Ngoc Quang\HK1-Y3\HRM\Human_management\Human_management\ReportBangLuong.rdlc";
@@ -67,29 +70,29 @@ namespace Human_management
             sql = string.Format("SELECT count(ctcc.id) " +
                 "FROM public.tbd_nhansu AS ns INNER JOIN public.tbd_chitietchamcong AS ctcc " +
                 "ON ns.manhansu = ctcc.manhansu WHERE ns.manhansu = '{0}'", _manhansu);
-            string songaycong = pgdatabase.getValue(Class_connect.connection_pg, sql);
+            int songaycong = int.Parse(pgdatabase.getValue(Class_connect.connection_pg, sql));
             ReportParameter ngaycong = new ReportParameter("Rpm_ngaycong");
-            ngaycong.Values.Add(string.Format("{0}", songaycong));
+            ngaycong.Values.Add(string.Format("{0}", songaycong.ToString()));
             this.rpV_Bangluong.LocalReport.SetParameters(ngaycong);
 
             //luongcoban
-            float luongcoban = 0;
+            int luongcoban = 0;
             sql = string.Format("SELECT lcb.mucluongcoban " +
                 "FROM public.tbd_nhansu AS ns INNER JOIN public.tbd_chitietnhansu AS ctns ON ns.manhansu = ctns.manhansu " +
                 "INNER JOIN public.tbd_hopdonglaodong AS hdld ON hdld.manhansu = ns.manhansu " +
                 "INNER JOIN public.tbl_luongcoban AS lcb ON lcb.macapbac = hdld.macapbac " +
                 "WHERE ns.ishienthi AND ctns.isnhanvien AND ns.manhansu = '" + _manhansu + "';");
-            luongcoban = float.Parse(pgdatabase.getValue(Class_connect.connection_pg, sql));
+            luongcoban = int.Parse(pgdatabase.getValue(Class_connect.connection_pg, sql));
 
             //phucap
-            float phucap = 0;
+            int phucap = 0;
             sql = string.Format("SELECT tc.muctrocap " +
                 "FROM public.tbd_nhansu AS ns INNER JOIN public.tbd_chitietnhansu AS ctns ON ns.manhansu = ctns.manhansu " +
                 "INNER JOIN public.tbd_hopdonglaodong AS hdld ON hdld.manhansu = ns.manhansu " +
                 "INNER JOIN public.tbl_luongcoban AS lcb ON lcb.macapbac = hdld.macapbac " +
                 "INNER JOIN public.tbl_trocap AS tc ON tc.matrocap = hdld.matrocap " +
                 "WHERE ns.ishienthi AND ctns.isnhanvien AND ns.manhansu = '" + _manhansu + "'");
-            phucap = float.Parse(pgdatabase.getValue(Class_connect.connection_pg, sql));
+            phucap = int.Parse(pgdatabase.getValue(Class_connect.connection_pg, sql));
 
             //
             string hoten_ = "";
@@ -117,47 +120,65 @@ namespace Human_management
                 hoten_ = dt.Rows[i]["hoten"].ToString();
                 bl.chucdanh = dt.Rows[i]["chucdanh"].ToString();
                 bl.phongban = dt.Rows[i]["phongban"].ToString();
-                bl.luongcoban = dt.Rows[i]["luongcoban"].ToString();
-                bl.phucap = dt.Rows[i]["phucap"].ToString();
+
+                // Định dạng tiền tệ cho luongcoban
+                decimal luongcobanValue;
+                if (decimal.TryParse(dt.Rows[i]["luongcoban"].ToString(), out luongcobanValue))
+                {
+                    bl.luongcoban = luongcobanValue.ToString("C0", culture);
+                }
+
+                // Định dạng tiền tệ cho phucap
+                decimal phucapValue;
+                if (decimal.TryParse(dt.Rows[i]["phucap"].ToString(), out phucapValue))
+                {
+                    bl.phucap = phucapValue.ToString("C0", culture);
+                }
 
                 bangluong.Add(bl);
             }
+            //paramater luongtheongay
+            float luongtheongay = ((luongcoban / 20) * songaycong);
+            ReportParameter luongngay = new ReportParameter("Rpm_luongtheongay");
+            luongngay.Values.Add(string.Format("{0}", luongtheongay.ToString("C0", culture)));
+            this.rpV_Bangluong.LocalReport.SetParameters(luongngay);
+
+            //paramater tongkhoanthu
+            float tongthu = luongtheongay + phucap;
+            ReportParameter tongkhoanthu = new ReportParameter("Rpm_tongkhoanthu");
+            tongkhoanthu.Values.Add(string.Format("{0}", tongthu.ToString("C0", culture)));
+            this.rpV_Bangluong.LocalReport.SetParameters(tongkhoanthu);
 
             //paramater bhxh
-            float tienbhxh = luongcoban * (8 / 100);
+            float tienbhxh = luongtheongay * (8.0f / 100);
             ReportParameter bhxh = new ReportParameter("Rpm_bhxh");
-            bhxh.Values.Add(string.Format("{0}", tienbhxh.ToString()));
+            bhxh.Values.Add(string.Format("{0}", tienbhxh.ToString("C0", culture)));
             this.rpV_Bangluong.LocalReport.SetParameters(bhxh);
 
             //paramater bhyt
-            float tienbhyt = luongcoban * (15 / 1000);
+            float tienbhyt = luongtheongay * (15f / 1000);
             ReportParameter bhyt = new ReportParameter("Rpm_bhyt");
-            bhyt.Values.Add(string.Format("{0}", tienbhyt.ToString()));
+            bhyt.Values.Add(string.Format("{0}", tienbhyt.ToString("C0", culture)));
             this.rpV_Bangluong.LocalReport.SetParameters(bhyt);
-
-            //paramater tongkhoanthu
-            float tongthu = luongcoban + phucap;
-            ReportParameter tongkhoanthu = new ReportParameter("Rpm_tongkhoanthu");
-            tongkhoanthu.Values.Add(string.Format("{0}", tongthu.ToString()));
-            this.rpV_Bangluong.LocalReport.SetParameters(tongkhoanthu);
 
             //paramater tongkhoantru
             float tongtru = tienbhxh + tienbhyt;
             ReportParameter tongkhoantru = new ReportParameter("Rpm_tongkhoantru");
-            tongkhoantru.Values.Add(string.Format("{0}", tongtru.ToString()));
+            tongkhoantru.Values.Add(string.Format("{0}", tongtru.ToString("C0", culture)));
             this.rpV_Bangluong.LocalReport.SetParameters(tongkhoantru);
 
             //paramater thucnhan
             ReportParameter thucnhan = new ReportParameter("Rpm_thucnhan");
-            thucnhan.Values.Add(string.Format("{0}", (tongthu - tongtru).ToString()));
+            thucnhan.Values.Add(string.Format("{0}", (tongthu - tongtru).ToString("C0", culture)));
             this.rpV_Bangluong.LocalReport.SetParameters(thucnhan);
 
-            ////paramater nguoilapphieu
-            //sql = string.Format("SELECT hovaten FROM public.tbl_users WHERE id = '" + _id_user + "';");
-            //string hoten_nguoilapphieu = pgdatabase.getValue(Class_connect.connection_pg, sql);
-            //ReportParameter nguoilapphieu = new ReportParameter("Rpm_nguoilapphieu]");
-            //nguoilapphieu.Values.Add(string.Format("{0}", hoten_nguoilapphieu));
-            //this.rpV_Bangluong.LocalReport.SetParameters(nguoilapphieu);
+            //paramater nguoilapphieu
+            sql = string.Format("SELECT hovaten FROM public.tbl_users WHERE id = '" + _id_user + "';");
+
+            string nguoilapphieu = pgdatabase.getValue(Class_connect.connection_pg, sql);
+            ReportParameter nguoilap = new ReportParameter("Rpm_nguoilapphieu");
+            nguoilap.Values.Add(string.Format("{0}", nguoilapphieu));
+            this.rpV_Bangluong.LocalReport.SetParameters(nguoilap);
 
             //paramater nguoinhantien
             ReportParameter nguoinhantien = new ReportParameter("Rpm_nguoinhantien");
