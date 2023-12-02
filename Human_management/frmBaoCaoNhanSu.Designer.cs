@@ -51,7 +51,7 @@ namespace Human_management
             this.btn_Taobaocao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Taobaocao.Location = new System.Drawing.Point(861, 13);
             this.btn_Taobaocao.Name = "btn_Taobaocao";
-            this.btn_Taobaocao.Size = new System.Drawing.Size(174, 35);
+            this.btn_Taobaocao.Size = new System.Drawing.Size(155, 35);
             this.btn_Taobaocao.TabIndex = 1;
             this.btn_Taobaocao.Text = "TẠO BÁO CÁO";
             this.btn_Taobaocao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -88,7 +88,7 @@ namespace Human_management
             this.Controls.Add(this.label9);
             this.Controls.Add(this.rpvBaoCao);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmBaoCaoNhanSu";
             this.Text = "BÁO CÁO NHÂN SỰ";

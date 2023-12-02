@@ -164,10 +164,5 @@ namespace Human_management
                 dGV_chiitietchamcong.AutoGenerateColumns = false;
             }
         }
-
-        private void btn_taobangluong_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -16,6 +16,5 @@ namespace Human_management.Modle
         public string tenchucdanh { get; set; }
         public string tenphongban { get; set; }
         public string ngaybatdau { get; set; }
-        public string diachitamtru { get; set; }
     }
 }

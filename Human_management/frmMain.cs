@@ -129,7 +129,7 @@ namespace Human_management
 
         private void ttmnu_QLQuyenLoiPhucLoi_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmQuyenLoiPhucLoi());
+            OpenChildForm(new frmQuyenLoiPhucLoi(_id_user));
         }
 
         private void ttmnu_QLKPI_Click(object sender, EventArgs e)

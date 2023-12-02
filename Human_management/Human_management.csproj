@@ -346,7 +346,7 @@
     </Compile>
     <Compile Include="Modle\Class_connect.cs" />
     <Compile Include="Modle\Class_pgdatabase.cs" />
-    <Compile Include="Modle\Class_report.cs" />
+    <Compile Include="Modle\object_bangluong.cs" />
     <Compile Include="Modle\object_nhansu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -439,6 +439,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Human_management.Modle.Class_pgdatabase.datasource" />
     <None Include="Properties\DataSources\Human_management.Modle.Class_report.datasource" />
+    <None Include="Properties\DataSources\Human_management.Modle.object_bangluong.datasource" />
     <None Include="Properties\DataSources\Human_management.Modle.object_nhansu.datasource" />
     <None Include="Properties\DataSources\Human_management.Modle.object_ns.datasource" />
     <None Include="Properties\Settings.settings">

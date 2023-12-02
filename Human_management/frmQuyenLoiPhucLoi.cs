@@ -16,10 +16,12 @@ namespace Human_management
     {
         Class_pgdatabase pgdatabase;
         public string sql = "";
+        public string _id_user;
 
-        public frmQuyenLoiPhucLoi()
+        public frmQuyenLoiPhucLoi(string id_user)
         {
             InitializeComponent();
+            _id_user = id_user;
         }
 
         private void frmQuyenLoiPhucLoi_Load(object sender, EventArgs e)
@@ -109,7 +111,7 @@ namespace Human_management
         private void btn_Taobangluong_Click(object sender, EventArgs e)
         {
 
-            frmTaoBangLuong frm = new frmTaoBangLuong();
+            frmTaoBangLuong frm = new frmTaoBangLuong(txtMaNhanSu.Text, _id_user);
             frm.Show();
         }
     }
