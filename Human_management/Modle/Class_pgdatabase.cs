@@ -144,7 +144,6 @@ namespace Human_management.Modle
                         command.ExecuteNonQuery();
                         connection.Close();
                     }
-                    
                 }
                 catch (Exception ex)
                 {

@@ -42,6 +42,7 @@ namespace Human_management
         private void btn_Taobaocao_Click(object sender, EventArgs e)
         {
             show_report(@"C:\Do Ngoc Quang\HK1-Y3\HRM\Human_management\Human_management\ReportBaoCaoNhanSu.rdlc");
+
         }
         
         public void show_report(string path)
@@ -50,7 +51,6 @@ namespace Human_management
             rpvBaoCao.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             rpvBaoCao.ZoomMode = ZoomMode.FullPage;
             rpvBaoCao.ZoomPercent = 100;
-
         }
     }
 }

@@ -346,6 +346,8 @@
     </Compile>
     <Compile Include="Modle\Class_connect.cs" />
     <Compile Include="Modle\Class_pgdatabase.cs" />
+    <Compile Include="Modle\Class_report.cs" />
+    <Compile Include="Modle\object_nhansu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -433,7 +435,12 @@
     </Compile>
     <EmbeddedResource Include="ReportBangLuong.rdlc" />
     <EmbeddedResource Include="ReportBaoCaoNhanSu.rdlc" />
+    <EmbeddedResource Include="temp.rdlc" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Human_management.Modle.Class_pgdatabase.datasource" />
+    <None Include="Properties\DataSources\Human_management.Modle.Class_report.datasource" />
+    <None Include="Properties\DataSources\Human_management.Modle.object_nhansu.datasource" />
+    <None Include="Properties\DataSources\Human_management.Modle.object_ns.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
