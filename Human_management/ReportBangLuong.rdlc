@@ -63,24 +63,32 @@
                     <Value>PHIẾU LƯƠNG NHÂN VIÊN THÁNG </Value>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>11pt</FontSize>
+                      <FontWeight>SemiBold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Parameters!Rpm_ngay.Value</Value>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>11pt</FontSize>
+                      <FontWeight>SemiBold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value>/</Value>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>11pt</FontSize>
+                      <FontWeight>SemiBold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Parameters!Rpm_nam.Value</Value>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>11pt</FontSize>
+                      <FontWeight>SemiBold</FontWeight>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -91,9 +99,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox7</rd:DefaultName>
             <Top>0.025in</Top>
-            <Left>3.025in</Left>
+            <Left>3.34167in</Left>
             <Height>0.25in</Height>
-            <Width>4.225in</Width>
+            <Width>4.65833in</Width>
             <Style>
               <Border>
                 <Style>None</Style>

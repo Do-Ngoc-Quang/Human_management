@@ -71,6 +71,9 @@
     <Reference Include="Google.Apis.Sheets.v4, Version=1.63.0.3148, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.Sheets.v4.1.63.0.3148\lib\net45\Google.Apis.Sheets.v4.dll</HintPath>
     </Reference>
+    <Reference Include="LibExcel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.LibExcel.2022.4.1\lib\net452\LibExcel.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -98,11 +101,44 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1370.28, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1370.28\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.1370.28, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1370.28\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.1370.28, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1370.28\lib\net45\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Npgsql, Version=7.0.6.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>..\packages\Npgsql.7.0.6\lib\netstandard2.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2023.4.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2023.4.4\lib\net472\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Blockly, Version=2023.4.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2023.4.4\lib\net472\Stimulsoft.Blockly.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Data, Version=2023.4.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2023.4.4\lib\net472\Stimulsoft.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Map, Version=2023.4.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2023.4.4\lib\net472\Stimulsoft.Map.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2023.4.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2023.4.4\lib\net472\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Check, Version=2023.4.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2023.4.4\lib\net472\Stimulsoft.Report.Check.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Helper, Version=2023.4.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2023.4.4\lib\net472\Stimulsoft.Report.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Svg, Version=2023.4.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Svg.2023.4.4\lib\net472\Stimulsoft.Svg.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -200,147 +236,99 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAbout.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmAbout.cs" />
     <Compile Include="frmAbout.Designer.cs">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBaoCaoNhanSu.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmBaoCaoNhanSu.cs" />
     <Compile Include="frmBaoCaoNhanSu.Designer.cs">
       <DependentUpon>frmBaoCaoNhanSu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChamCong.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmChamCong.cs" />
     <Compile Include="frmChamCong.Designer.cs">
       <DependentUpon>frmChamCong.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDaoTao.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmDaoTao.cs" />
     <Compile Include="frmDaoTao.Designer.cs">
       <DependentUpon>frmDaoTao.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGhiNhanDaoTao.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmGhiNhanDaoTao.cs" />
     <Compile Include="frmGhiNhanDaoTao.Designer.cs">
       <DependentUpon>frmGhiNhanDaoTao.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHieuSuatCongViecKPI.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmHieuSuatCongViecKPI.cs" />
     <Compile Include="frmHieuSuatCongViecKPI.Designer.cs">
       <DependentUpon>frmHieuSuatCongViecKPI.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHoanTatQuaTrinhDaoTao.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmHoanTatQuaTrinhDaoTao.cs" />
     <Compile Include="frmHoanTatQuaTrinhDaoTao.Designer.cs">
       <DependentUpon>frmHoanTatQuaTrinhDaoTao.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHopDongLaoDong.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmHopDongLaoDong.cs" />
     <Compile Include="frmHopDongLaoDong.Designer.cs">
       <DependentUpon>frmHopDongLaoDong.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHuongDanSuDung.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmHuongDanSuDung.cs" />
     <Compile Include="frmHuongDanSuDung.Designer.cs">
       <DependentUpon>frmHuongDanSuDung.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNhanSuNghiPhep.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmNhanSuNghiPhep.cs" />
     <Compile Include="frmNhanSuNghiPhep.Designer.cs">
       <DependentUpon>frmNhanSuNghiPhep.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuatrinhlamviec.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmQuatrinhlamviec.cs" />
     <Compile Include="frmQuatrinhlamviec.Designer.cs">
       <DependentUpon>frmQuatrinhlamviec.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTaoBangLuong.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmTaoBangLuong.cs" />
     <Compile Include="frmTaoBangLuong.Designer.cs">
       <DependentUpon>frmTaoBangLuong.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmXuLyQuaTrinhPhongVan.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmXuLyQuaTrinhPhongVan.cs" />
     <Compile Include="frmXuLyQuaTrinhPhongVan.Designer.cs">
       <DependentUpon>frmXuLyQuaTrinhPhongVan.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPhanQuyen.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmPhanQuyen.cs" />
     <Compile Include="frmPhanQuyen.Designer.cs">
       <DependentUpon>frmPhanQuyen.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuyenLoiPhucLoi.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmQuyenLoiPhucLoi.cs" />
     <Compile Include="frmQuyenLoiPhucLoi.Designer.cs">
       <DependentUpon>frmQuyenLoiPhucLoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTaiKhoan.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmTaiKhoan.cs" />
     <Compile Include="frmTaiKhoan.Designer.cs">
       <DependentUpon>frmTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmForgetpassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmForgetpassword.cs" />
     <Compile Include="frmForgetpassword.Designer.cs">
       <DependentUpon>frmForgetpassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmLogin.cs" />
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmMain.cs" />
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegister.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmRegister.cs" />
     <Compile Include="frmRegister.Designer.cs">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongTinNhanSu.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmThongTinNhanSu.cs" />
     <Compile Include="frmThongTinNhanSu.Designer.cs">
       <DependentUpon>frmThongTinNhanSu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTiepNhanHoSo.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmTiepNhanHoSo.cs" />
     <Compile Include="frmTiepNhanHoSo.Designer.cs">
       <DependentUpon>frmTiepNhanHoSo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTiepNhanVaBanGiaoCV.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmTiepNhanVaBanGiaoCV.cs" />
     <Compile Include="frmTiepNhanVaBanGiaoCV.Designer.cs">
       <DependentUpon>frmTiepNhanVaBanGiaoCV.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_demo_phanmemchamcong.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_demo_phanmemchamcong.cs" />
     <Compile Include="frm_demo_phanmemchamcong.Designer.cs">
       <DependentUpon>frm_demo_phanmemchamcong.cs</DependentUpon>
     </Compile>
@@ -469,6 +457,45 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dac_ta\dac_ta.txt" />
+    <Content Include="Localization\ar.xml" />
+    <Content Include="Localization\be.xml" />
+    <Content Include="Localization\bg.xml" />
+    <Content Include="Localization\bh.xml" />
+    <Content Include="Localization\ca-ES.xml" />
+    <Content Include="Localization\cs.xml" />
+    <Content Include="Localization\de.xml" />
+    <Content Include="Localization\el-GR.xml" />
+    <Content Include="Localization\en-GB.xml" />
+    <Content Include="Localization\en.xml" />
+    <Content Include="Localization\es.xml" />
+    <Content Include="Localization\eu-ES.xml" />
+    <Content Include="Localization\fa.xml" />
+    <Content Include="Localization\fr.xml" />
+    <Content Include="Localization\gl-ES.xml" />
+    <Content Include="Localization\hr.xml" />
+    <Content Include="Localization\hu.xml" />
+    <Content Include="Localization\id.xml" />
+    <Content Include="Localization\it.xml" />
+    <Content Include="Localization\ja.xml" />
+    <Content Include="Localization\ka.xml" />
+    <Content Include="Localization\ko.xml" />
+    <Content Include="Localization\ku.xml" />
+    <Content Include="Localization\lt.xml" />
+    <Content Include="Localization\nb-NO.xml" />
+    <Content Include="Localization\nl.xml" />
+    <Content Include="Localization\pl.xml" />
+    <Content Include="Localization\pt-BR.xml" />
+    <Content Include="Localization\pt.xml" />
+    <Content Include="Localization\ro.xml" />
+    <Content Include="Localization\ru.xml" />
+    <Content Include="Localization\sk.xml" />
+    <Content Include="Localization\sr.xml" />
+    <Content Include="Localization\sv.xml" />
+    <Content Include="Localization\tr.xml" />
+    <Content Include="Localization\uk.xml" />
+    <Content Include="Localization\vi.xml" />
+    <Content Include="Localization\zh-CHS.xml" />
+    <Content Include="Localization\zh-CHT.xml" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -493,5 +520,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.1370.28\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.1370.28\build\Microsoft.Web.WebView2.targets'))" />
   </Target>
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.1370.28\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.1370.28\build\Microsoft.Web.WebView2.targets')" />
 </Project>

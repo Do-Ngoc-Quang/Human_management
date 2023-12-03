@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace Human_management
         Class_pgdatabase pgdatabase;
         public string sql = "";
         private string _manhansu;
+
+        CultureInfo culture = new CultureInfo("vi-VN");
 
         public frmHopDongLaoDong(string manhansu)
         {
@@ -114,8 +117,11 @@ namespace Human_management
         {
             string macapbac = cbb_capbac.SelectedValue.ToString();
 
-            txt_luongcoban.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT mucluongcoban " +
-                "FROM public.tbl_luongcoban WHERE macapbac = '" + macapbac + "';");
+            string mucluongcoban = pgdatabase.getValue(Class_connect.connection_pg, "SELECT mucluongcoban FROM public.tbl_luongcoban WHERE macapbac = '" + macapbac + "';");
+            if (decimal.TryParse(mucluongcoban, out decimal mucluongcobanValue))
+            {
+                txt_luongcoban.Text = mucluongcobanValue.ToString("C0", culture);
+            }
         }
 
         private void cbb_trocap_SelectedValueChanged(object sender, EventArgs e)
@@ -124,8 +130,13 @@ namespace Human_management
 
             txt_tentrocap.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT tentrocap " +
                 "FROM public.tbl_trocap WHERE matrocap = '" + matrocap + "';");
-            txt_muctrocap.Text = pgdatabase.getValue(Class_connect.connection_pg, "SELECT muctrocap " +
-                "FROM public.tbl_trocap WHERE matrocap = '" + matrocap + "';");
+
+            string muctrocap = pgdatabase.getValue(Class_connect.connection_pg, "SELECT muctrocap FROM public.tbl_trocap WHERE matrocap = '" + matrocap + "';");
+            if (decimal.TryParse(muctrocap, out decimal muctrocapValue))
+            {
+                txt_muctrocap.Text = muctrocapValue.ToString("C0", culture);
+            }
+
         }
 
         private void dTP_ngaybatdau_ValueChanged(object sender, EventArgs e)

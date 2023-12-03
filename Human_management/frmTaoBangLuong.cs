@@ -174,7 +174,6 @@ namespace Human_management
 
             //paramater nguoilapphieu
             sql = string.Format("SELECT hovaten FROM public.tbl_users WHERE id = '" + _id_user + "';");
-
             string nguoilapphieu = pgdatabase.getValue(Class_connect.connection_pg, sql);
             ReportParameter nguoilap = new ReportParameter("Rpm_nguoilapphieu");
             nguoilap.Values.Add(string.Format("{0}", nguoilapphieu));
@@ -185,7 +184,7 @@ namespace Human_management
             nguoinhantien.Values.Add(string.Format("{0}", hoten_));
             this.rpV_Bangluong.LocalReport.SetParameters(nguoinhantien);
 
-            //
+            // ---
             ReportDataSource bangluong_datasource = new ReportDataSource("DataSet_BangLuong", bangluong);
             this.rpV_Bangluong.LocalReport.DataSources.Add(bangluong_datasource);
 
