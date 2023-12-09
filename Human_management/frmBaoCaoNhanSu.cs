@@ -17,10 +17,12 @@ namespace Human_management
     {
         Class_pgdatabase pgdatabase;
         public string sql = "";
+        public string path = Application.StartupPath;
 
         public frmBaoCaoNhanSu()
         {
             InitializeComponent();
+            //MessageBox.Show(path);
         }
 
         private void frmBaoCaoNhanSu_Load(object sender, EventArgs e)
@@ -44,7 +46,8 @@ namespace Human_management
         {
             this.rpvBaoCao.LocalReport.DataSources.Clear();
 
-            rpvBaoCao.LocalReport.ReportPath = @"C:\Do Ngoc Quang\HK1-Y3\HRM\Human_management\Human_management\ReportBaoCaoNhanSu.rdlc";
+            //rpvBaoCao.LocalReport.ReportPath = @"C:\Do Ngoc Quang\HK1-Y3\HRM\Human_management\Human_management\ReportBaoCaoNhanSu.rdlc";
+            rpvBaoCao.LocalReport.ReportPath = path + @"\report\ReportBaoCaoNhanSu.rdlc";
 
             string isall = "";
             if (cbb_phongban.SelectedValue.ToString() == "all")
