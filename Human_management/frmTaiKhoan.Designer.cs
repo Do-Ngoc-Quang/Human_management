@@ -66,7 +66,7 @@ namespace Human_management
             this.tabP_doimatkhau.Location = new System.Drawing.Point(4, 37);
             this.tabP_doimatkhau.Name = "tabP_doimatkhau";
             this.tabP_doimatkhau.Padding = new System.Windows.Forms.Padding(3);
-            this.tabP_doimatkhau.Size = new System.Drawing.Size(1534, 857);
+            this.tabP_doimatkhau.Size = new System.Drawing.Size(1505, 363);
             this.tabP_doimatkhau.TabIndex = 1;
             this.tabP_doimatkhau.Text = "Đổi mật khẩu";
             // 
@@ -91,7 +91,7 @@ namespace Human_management
             this.btnHienThiAnh.Location = new System.Drawing.Point(68, 286);
             this.btnHienThiAnh.Name = "btnHienThiAnh";
             this.btnHienThiAnh.Size = new System.Drawing.Size(130, 35);
-            this.btnHienThiAnh.TabIndex = 41;
+            this.btnHienThiAnh.TabIndex = 2;
             this.btnHienThiAnh.Text = "Hiển thị ảnh";
             this.btnHienThiAnh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHienThiAnh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -105,7 +105,7 @@ namespace Human_management
             this.btnTaiAnh.Location = new System.Drawing.Point(68, 250);
             this.btnTaiAnh.Name = "btnTaiAnh";
             this.btnTaiAnh.Size = new System.Drawing.Size(130, 35);
-            this.btnTaiAnh.TabIndex = 40;
+            this.btnTaiAnh.TabIndex = 1;
             this.btnTaiAnh.Text = "Tải ảnh lên   ";
             this.btnTaiAnh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTaiAnh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -145,7 +145,7 @@ namespace Human_management
             this.btnCapNhat.Location = new System.Drawing.Point(550, 160);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(120, 35);
-            this.btnCapNhat.TabIndex = 23;
+            this.btnCapNhat.TabIndex = 8;
             this.btnCapNhat.Text = "CẬP NHẬT";
             this.btnCapNhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCapNhat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -159,7 +159,7 @@ namespace Human_management
             this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(189, 34);
-            this.txtSoDienThoai.TabIndex = 7;
+            this.txtSoDienThoai.TabIndex = 6;
             this.txtSoDienThoai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
@@ -178,7 +178,7 @@ namespace Human_management
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(391, 34);
-            this.txtEmail.TabIndex = 6;
+            this.txtEmail.TabIndex = 5;
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
@@ -197,7 +197,7 @@ namespace Human_management
             this.dateTimePickerNgaySinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePickerNgaySinh.Name = "dateTimePickerNgaySinh";
             this.dateTimePickerNgaySinh.Size = new System.Drawing.Size(189, 34);
-            this.dateTimePickerNgaySinh.TabIndex = 4;
+            this.dateTimePickerNgaySinh.TabIndex = 3;
             this.dateTimePickerNgaySinh.Value = new System.DateTime(2023, 10, 14, 10, 41, 9, 0);
             // 
             // cbbGioiTinh
@@ -208,7 +208,7 @@ namespace Human_management
             this.cbbGioiTinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbGioiTinh.Name = "cbbGioiTinh";
             this.cbbGioiTinh.Size = new System.Drawing.Size(83, 36);
-            this.cbbGioiTinh.TabIndex = 3;
+            this.cbbGioiTinh.TabIndex = 2;
             // 
             // txtHoTen
             // 
@@ -216,7 +216,7 @@ namespace Human_management
             this.txtHoTen.Location = new System.Drawing.Point(374, 34);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(316, 34);
-            this.txtHoTen.TabIndex = 2;
+            this.txtHoTen.TabIndex = 1;
             this.txtHoTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
@@ -243,7 +243,7 @@ namespace Human_management
             this.txtCCCD.Location = new System.Drawing.Point(101, 71);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(245, 34);
-            this.txtCCCD.TabIndex = 5;
+            this.txtCCCD.TabIndex = 4;
             this.txtCCCD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
@@ -261,7 +261,7 @@ namespace Human_management
             this.txt_diachi.Location = new System.Drawing.Point(101, 107);
             this.txt_diachi.Name = "txt_diachi";
             this.txt_diachi.Size = new System.Drawing.Size(1102, 34);
-            this.txt_diachi.TabIndex = 18;
+            this.txt_diachi.TabIndex = 7;
             // 
             // label18
             // 

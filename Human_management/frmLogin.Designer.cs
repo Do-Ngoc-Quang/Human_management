@@ -49,7 +49,7 @@ namespace Human_management
             // lblRegister
             // 
             this.lblRegister.AutoSize = true;
-            this.lblRegister.BackColor = System.Drawing.SystemColors.Control;
+            this.lblRegister.BackColor = System.Drawing.SystemColors.Window;
             this.lblRegister.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegister.ForeColor = System.Drawing.Color.Teal;
             this.lblRegister.Location = new System.Drawing.Point(269, 316);
@@ -62,7 +62,7 @@ namespace Human_management
             // lblForgetpassword
             // 
             this.lblForgetpassword.AutoSize = true;
-            this.lblForgetpassword.BackColor = System.Drawing.SystemColors.Control;
+            this.lblForgetpassword.BackColor = System.Drawing.SystemColors.Window;
             this.lblForgetpassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblForgetpassword.ForeColor = System.Drawing.Color.Teal;
             this.lblForgetpassword.Location = new System.Drawing.Point(278, 170);
@@ -169,6 +169,7 @@ namespace Human_management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(434, 360);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

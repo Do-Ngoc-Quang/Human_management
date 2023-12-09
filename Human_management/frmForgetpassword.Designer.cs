@@ -117,6 +117,7 @@ namespace Human_management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(578, 177);
             this.ControlBox = false;
             this.Controls.Add(this.pic_Close);

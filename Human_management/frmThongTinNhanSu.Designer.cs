@@ -30,7 +30,7 @@ namespace Human_management
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongTinNhanSu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_anhnhansu = new System.Windows.Forms.TextBox();
             this.btnHienThiAnh = new System.Windows.Forms.Button();
             this.btnTaiAnh = new System.Windows.Forms.Button();
@@ -189,14 +189,14 @@ namespace Human_management
             this.dGVNhanSu.AllowUserToAddRows = false;
             this.dGVNhanSu.AllowUserToDeleteRows = false;
             this.dGVNhanSu.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGVNhanSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVNhanSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dGVNhanSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVNhanSu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -1060,7 +1060,7 @@ namespace Human_management
             this.txt_chucdanh.Name = "txt_chucdanh";
             this.txt_chucdanh.ReadOnly = true;
             this.txt_chucdanh.Size = new System.Drawing.Size(250, 34);
-            this.txt_chucdanh.TabIndex = 16;
+            this.txt_chucdanh.TabIndex = 1;
             this.txt_chucdanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label25
@@ -1078,7 +1078,7 @@ namespace Human_management
             this.txt_stknganhang.Location = new System.Drawing.Point(93, 59);
             this.txt_stknganhang.Name = "txt_stknganhang";
             this.txt_stknganhang.Size = new System.Drawing.Size(250, 34);
-            this.txt_stknganhang.TabIndex = 16;
+            this.txt_stknganhang.TabIndex = 3;
             this.txt_stknganhang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label26
@@ -1096,7 +1096,7 @@ namespace Human_management
             this.txt_tennganhang.Location = new System.Drawing.Point(453, 59);
             this.txt_tennganhang.Name = "txt_tennganhang";
             this.txt_tennganhang.Size = new System.Drawing.Size(250, 34);
-            this.txt_tennganhang.TabIndex = 16;
+            this.txt_tennganhang.TabIndex = 4;
             this.txt_tennganhang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label24
@@ -1114,7 +1114,7 @@ namespace Human_management
             this.txt_sobhxh.Location = new System.Drawing.Point(93, 95);
             this.txt_sobhxh.Name = "txt_sobhxh";
             this.txt_sobhxh.Size = new System.Drawing.Size(250, 34);
-            this.txt_sobhxh.TabIndex = 16;
+            this.txt_sobhxh.TabIndex = 5;
             this.txt_sobhxh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label27
@@ -1132,7 +1132,7 @@ namespace Human_management
             this.txt_sobhyt.Location = new System.Drawing.Point(453, 95);
             this.txt_sobhyt.Name = "txt_sobhyt";
             this.txt_sobhyt.Size = new System.Drawing.Size(250, 34);
-            this.txt_sobhyt.TabIndex = 16;
+            this.txt_sobhyt.TabIndex = 6;
             this.txt_sobhyt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label23
@@ -1152,7 +1152,7 @@ namespace Human_management
             this.txt_phongban.Name = "txt_phongban";
             this.txt_phongban.ReadOnly = true;
             this.txt_phongban.Size = new System.Drawing.Size(250, 34);
-            this.txt_phongban.TabIndex = 16;
+            this.txt_phongban.TabIndex = 2;
             this.txt_phongban.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnCapNhat
@@ -1162,7 +1162,7 @@ namespace Human_management
             this.btnCapNhat.Location = new System.Drawing.Point(984, 60);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(120, 35);
-            this.btnCapNhat.TabIndex = 23;
+            this.btnCapNhat.TabIndex = 9;
             this.btnCapNhat.Text = "CẬP NHẬT";
             this.btnCapNhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCapNhat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1176,7 +1176,7 @@ namespace Human_management
             this.btnXoa.Location = new System.Drawing.Point(1110, 60);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 35);
-            this.btnXoa.TabIndex = 41;
+            this.btnXoa.TabIndex = 10;
             this.btnXoa.Text = "XÓA";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1224,7 +1224,7 @@ namespace Human_management
             this.btn_quatrinhlamviec.Location = new System.Drawing.Point(740, 41);
             this.btn_quatrinhlamviec.Name = "btn_quatrinhlamviec";
             this.btn_quatrinhlamviec.Size = new System.Drawing.Size(190, 35);
-            this.btn_quatrinhlamviec.TabIndex = 44;
+            this.btn_quatrinhlamviec.TabIndex = 7;
             this.btn_quatrinhlamviec.Text = "Quá trình làm việc";
             this.btn_quatrinhlamviec.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_quatrinhlamviec.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1238,7 +1238,7 @@ namespace Human_management
             this.btn_hopdonglaodong.Location = new System.Drawing.Point(740, 77);
             this.btn_hopdonglaodong.Name = "btn_hopdonglaodong";
             this.btn_hopdonglaodong.Size = new System.Drawing.Size(190, 35);
-            this.btn_hopdonglaodong.TabIndex = 44;
+            this.btn_hopdonglaodong.TabIndex = 8;
             this.btn_hopdonglaodong.Text = "Hợp đồng lao động";
             this.btn_hopdonglaodong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_hopdonglaodong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

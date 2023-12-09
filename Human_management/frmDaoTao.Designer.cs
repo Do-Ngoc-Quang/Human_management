@@ -110,7 +110,7 @@ namespace Human_management
             this.cbb_phongban.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbb_phongban.Name = "cbb_phongban";
             this.cbb_phongban.Size = new System.Drawing.Size(251, 36);
-            this.cbb_phongban.TabIndex = 16;
+            this.cbb_phongban.TabIndex = 1;
             this.cbb_phongban.SelectedValueChanged += new System.EventHandler(this.cbb_phongban_SelectedValueChanged);
             // 
             // label17
@@ -740,7 +740,7 @@ namespace Human_management
             this.btn_ghinhandaotao.Location = new System.Drawing.Point(281, 661);
             this.btn_ghinhandaotao.Name = "btn_ghinhandaotao";
             this.btn_ghinhandaotao.Size = new System.Drawing.Size(200, 35);
-            this.btn_ghinhandaotao.TabIndex = 43;
+            this.btn_ghinhandaotao.TabIndex = 1;
             this.btn_ghinhandaotao.Text = "GHI NHẬN ĐÀO TẠO";
             this.btn_ghinhandaotao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_ghinhandaotao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

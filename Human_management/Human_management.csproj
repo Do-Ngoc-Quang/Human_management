@@ -236,99 +236,147 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAbout.cs" />
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAbout.Designer.cs">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBaoCaoNhanSu.cs" />
+    <Compile Include="frmBaoCaoNhanSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmBaoCaoNhanSu.Designer.cs">
       <DependentUpon>frmBaoCaoNhanSu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChamCong.cs" />
+    <Compile Include="frmChamCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmChamCong.Designer.cs">
       <DependentUpon>frmChamCong.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDaoTao.cs" />
+    <Compile Include="frmDaoTao.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmDaoTao.Designer.cs">
       <DependentUpon>frmDaoTao.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGhiNhanDaoTao.cs" />
+    <Compile Include="frmGhiNhanDaoTao.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmGhiNhanDaoTao.Designer.cs">
       <DependentUpon>frmGhiNhanDaoTao.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHieuSuatCongViecKPI.cs" />
+    <Compile Include="frmHieuSuatCongViecKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmHieuSuatCongViecKPI.Designer.cs">
       <DependentUpon>frmHieuSuatCongViecKPI.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHoanTatQuaTrinhDaoTao.cs" />
+    <Compile Include="frmHoanTatQuaTrinhDaoTao.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmHoanTatQuaTrinhDaoTao.Designer.cs">
       <DependentUpon>frmHoanTatQuaTrinhDaoTao.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHopDongLaoDong.cs" />
+    <Compile Include="frmHopDongLaoDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmHopDongLaoDong.Designer.cs">
       <DependentUpon>frmHopDongLaoDong.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHuongDanSuDung.cs" />
+    <Compile Include="frmHuongDanSuDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmHuongDanSuDung.Designer.cs">
       <DependentUpon>frmHuongDanSuDung.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNhanSuNghiPhep.cs" />
+    <Compile Include="frmNhanSuNghiPhep.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmNhanSuNghiPhep.Designer.cs">
       <DependentUpon>frmNhanSuNghiPhep.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuatrinhlamviec.cs" />
+    <Compile Include="frmQuatrinhlamviec.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmQuatrinhlamviec.Designer.cs">
       <DependentUpon>frmQuatrinhlamviec.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTaoBangLuong.cs" />
+    <Compile Include="frmTaoBangLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmTaoBangLuong.Designer.cs">
       <DependentUpon>frmTaoBangLuong.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmXuLyQuaTrinhPhongVan.cs" />
+    <Compile Include="frmXuLyQuaTrinhPhongVan.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmXuLyQuaTrinhPhongVan.Designer.cs">
       <DependentUpon>frmXuLyQuaTrinhPhongVan.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPhanQuyen.cs" />
+    <Compile Include="frmPhanQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPhanQuyen.Designer.cs">
       <DependentUpon>frmPhanQuyen.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuyenLoiPhucLoi.cs" />
+    <Compile Include="frmQuyenLoiPhucLoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmQuyenLoiPhucLoi.Designer.cs">
       <DependentUpon>frmQuyenLoiPhucLoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTaiKhoan.cs" />
+    <Compile Include="frmTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmTaiKhoan.Designer.cs">
       <DependentUpon>frmTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmForgetpassword.cs" />
+    <Compile Include="frmForgetpassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmForgetpassword.Designer.cs">
       <DependentUpon>frmForgetpassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs" />
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs" />
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegister.cs" />
+    <Compile Include="frmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmRegister.Designer.cs">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongTinNhanSu.cs" />
+    <Compile Include="frmThongTinNhanSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmThongTinNhanSu.Designer.cs">
       <DependentUpon>frmThongTinNhanSu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTiepNhanHoSo.cs" />
+    <Compile Include="frmTiepNhanHoSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmTiepNhanHoSo.Designer.cs">
       <DependentUpon>frmTiepNhanHoSo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTiepNhanVaBanGiaoCV.cs" />
+    <Compile Include="frmTiepNhanVaBanGiaoCV.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmTiepNhanVaBanGiaoCV.Designer.cs">
       <DependentUpon>frmTiepNhanVaBanGiaoCV.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_demo_phanmemchamcong.cs" />
+    <Compile Include="frm_demo_phanmemchamcong.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_demo_phanmemchamcong.Designer.cs">
       <DependentUpon>frm_demo_phanmemchamcong.cs</DependentUpon>
     </Compile>
@@ -423,7 +471,7 @@
     </Compile>
     <EmbeddedResource Include="ReportBangLuong.rdlc" />
     <EmbeddedResource Include="ReportBaoCaoNhanSu.rdlc" />
-    <EmbeddedResource Include="temp.rdlc" />
+    <EmbeddedResource Include="ReportThongTinNhanSu.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Human_management.Modle.Class_pgdatabase.datasource" />
     <None Include="Properties\DataSources\Human_management.Modle.Class_report.datasource" />
@@ -457,45 +505,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dac_ta\dac_ta.txt" />
-    <Content Include="Localization\ar.xml" />
-    <Content Include="Localization\be.xml" />
-    <Content Include="Localization\bg.xml" />
-    <Content Include="Localization\bh.xml" />
-    <Content Include="Localization\ca-ES.xml" />
-    <Content Include="Localization\cs.xml" />
-    <Content Include="Localization\de.xml" />
-    <Content Include="Localization\el-GR.xml" />
-    <Content Include="Localization\en-GB.xml" />
-    <Content Include="Localization\en.xml" />
-    <Content Include="Localization\es.xml" />
-    <Content Include="Localization\eu-ES.xml" />
-    <Content Include="Localization\fa.xml" />
-    <Content Include="Localization\fr.xml" />
-    <Content Include="Localization\gl-ES.xml" />
-    <Content Include="Localization\hr.xml" />
-    <Content Include="Localization\hu.xml" />
-    <Content Include="Localization\id.xml" />
-    <Content Include="Localization\it.xml" />
-    <Content Include="Localization\ja.xml" />
-    <Content Include="Localization\ka.xml" />
-    <Content Include="Localization\ko.xml" />
-    <Content Include="Localization\ku.xml" />
-    <Content Include="Localization\lt.xml" />
-    <Content Include="Localization\nb-NO.xml" />
-    <Content Include="Localization\nl.xml" />
-    <Content Include="Localization\pl.xml" />
-    <Content Include="Localization\pt-BR.xml" />
-    <Content Include="Localization\pt.xml" />
-    <Content Include="Localization\ro.xml" />
-    <Content Include="Localization\ru.xml" />
-    <Content Include="Localization\sk.xml" />
-    <Content Include="Localization\sr.xml" />
-    <Content Include="Localization\sv.xml" />
-    <Content Include="Localization\tr.xml" />
-    <Content Include="Localization\uk.xml" />
-    <Content Include="Localization\vi.xml" />
-    <Content Include="Localization\zh-CHS.xml" />
-    <Content Include="Localization\zh-CHT.xml" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

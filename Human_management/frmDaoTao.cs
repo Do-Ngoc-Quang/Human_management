@@ -124,7 +124,6 @@ namespace Human_management
         {
             frmGhiNhanDaoTao frm = new frmGhiNhanDaoTao(this, _maphongban, _manhansu);
             frm.Show();
-
         }
     }
 }

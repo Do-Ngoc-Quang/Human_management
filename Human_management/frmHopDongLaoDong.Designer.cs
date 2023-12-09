@@ -88,7 +88,7 @@ namespace Human_management
             this.btnThietLapHDLD.Location = new System.Drawing.Point(506, 418);
             this.btnThietLapHDLD.Name = "btnThietLapHDLD";
             this.btnThietLapHDLD.Size = new System.Drawing.Size(208, 35);
-            this.btnThietLapHDLD.TabIndex = 23;
+            this.btnThietLapHDLD.TabIndex = 9;
             this.btnThietLapHDLD.Text = "THIẾT LẬP HỢP ĐỒNG";
             this.btnThietLapHDLD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThietLapHDLD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -134,7 +134,7 @@ namespace Human_management
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.ReadOnly = true;
             this.txtSoDienThoai.Size = new System.Drawing.Size(189, 34);
-            this.txtSoDienThoai.TabIndex = 7;
+            this.txtSoDienThoai.TabIndex = 6;
             this.txtSoDienThoai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
@@ -314,7 +314,7 @@ namespace Human_management
             this.cbb_capbac.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbb_capbac.Name = "cbb_capbac";
             this.cbb_capbac.Size = new System.Drawing.Size(202, 36);
-            this.cbb_capbac.TabIndex = 3;
+            this.cbb_capbac.TabIndex = 2;
             this.cbb_capbac.SelectedValueChanged += new System.EventHandler(this.cbb_capbac_SelectedValueChanged);
             // 
             // label9
@@ -369,7 +369,7 @@ namespace Human_management
             this.txt_tenloaihopdong.Name = "txt_tenloaihopdong";
             this.txt_tenloaihopdong.ReadOnly = true;
             this.txt_tenloaihopdong.Size = new System.Drawing.Size(374, 34);
-            this.txt_tenloaihopdong.TabIndex = 16;
+            this.txt_tenloaihopdong.TabIndex = 2;
             this.txt_tenloaihopdong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label22
@@ -390,7 +390,7 @@ namespace Human_management
             this.cbb_loaihopdong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbb_loaihopdong.Name = "cbb_loaihopdong";
             this.cbb_loaihopdong.Size = new System.Drawing.Size(335, 36);
-            this.cbb_loaihopdong.TabIndex = 3;
+            this.cbb_loaihopdong.TabIndex = 1;
             this.cbb_loaihopdong.SelectedValueChanged += new System.EventHandler(this.cbb_loaihopdong_SelectedValueChanged);
             // 
             // label3
@@ -411,7 +411,7 @@ namespace Human_management
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(370, 34);
-            this.txtEmail.TabIndex = 6;
+            this.txtEmail.TabIndex = 5;
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
@@ -430,7 +430,7 @@ namespace Human_management
             this.dateTimePickerNgaySinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePickerNgaySinh.Name = "dateTimePickerNgaySinh";
             this.dateTimePickerNgaySinh.Size = new System.Drawing.Size(189, 34);
-            this.dateTimePickerNgaySinh.TabIndex = 4;
+            this.dateTimePickerNgaySinh.TabIndex = 3;
             this.dateTimePickerNgaySinh.Value = new System.DateTime(2023, 10, 14, 10, 41, 9, 0);
             // 
             // txtHoTen
@@ -461,7 +461,7 @@ namespace Human_management
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.ReadOnly = true;
             this.txtCCCD.Size = new System.Drawing.Size(263, 34);
-            this.txtCCCD.TabIndex = 5;
+            this.txtCCCD.TabIndex = 4;
             this.txtCCCD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
@@ -481,7 +481,7 @@ namespace Human_management
             this.txtMaSoThue.Name = "txtMaSoThue";
             this.txtMaSoThue.ReadOnly = true;
             this.txtMaSoThue.Size = new System.Drawing.Size(263, 34);
-            this.txtMaSoThue.TabIndex = 13;
+            this.txtMaSoThue.TabIndex = 7;
             this.txtMaSoThue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtDCTamTru
@@ -492,7 +492,7 @@ namespace Human_management
             this.txtDCTamTru.Name = "txtDCTamTru";
             this.txtDCTamTru.ReadOnly = true;
             this.txtDCTamTru.Size = new System.Drawing.Size(710, 34);
-            this.txtDCTamTru.TabIndex = 18;
+            this.txtDCTamTru.TabIndex = 8;
             // 
             // label18
             // 

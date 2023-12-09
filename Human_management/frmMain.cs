@@ -88,12 +88,14 @@ namespace Human_management
                     ttmnu_QLChamCong.Visible = false;
                     ttmnu_QLDaoTao.Visible = false;
                     ttmnu_QLKPI.Visible = false;
+                    ttmnu_QLQuyenLoiPhucLoi.Visible = false;
                 }
                 else
                 {
                     ttmnu_QLChamCong.Visible = true;
                     ttmnu_QLDaoTao.Visible = true;
                     ttmnu_QLKPI.Visible = true;
+                    ttmnu_QLQuyenLoiPhucLoi.Visible = true;
                 }
 
             }

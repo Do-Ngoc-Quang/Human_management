@@ -497,7 +497,7 @@ namespace Human_management
             this.btnLamMoi.Location = new System.Drawing.Point(722, 279);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(110, 35);
-            this.btnLamMoi.TabIndex = 21;
+            this.btnLamMoi.TabIndex = 24;
             this.btnLamMoi.Text = "LÀM MỚI";
             this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -511,7 +511,7 @@ namespace Human_management
             this.btnCapNhat.Location = new System.Drawing.Point(499, 279);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(120, 35);
-            this.btnCapNhat.TabIndex = 23;
+            this.btnCapNhat.TabIndex = 22;
             this.btnCapNhat.Text = "CẬP NHẬT";
             this.btnCapNhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCapNhat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -525,7 +525,7 @@ namespace Human_management
             this.btnXoa.Location = new System.Drawing.Point(633, 279);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 35);
-            this.btnXoa.TabIndex = 24;
+            this.btnXoa.TabIndex = 23;
             this.btnXoa.Text = "XÓA";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -539,7 +539,7 @@ namespace Human_management
             this.btnThem.Location = new System.Drawing.Point(398, 279);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(87, 35);
-            this.btnThem.TabIndex = 22;
+            this.btnThem.TabIndex = 21;
             this.btnThem.Text = "THÊM";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

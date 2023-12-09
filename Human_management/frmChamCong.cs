@@ -24,6 +24,8 @@ namespace Human_management
         Class_pgdatabase pgdatabase;
         public string sql = "";
 
+        public string mathang = "";
+        public string namHientai = "";
 
         public frmChamCong()
         {
@@ -38,6 +40,17 @@ namespace Human_management
         {
             load_dsnhansu();
             load_thang();
+
+            // Lấy ngày và giờ hiện tại
+            DateTime now = DateTime.Now;
+
+            // Tách tháng, năm thành ba biến riêng
+            String currentMonth = now.Month.ToString();
+            mathang = currentMonth.ToString();
+            if (mathang != "") { cbb_thang.SelectedValue = mathang; }
+
+            String currentYear = now.Year.ToString();
+            namHientai = currentYear.ToString();
         }
 
         public void load_dsnhansu()
@@ -57,12 +70,12 @@ namespace Human_management
 
         public void load_thang()
         {
-            string sql = "SELECT thang FROM public.tbl_thang";
+            string sql = "SELECT mathang, tenthang FROM public.tbl_thang";
             pgdatabase = new Class_pgdatabase();
             DataTable datatable = pgdatabase.getDataTable(Class_connect.connection_pg, sql);
             cbb_thang.DataSource = datatable;
-            cbb_thang.DisplayMember = "thang";
-            cbb_thang.ValueMember = "thang";
+            cbb_thang.DisplayMember = "tenthang";
+            cbb_thang.ValueMember = "mathang";
         }
 
 
@@ -106,8 +119,6 @@ namespace Human_management
             load_dsnhansu();
         }
 
-
-
         private void dGVNhanSu_Click(object sender, EventArgs e)
         {
             string manhansu = dGVNhanSu.CurrentRow.Cells["manhansu"].Value.ToString();
@@ -125,8 +136,13 @@ namespace Human_management
 
             load_tongquan(manhansu);
 
-            //CHI TIẾT
+            //Chi tiết chấm công
             load_chitiet(manhansu);
+        }
+
+        private void cbb_thang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         public void load_tongquan(string manhansu)
@@ -153,7 +169,8 @@ namespace Human_management
         {
             dGV_chiitietchamcong.DataSource = null; //reset dGV
 
-            string sql = "SELECT giovao, giora, sogiolamviec, ngayhientai FROM public.tbd_chitietchamcong WHERE manhansu = '"+ manhansu + "'";
+            string sql = "SELECT giovao, giora, sogiolamviec, ngayhientai FROM public.tbd_chitietchamcong " +
+                "WHERE manhansu = '" + manhansu + "' AND EXTRACT(MONTH FROM ngayhientai) = '" + mathang + "' AND EXTRACT(YEAR FROM ngayhientai) = '" + namHientai + "';";
             DataTable datatable = new DataTable();
             pgdatabase = new Class_pgdatabase();
             datatable = pgdatabase.getDataTable(Class_connect.connection_pg, sql);
@@ -163,6 +180,12 @@ namespace Human_management
                 dGV_chiitietchamcong.DataSource = datatable;
                 dGV_chiitietchamcong.AutoGenerateColumns = false;
             }
+
+            //SELECT giovao, giora, sogiolamviec, ngayhientai
+            //FROM public.tbd_chitietchamcong
+            //WHERE manhansu = 'demo14' 
+            //AND EXTRACT(MONTH FROM ngayhientai) = '' 
+            //AND EXTRACT(YEAR FROM ngayhientai) = '';
         }
     }
 }
