@@ -18,6 +18,9 @@ namespace Human_management
         public string sql = "";
         public string _id_user;
 
+        public string thang_month = "";
+        public string nam_year = "";
+
         public frmQuyenLoiPhucLoi(string id_user)
         {
             InitializeComponent();
@@ -31,6 +34,17 @@ namespace Human_management
             //Thanh tìm kiến hiển thị placeholder 
             txtTimMaNhanSu.Text = "Tìm kiếm theo mã hoặc tên nhân sự";
             txtTimMaNhanSu.ForeColor = SystemColors.GrayText;
+
+            // Lấy ngày và giờ hiện tại
+            DateTime now = DateTime.Now;
+
+            // Tách năm, tháng thành ba biến riêng
+            String currentMonth = now.Month.ToString();
+            thang_month = currentMonth.ToString(); // tháng
+
+            String currentYear = now.Year.ToString();
+            nam_year = currentYear.ToString(); //năm
+            txt_nam.Text = nam_year;
         }
 
         public void load_dsnhansu()
@@ -111,8 +125,20 @@ namespace Human_management
         private void btn_Taobangluong_Click(object sender, EventArgs e)
         {
 
-            frmTaoBangLuong frm = new frmTaoBangLuong(txtMaNhanSu.Text, _id_user);
+            frmTaoBangLuong frm = new frmTaoBangLuong(txtMaNhanSu.Text, _id_user, thang_month, nam_year);
             frm.Show();
+        }
+
+        private void cbb_timkiem_thang_SelectedValueChanged(object sender, EventArgs e)
+        {
+            thang_month = cbb_thang.SelectedItem.ToString();
+            nam_year = txt_nam.Text;
+            btn_Taobangluong.Enabled = true;
+        }
+
+        private void txt_nam_TextChanged(object sender, EventArgs e)
+        {
+            nam_year = txt_nam.Text;
         }
     }
 }

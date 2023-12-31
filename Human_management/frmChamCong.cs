@@ -57,8 +57,6 @@ namespace Human_management
             txt_nam.Text = nam_year;
             txt_timkiem_nam.Text = nam_year;
 
-            //if (thang_month != "") { cbb_thang.SelectedValue = thang_month; }
-
             load_dsnhansu();
 
         }
@@ -146,12 +144,14 @@ namespace Human_management
         public void load_tongquan(string manhansu)
         {
             //TỔNG QUAN
+            // Ngày công
             sql = string.Format("SELECT count(ctcc.id) " +
                 "FROM public.tbd_nhansu AS ns INNER JOIN public.tbd_chitietchamcong AS ctcc ON ns.manhansu = ctcc.manhansu " +
                 "WHERE ns.manhansu = '{0}' AND EXTRACT(MONTH FROM ngay) = '" + thang_month + "' AND EXTRACT(YEAR FROM ngay) = '" + nam_year + "'", manhansu);
             string songaycong = pgdatabase.getValue(Class_connect.connection_pg, sql);
             txt_songaycong.Text = songaycong.ToString();
 
+            // Số ngày nghỉ phép
             sql = string.Format("SELECT SUM(songay) FROM public.tbd_chitietnghiphep WHERE manhansu_ctnp = '{0}' " +
                 "AND EXTRACT(MONTH FROM ngayketthuc_ctnp) = '" + thang_month + "' AND EXTRACT(YEAR FROM ngayketthuc_ctnp) = '" + nam_year + "';", manhansu);
             string songaynghi = pgdatabase.getValue(Class_connect.connection_pg, sql);
@@ -159,6 +159,7 @@ namespace Human_management
 
             dGV_chitietnghiphep.DataSource = null; //reset dGV
 
+            // dGV ngày nghỉ phép
             sql = "SELECT ctnp.*, np.tennghiphep FROM public.tbd_chitietnghiphep AS ctnp " +
                 "INNER JOIN public.tbl_nghiphep AS np ON ctnp.manghiphep = np.manghiphep " +
                 "WHERE ctnp.manhansu_ctnp = '" + manhansu + "'AND EXTRACT(MONTH FROM ngayketthuc_ctnp) = '" + thang_month + "' " +

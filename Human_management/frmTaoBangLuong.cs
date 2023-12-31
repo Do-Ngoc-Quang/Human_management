@@ -22,13 +22,17 @@ namespace Human_management
 
         public string _manhansu;
         public string _id_user;
+        public string _thang;
+        public string _nam;
 
-        public frmTaoBangLuong(string manhansu, string id_user)
+        public frmTaoBangLuong(string manhansu, string id_user, string thang, string nam)
         {
             InitializeComponent();
 
             _manhansu = manhansu;
             _id_user = id_user;
+            _thang = thang;
+            _nam = nam;
         }
 
         private void frmTaoBangLuong_Load(object sender, EventArgs e)
@@ -58,20 +62,31 @@ namespace Human_management
             ngay.Values.Add(string.Format("{0}", currentDay));
             this.rpV_Bangluong.LocalReport.SetParameters(ngay);
 
-            //paramater thang
+            //paramater tháng làm báo cáo
             ReportParameter thang = new ReportParameter("Rpm_thang");
             thang.Values.Add(string.Format("{0}", currentMonth));
             this.rpV_Bangluong.LocalReport.SetParameters(thang);
 
-            //paramater nam
+            //paramater tháng tính lương
+            ReportParameter thang_tinh_luong = new ReportParameter("Rpm_thang_tinh_luong");
+            thang_tinh_luong.Values.Add(string.Format("{0}", _thang));
+            this.rpV_Bangluong.LocalReport.SetParameters(thang_tinh_luong);
+
+            //paramater năm làm báo cáo
             ReportParameter nam = new ReportParameter("Rpm_nam");
             nam.Values.Add(string.Format("{0}", currentYear));
             this.rpV_Bangluong.LocalReport.SetParameters(nam);
 
+            //paramater năm tính lương
+            ReportParameter nam_tinh_luong = new ReportParameter("Rpm_nam_tinh_luong");
+            nam_tinh_luong.Values.Add(string.Format("{0}", _nam));
+            this.rpV_Bangluong.LocalReport.SetParameters(nam_tinh_luong);
+
             //paramater ngaycong
             sql = string.Format("SELECT count(ctcc.id) " +
                 "FROM public.tbd_nhansu AS ns INNER JOIN public.tbd_chitietchamcong AS ctcc " +
-                "ON ns.manhansu = ctcc.manhansu WHERE ns.manhansu = '{0}'", _manhansu);
+                "ON ns.manhansu = ctcc.manhansu WHERE ns.manhansu = '{0}' " +
+                "AND EXTRACT(MONTH FROM ngay) = '" + _thang + "' AND EXTRACT(YEAR FROM ngay) = '" + _nam + "'", _manhansu);
             int songaycong = int.Parse(pgdatabase.getValue(Class_connect.connection_pg, sql));
             ReportParameter ngaycong = new ReportParameter("Rpm_ngaycong");
             ngaycong.Values.Add(string.Format("{0}", songaycong.ToString()));

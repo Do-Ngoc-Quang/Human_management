@@ -29,7 +29,7 @@ namespace Human_management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuyenLoiPhucLoi));
             this.dGVNhanSu = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,6 +88,10 @@ namespace Human_management
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaNhanSu = new System.Windows.Forms.TextBox();
+            this.cbb_thang = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_nam = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dGVNhanSu)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -100,14 +104,14 @@ namespace Human_management
             this.dGVNhanSu.AllowUserToAddRows = false;
             this.dGVNhanSu.AllowUserToDeleteRows = false;
             this.dGVNhanSu.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGVNhanSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVNhanSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dGVNhanSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVNhanSu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -522,20 +526,24 @@ namespace Human_management
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txt_nam);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.cbb_thang);
+            this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.btn_Taobangluong);
-            this.groupBox3.Controls.Add(this.btn_nhansunghiphep);
-            this.groupBox3.Location = new System.Drawing.Point(968, 555);
+            this.groupBox3.Location = new System.Drawing.Point(894, 555);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(350, 145);
+            this.groupBox3.Size = new System.Drawing.Size(410, 145);
             this.groupBox3.TabIndex = 51;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "TÁC VỤ";
             // 
             // btn_Taobangluong
             // 
+            this.btn_Taobangluong.Enabled = false;
             this.btn_Taobangluong.Image = ((System.Drawing.Image)(resources.GetObject("btn_Taobangluong.Image")));
             this.btn_Taobangluong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Taobangluong.Location = new System.Drawing.Point(81, 69);
+            this.btn_Taobangluong.Location = new System.Drawing.Point(100, 104);
             this.btn_Taobangluong.Name = "btn_Taobangluong";
             this.btn_Taobangluong.Size = new System.Drawing.Size(190, 35);
             this.btn_Taobangluong.TabIndex = 49;
@@ -548,7 +556,7 @@ namespace Human_management
             // 
             this.btn_nhansunghiphep.Image = ((System.Drawing.Image)(resources.GetObject("btn_nhansunghiphep.Image")));
             this.btn_nhansunghiphep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_nhansunghiphep.Location = new System.Drawing.Point(81, 33);
+            this.btn_nhansunghiphep.Location = new System.Drawing.Point(87, 132);
             this.btn_nhansunghiphep.Name = "btn_nhansunghiphep";
             this.btn_nhansunghiphep.Size = new System.Drawing.Size(190, 35);
             this.btn_nhansunghiphep.TabIndex = 45;
@@ -563,7 +571,7 @@ namespace Human_management
             this.groupBox4.Controls.Add(this.txt_SLdaotao);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Location = new System.Drawing.Point(231, 555);
+            this.groupBox4.Location = new System.Drawing.Point(157, 555);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(350, 145);
             this.groupBox4.TabIndex = 51;
@@ -599,15 +607,16 @@ namespace Human_management
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.panel2);
+            this.groupBox5.Controls.Add(this.btn_nhansunghiphep);
             this.groupBox5.Controls.Add(this.txtPhepnamdanghi);
             this.groupBox5.Controls.Add(this.txt_TongPhepNam);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.label1);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.label2);
-            this.groupBox5.Location = new System.Drawing.Point(599, 555);
+            this.groupBox5.Location = new System.Drawing.Point(525, 555);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(359, 145);
+            this.groupBox5.Size = new System.Drawing.Size(359, 183);
             this.groupBox5.TabIndex = 51;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "NGHỈ PHÉP";
@@ -615,14 +624,14 @@ namespace Human_management
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panel2.Location = new System.Drawing.Point(6, 85);
+            this.panel2.Location = new System.Drawing.Point(6, 74);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(340, 1);
             this.panel2.TabIndex = 2;
             // 
             // txtPhepnamdanghi
             // 
-            this.txtPhepnamdanghi.Location = new System.Drawing.Point(112, 100);
+            this.txtPhepnamdanghi.Location = new System.Drawing.Point(112, 81);
             this.txtPhepnamdanghi.Name = "txtPhepnamdanghi";
             this.txtPhepnamdanghi.Size = new System.Drawing.Size(34, 34);
             this.txtPhepnamdanghi.TabIndex = 1;
@@ -638,7 +647,7 @@ namespace Human_management
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 103);
+            this.label6.Location = new System.Drawing.Point(16, 84);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 28);
             this.label6.TabIndex = 0;
@@ -656,7 +665,7 @@ namespace Human_management
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(148, 104);
+            this.label5.Location = new System.Drawing.Point(148, 85);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 28);
             this.label5.TabIndex = 0;
@@ -678,6 +687,57 @@ namespace Human_management
             this.txtMaNhanSu.Size = new System.Drawing.Size(100, 34);
             this.txtMaNhanSu.TabIndex = 52;
             this.txtMaNhanSu.Visible = false;
+            // 
+            // cbb_thang
+            // 
+            this.cbb_thang.FormattingEnabled = true;
+            this.cbb_thang.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cbb_thang.Location = new System.Drawing.Point(176, 46);
+            this.cbb_thang.Name = "cbb_thang";
+            this.cbb_thang.Size = new System.Drawing.Size(56, 36);
+            this.cbb_thang.TabIndex = 51;
+            this.cbb_thang.SelectedValueChanged += new System.EventHandler(this.cbb_timkiem_thang_SelectedValueChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(19, 50);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(169, 28);
+            this.label7.TabIndex = 50;
+            this.label7.Text = "Bảng lương tháng";
+            // 
+            // txt_nam
+            // 
+            this.txt_nam.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_nam.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_nam.Location = new System.Drawing.Point(302, 47);
+            this.txt_nam.Name = "txt_nam";
+            this.txt_nam.Size = new System.Drawing.Size(77, 34);
+            this.txt_nam.TabIndex = 54;
+            this.txt_nam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_nam.TextChanged += new System.EventHandler(this.txt_nam_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(260, 50);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 28);
+            this.label8.TabIndex = 53;
+            this.label8.Text = "Năm";
             // 
             // frmQuyenLoiPhucLoi
             // 
@@ -701,6 +761,7 @@ namespace Human_management
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -769,5 +830,9 @@ namespace Human_management
         private System.Windows.Forms.TextBox txtPhepnamdanghi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbb_thang;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txt_nam;
+        private System.Windows.Forms.Label label8;
     }
 }
