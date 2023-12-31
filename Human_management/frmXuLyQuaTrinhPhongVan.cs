@@ -47,7 +47,7 @@ namespace Human_management
             pgdatabase = new Class_pgdatabase();
             datatable = pgdatabase.getDataTable(Class_connect.connection_pg, sql);
 
-            if (datatable.Rows.Count > 0)
+            if (datatable.Rows.Count >= 0)
             {
                 dGVNhanSu.DataSource = datatable;
                 dGVNhanSu.AutoGenerateColumns = false;

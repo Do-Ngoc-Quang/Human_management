@@ -572,7 +572,7 @@ namespace Human_management
             // 
             // txt_SLdaotao
             // 
-            this.txt_SLdaotao.Location = new System.Drawing.Point(164, 31);
+            this.txt_SLdaotao.Location = new System.Drawing.Point(159, 31);
             this.txt_SLdaotao.Name = "txt_SLdaotao";
             this.txt_SLdaotao.Size = new System.Drawing.Size(34, 34);
             this.txt_SLdaotao.TabIndex = 1;
@@ -622,14 +622,14 @@ namespace Human_management
             // 
             // txtPhepnamdanghi
             // 
-            this.txtPhepnamdanghi.Location = new System.Drawing.Point(117, 100);
+            this.txtPhepnamdanghi.Location = new System.Drawing.Point(112, 100);
             this.txtPhepnamdanghi.Name = "txtPhepnamdanghi";
             this.txtPhepnamdanghi.Size = new System.Drawing.Size(34, 34);
             this.txtPhepnamdanghi.TabIndex = 1;
             // 
             // txt_TongPhepNam
             // 
-            this.txt_TongPhepNam.Location = new System.Drawing.Point(117, 33);
+            this.txt_TongPhepNam.Location = new System.Drawing.Point(112, 33);
             this.txt_TongPhepNam.Name = "txt_TongPhepNam";
             this.txt_TongPhepNam.Size = new System.Drawing.Size(34, 34);
             this.txt_TongPhepNam.TabIndex = 1;

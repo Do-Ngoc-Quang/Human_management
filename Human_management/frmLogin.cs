@@ -69,7 +69,6 @@ namespace Human_management
                 isloggined = true;
                 frmMain frmmain = new frmMain(this, isloggined, id_user.ToString(), isadmin, txtUsername.Text);
                 frmmain.Show();
-                
             }
             else
             {
@@ -104,8 +103,8 @@ namespace Human_management
         }
         public void resetValue()
         {
-            txtUsername.Text = "";
-            txtPassword.Text = "";
+            txtUsername.Text = "admin";
+            txtPassword.Text = "admin";
         }
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)

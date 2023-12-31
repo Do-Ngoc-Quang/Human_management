@@ -187,7 +187,7 @@ namespace Human_management
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmNhanSuNghiPhep";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TẢO NGHỈ PHÉP CHO NHÂN SỰ";
+            this.Text = "ĐĂNG KÝ NGHỈ PHÉP CHO NHÂN SỰ";
             this.Load += new System.EventHandler(this.frmNhanSuNghiPhep_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

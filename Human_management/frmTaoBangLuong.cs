@@ -18,6 +18,8 @@ namespace Human_management
         Class_pgdatabase pgdatabase;
         public string sql = "";
 
+        public string path = Application.StartupPath;
+
         public string _manhansu;
         public string _id_user;
 
@@ -49,7 +51,7 @@ namespace Human_management
 
             this.rpV_Bangluong.LocalReport.DataSources.Clear();
 
-            rpV_Bangluong.LocalReport.ReportPath = @"C:\Do Ngoc Quang\HK1-Y3\HRM\Human_management\Human_management\ReportBangLuong.rdlc";
+            rpV_Bangluong.LocalReport.ReportPath = path + @"\report\ReportBangLuong.rdlc";
 
             //paramater ngay
             ReportParameter ngay = new ReportParameter("Rpm_ngay");

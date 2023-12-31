@@ -24,8 +24,10 @@ namespace Human_management
         Class_pgdatabase pgdatabase;
         public string sql = "";
 
-        public string mathang = "";
-        public string namHientai = "";
+        public string _manhansu = "";
+
+        public string thang_month = "";
+        public string nam_year = "";
 
         public frmChamCong()
         {
@@ -38,19 +40,27 @@ namespace Human_management
 
         private void frmChamCong_Load(object sender, EventArgs e)
         {
-            load_dsnhansu();
-            load_thang();
+            //load_thang();
 
             // Lấy ngày và giờ hiện tại
             DateTime now = DateTime.Now;
 
-            // Tách tháng, năm thành ba biến riêng
+            // Tách năm, tháng thành ba biến riêng
             String currentMonth = now.Month.ToString();
-            mathang = currentMonth.ToString();
-            if (mathang != "") { cbb_thang.SelectedValue = mathang; }
+            thang_month = currentMonth.ToString(); // tháng
 
             String currentYear = now.Year.ToString();
-            namHientai = currentYear.ToString();
+            nam_year = currentYear.ToString(); //năm
+
+            //--
+            txt_thang.Text = thang_month;
+            txt_nam.Text = nam_year;
+            txt_timkiem_nam.Text = nam_year;
+
+            //if (thang_month != "") { cbb_thang.SelectedValue = thang_month; }
+
+            load_dsnhansu();
+
         }
 
         public void load_dsnhansu()
@@ -73,9 +83,9 @@ namespace Human_management
             string sql = "SELECT mathang, tenthang FROM public.tbl_thang";
             pgdatabase = new Class_pgdatabase();
             DataTable datatable = pgdatabase.getDataTable(Class_connect.connection_pg, sql);
-            cbb_thang.DataSource = datatable;
-            cbb_thang.DisplayMember = "tenthang";
-            cbb_thang.ValueMember = "mathang";
+            cbb_timkiem_thang.DataSource = datatable;
+            cbb_timkiem_thang.DisplayMember = "tenthang";
+            cbb_timkiem_thang.ValueMember = "mathang";
         }
 
 
@@ -123,35 +133,36 @@ namespace Human_management
         {
             string manhansu = dGVNhanSu.CurrentRow.Cells["manhansu"].Value.ToString();
 
-            //TỔNG QUAN
-            sql = string.Format("SELECT count(ctcc.id) " +
-                "FROM public.tbd_nhansu AS ns INNER JOIN public.tbd_chitietchamcong AS ctcc ON ns.manhansu = ctcc.manhansu " +
-                "WHERE ns.manhansu = '{0}'", manhansu);
-            string songaycong = pgdatabase.getValue(Class_connect.connection_pg, sql);
-            txt_songaycong.Text = songaycong.ToString();
-
-            sql = string.Format("SELECT SUM(songay) FROM public.tbd_chitietnghiphep WHERE manhansu_ctnp = '{0}';", manhansu);
-            string songaynghi = pgdatabase.getValue(Class_connect.connection_pg, sql);
-            txt_songaynghiphep.Text = songaynghi.ToString();
 
             load_tongquan(manhansu);
 
             //Chi tiết chấm công
             load_chitiet(manhansu);
+
+            _manhansu = manhansu;
         }
 
-        private void cbb_thang_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         public void load_tongquan(string manhansu)
         {
+            //TỔNG QUAN
+            sql = string.Format("SELECT count(ctcc.id) " +
+                "FROM public.tbd_nhansu AS ns INNER JOIN public.tbd_chitietchamcong AS ctcc ON ns.manhansu = ctcc.manhansu " +
+                "WHERE ns.manhansu = '{0}' AND EXTRACT(MONTH FROM ngay) = '" + thang_month + "' AND EXTRACT(YEAR FROM ngay) = '" + nam_year + "'", manhansu);
+            string songaycong = pgdatabase.getValue(Class_connect.connection_pg, sql);
+            txt_songaycong.Text = songaycong.ToString();
+
+            sql = string.Format("SELECT SUM(songay) FROM public.tbd_chitietnghiphep WHERE manhansu_ctnp = '{0}' " +
+                "AND EXTRACT(MONTH FROM ngayketthuc_ctnp) = '" + thang_month + "' AND EXTRACT(YEAR FROM ngayketthuc_ctnp) = '" + nam_year + "';", manhansu);
+            string songaynghi = pgdatabase.getValue(Class_connect.connection_pg, sql);
+            txt_songaynghiphep.Text = songaynghi.ToString();
+
             dGV_chitietnghiphep.DataSource = null; //reset dGV
 
-            string sql = "SELECT ctnp.*, np.tennghiphep FROM public.tbd_chitietnghiphep AS ctnp " +
+            sql = "SELECT ctnp.*, np.tennghiphep FROM public.tbd_chitietnghiphep AS ctnp " +
                 "INNER JOIN public.tbl_nghiphep AS np ON ctnp.manghiphep = np.manghiphep " +
-                "WHERE ctnp.manhansu_ctnp = '"+ manhansu +"'";
+                "WHERE ctnp.manhansu_ctnp = '" + manhansu + "'AND EXTRACT(MONTH FROM ngayketthuc_ctnp) = '" + thang_month + "' " +
+                "AND EXTRACT(YEAR FROM ngayketthuc_ctnp) = '" + nam_year + "'";
             DataTable datatable = new DataTable();
             pgdatabase = new Class_pgdatabase();
             datatable = pgdatabase.getDataTable(Class_connect.connection_pg, sql);
@@ -169,8 +180,8 @@ namespace Human_management
         {
             dGV_chiitietchamcong.DataSource = null; //reset dGV
 
-            string sql = "SELECT giovao, giora, sogiolamviec, ngayhientai FROM public.tbd_chitietchamcong " +
-                "WHERE manhansu = '" + manhansu + "' AND EXTRACT(MONTH FROM ngayhientai) = '" + mathang + "' AND EXTRACT(YEAR FROM ngayhientai) = '" + namHientai + "';";
+            string sql = "SELECT giovao, giora, sogiolamviec, ngay FROM public.tbd_chitietchamcong " +
+                "WHERE manhansu = '" + manhansu + "' AND EXTRACT(MONTH FROM ngay) = '" + thang_month + "' AND EXTRACT(YEAR FROM ngay) = '" + nam_year + "';";
             DataTable datatable = new DataTable();
             pgdatabase = new Class_pgdatabase();
             datatable = pgdatabase.getDataTable(Class_connect.connection_pg, sql);
@@ -181,11 +192,39 @@ namespace Human_management
                 dGV_chiitietchamcong.AutoGenerateColumns = false;
             }
 
-            //SELECT giovao, giora, sogiolamviec, ngayhientai
-            //FROM public.tbd_chitietchamcong
-            //WHERE manhansu = 'demo14' 
-            //AND EXTRACT(MONTH FROM ngayhientai) = '' 
-            //AND EXTRACT(YEAR FROM ngayhientai) = '';
+        }
+
+        private void cbb_thang_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string thang_month_cbb = cbb_timkiem_thang.SelectedItem.ToString();
+            thang_month = thang_month_cbb;
+
+            // --
+            txt_thang.Text = thang_month;
+            txt_nam.Text = txt_timkiem_nam.Text;
+
+            if (txt_timkiem_nam.Text.Trim() == nam_year)
+            {
+                nam_year = txt_timkiem_nam.Text;
+            }
+            else
+            {
+                nam_year = txt_timkiem_nam.Text;
+            }
+
+
+            load_tongquan(_manhansu);
+            load_chitiet(_manhansu);
+        }
+
+        private void txt_timkiem_nam_TextChanged(object sender, EventArgs e)
+        {
+            txt_nam.Text = txt_timkiem_nam.Text;
+
+            nam_year = txt_timkiem_nam.Text;
+
+            load_tongquan(_manhansu);
+            load_chitiet(_manhansu);
         }
     }
-}
+}   

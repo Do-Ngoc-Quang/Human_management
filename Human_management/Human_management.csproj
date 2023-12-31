@@ -469,6 +469,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportBangLuong.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Human_management.Modle.Class_pgdatabase.datasource" />
     <None Include="Properties\DataSources\Human_management.Modle.Class_report.datasource" />
