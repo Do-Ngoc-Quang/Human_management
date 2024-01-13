@@ -26,6 +26,11 @@ namespace Human_management
         public Cloudinary cloudinary = null;
         Account account = new Account("hrmcloudinary", "336624331362197", "HR8ln3AxXVA05sAmpMi7pBLDAHA");
 
+        //--- Biến bool kiểm tra răng buộc dữ liệu
+        bool valid_cccd, valid_sdt, valid_mst, valid_tdhv = true;
+
+        bool valid_stk, valid_bhxh, valid_bhyt = false;
+
         public frmThongTinNhanSu()
         {
             InitializeComponent();
@@ -43,7 +48,7 @@ namespace Human_management
 
             //Thanh tìm kiến hiển thị placeholder 
             txtTimMaNhanSu.Text = "Tìm kiếm theo mã hoặc tên nhân sự";
-            txtTimMaNhanSu.ForeColor = SystemColors.GrayText;            
+            txtTimMaNhanSu.ForeColor = SystemColors.GrayText;
         }
 
         public void load_dsnhansu()
@@ -181,40 +186,76 @@ namespace Human_management
             int id = pgdatabase.getid(Class_connect.connection_pg, sql);
             if (id != 0)
             {
-                //Xử lý upload hình ảnh nhân sự lên cloudinary
-                if (fullPath_imageUpload != "")
+                if (empty_check() && valid_stk && valid_bhxh && valid_bhyt)
                 {
-                    UploadImageTo_Cloudinary(fullPath_imageUpload, imageName);
+                    //Xử lý upload hình ảnh nhân sự lên cloudinary
+                    if (fullPath_imageUpload != "")
+                    {
+                        UploadImageTo_Cloudinary(fullPath_imageUpload, imageName);
 
-                    //Xử lý chỉ cập nhật imageName
-                    sql = string.Format("UPDATE public.tbd_nhansu SET anhnhansu = '{0}' WHERE id = '" + id + "' and manhansu = '" + txtMaNhanSu.Text + "';", imageName.ToString());
+                        //Xử lý chỉ cập nhật imageName
+                        sql = string.Format("UPDATE public.tbd_nhansu SET anhnhansu = '{0}' WHERE id = '" + id + "' and manhansu = '" + txtMaNhanSu.Text + "';", imageName.ToString());
+                        pgdatabase.Runsql(Class_connect.connection_pg, sql);
+                    }
+
+                    //Xử lý cập nhật dữ liệu vào cơ sở dữ liệu vào postgreSQL
+                    sql = string.Format("UPDATE public.tbd_nhansu SET hoten = '{0}', gioitinh = '{1}', ngaysinh = '{2}'," +
+                        " cccd = '{3}', email = '{4}', sodienthoai = '{5}', dantoc = '{6}', tongiao = '{7}', quoctich = '{8}', noisinh = '{9}'," +
+                        " tinhtranghonnhan = '{10}', masothue = '{11}', tinhtrangvieclam = '{12}', trinhdohocvan = '{13}', chuyenmon = '{14}'," +
+                        " hocham = '{15}', diachitamtru = '{16}', diachithuongtru = '{17}', ghichu = '{18}'" +
+                        " WHERE id = '" + id + "' and manhansu = '" + txtMaNhanSu.Text + "';", txtHoTen.Text, cbbGioiTinh.SelectedValue.ToString(),
+                        dateTimePickerNgaySinh.Value, txtCCCD.Text, txtEmail.Text, txtSoDienThoai.Text, cbbDanToc.SelectedValue.ToString(),
+                        cbbTonGiao.SelectedValue.ToString(), cbbQuocTich.SelectedValue.ToString(), txtNoiSinh.Text, cbbTinhTrangHonNhan.SelectedValue.ToString(),
+                        txtMaSoThue.Text, cbbTinhTrangViecLam.SelectedValue.ToString(), txtTrinhDoHocVan.Text, txtChuyenMon.Text,
+                        txtHocHam.Text, txtDCTamTru.Text, txtDCThuongTru.Text, txtGhiChu.Text);
                     pgdatabase.Runsql(Class_connect.connection_pg, sql);
+
+                    //Xử lý cập nhật chi tiết nhân sự
+                    sql = string.Format("UPDATE public.tbd_chitietnhansu SET stknganhang='{0}', tennganhang='{1}', sobhxh='{2}', sobhyt='{3}' " +
+                        "WHERE manhansu = '" + txtMaNhanSu.Text + "';", txt_stknganhang.Text, txt_tennganhang.Text, txt_sobhxh.Text, txt_sobhyt.Text);
+                    pgdatabase.Runsql(Class_connect.connection_pg, sql);
+
+                    load_dsnhansu();
                 }
-
-                //Xử lý cập nhật dữ liệu vào cơ sở dữ liệu vào postgreSQL
-                sql = string.Format("UPDATE public.tbd_nhansu SET hoten = '{0}', gioitinh = '{1}', ngaysinh = '{2}'," +
-                    " cccd = '{3}', email = '{4}', sodienthoai = '{5}', dantoc = '{6}', tongiao = '{7}', quoctich = '{8}', noisinh = '{9}'," +
-                    " tinhtranghonnhan = '{10}', masothue = '{11}', tinhtrangvieclam = '{12}', trinhdohocvan = '{13}', chuyenmon = '{14}'," +
-                    " hocham = '{15}', diachitamtru = '{16}', diachithuongtru = '{17}', ghichu = '{18}'" +
-                    " WHERE id = '" + id + "' and manhansu = '" + txtMaNhanSu.Text + "';", txtHoTen.Text, cbbGioiTinh.SelectedValue.ToString(),
-                    dateTimePickerNgaySinh.Value, txtCCCD.Text, txtEmail.Text, txtSoDienThoai.Text, cbbDanToc.SelectedValue.ToString(),
-                    cbbTonGiao.SelectedValue.ToString(), cbbQuocTich.SelectedValue.ToString(), txtNoiSinh.Text, cbbTinhTrangHonNhan.SelectedValue.ToString(),
-                    txtMaSoThue.Text, cbbTinhTrangViecLam.SelectedValue.ToString(), txtTrinhDoHocVan.Text, txtChuyenMon.Text,
-                    txtHocHam.Text, txtDCTamTru.Text, txtDCThuongTru.Text, txtGhiChu.Text);
-                pgdatabase.Runsql(Class_connect.connection_pg, sql);
-
-                //Xử lý cập nhật chi tiết nhân sự
-                sql = string.Format("UPDATE public.tbd_chitietnhansu SET stknganhang='{0}', tennganhang='{1}', sobhxh='{2}', sobhyt='{3}' " +
-                    "WHERE manhansu = '" + txtMaNhanSu.Text + "';", txt_stknganhang.Text, txt_tennganhang.Text, txt_sobhxh.Text, txt_sobhyt.Text);
-                pgdatabase.Runsql(Class_connect.connection_pg, sql);
-
-                load_dsnhansu();
+                else
+                {
+                    MessageBox.Show("Các trường nhập liệu không được để trống", "Thông báo");
+                }
             }
             else
             {
                 MessageBox.Show("Không có trường dữ liệu nào được chọn", "Thông báo");
             }
         }
+
+        private bool empty_check()
+        {
+            if (string.IsNullOrEmpty(txt_stknganhang.Text))
+            {
+                txt_stknganhang.Focus();
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txt_tennganhang.Text))
+            {
+                txt_tennganhang.Focus();
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txt_sobhxh.Text))
+            {
+                txt_sobhxh.Focus();
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txt_sobhyt.Text))
+            {
+                txt_sobhyt.Focus();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -340,6 +381,254 @@ namespace Human_management
             frm.Show();
         }
 
+        private void txtCCCD_Leave(object sender, EventArgs e)
+        {
+            erP_thongbaoloi = new ErrorProvider();
 
+            // Kiểm tra độ dài của chuỗi nhập liệu
+            if (txtCCCD.Text.Trim().Length != 12)
+            {
+                // Nếu độ dài không phù hợp, thông báo lỗi
+                erP_thongbaoloi.SetError(txtCCCD, "Chỉ chứa 12 chữ số");
+                txtCCCD.Focus();
+                txtCCCD.Text = string.Empty;
+                valid_cccd = false;
+                return;
+            }
+            else
+            {
+                valid_cccd = true;
+            }
+
+            // Kiểm tra xem tất cả các ký tự có phải là số không
+            foreach (char c in txtCCCD.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    // Nếu có ký tự không phải số, thông báo lỗi và xóa nội dung nhập
+                    erP_thongbaoloi.SetError(txtCCCD, "CCCD phải là chữ số");
+                    txtCCCD.Focus();
+                    valid_cccd = false;
+                    return;
+                }
+                else
+                {
+                    valid_cccd = true;
+                }
+            }
+
+            if (valid_cccd)
+            {
+                erP_thongbaoloi.SetError(txtCCCD, "Đã hợp lệ");
+            }
+        }
+
+
+        private void txtSoDienThoai_Leave(object sender, EventArgs e)
+        {
+            erP_thongbaoloi = new ErrorProvider();
+
+            // Kiểm tra độ dài của chuỗi nhập liệu
+            if (txtSoDienThoai.Text.Trim().Length < 10 || txtSoDienThoai.Text.Trim().Length > 11)
+            {
+                // Nếu độ dài không phù hợp, thông báo lỗi
+                erP_thongbaoloi.SetError(txtSoDienThoai, "Chỉ chứa 10 tới 11 chữ số");
+                txtSoDienThoai.Focus();
+                txtSoDienThoai.Text = string.Empty;
+                valid_sdt = false;
+                return;
+            }
+            else
+            {
+                valid_sdt = true;
+            }
+
+            // Kiểm tra xem tất cả các ký tự có phải là số không
+            foreach (char c in txtSoDienThoai.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    // Nếu có ký tự không phải số, thông báo lỗi và xóa nội dung nhập
+                    erP_thongbaoloi.SetError(txtSoDienThoai, "Số điện thoại phải là chữ số");
+                    txtSoDienThoai.Focus();
+                    valid_sdt = false;
+                    return;
+                }
+                else
+                {
+                    valid_sdt = true;
+                }
+            }
+
+            if (valid_sdt)
+            {
+                erP_thongbaoloi.SetError(txtSoDienThoai, "Đã hợp lệ");
+            }
+        }
+
+        private void txtMaSoThue_Leave(object sender, EventArgs e)
+        {
+            erP_thongbaoloi = new ErrorProvider();
+
+            // Kiểm tra độ dài của chuỗi nhập liệu
+            if (txtMaSoThue.Text.Trim().Length != 10 && txtMaSoThue.Text.Trim().Length != 13)
+            {
+                // Nếu độ dài không phù hợp, thông báo lỗi
+                erP_thongbaoloi.SetError(txtMaSoThue, "Chỉ chứa 10 hoặc 13 chữ số");
+                txtMaSoThue.Focus();
+                txtMaSoThue.Text = string.Empty;
+                valid_mst = false;
+                return;
+            }
+            else
+            {
+                valid_mst = true;
+            }
+
+            // Kiểm tra xem tất cả các ký tự có phải là số không
+            foreach (char c in txtMaSoThue.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    // Nếu có ký tự không phải số, thông báo lỗi và xóa nội dung nhập
+                    erP_thongbaoloi.SetError(txtMaSoThue, "Mã số thuế phải là chữ số");
+                    txtMaSoThue.Focus();
+                    valid_mst = false;
+                    return;
+                }
+                else
+                {
+                    valid_mst = true;
+                }
+            }
+
+            if (valid_mst)
+            {
+                erP_thongbaoloi.SetError(txtMaSoThue, "Đã hợp lệ");
+            }
+        }
+
+        private void txtTrinhDoHocVan_Leave(object sender, EventArgs e)
+        {
+            erP_thongbaoloi = new ErrorProvider();
+
+            // Kiểm tra độ dài của chuỗi nhập liệu
+            if (txtTrinhDoHocVan.Text.Trim().Length != 2)
+            {
+                // Nếu độ dài không phù hợp, thông báo lỗi
+                erP_thongbaoloi.SetError(txtTrinhDoHocVan, "Chỉ chứa 2 chữ số");
+                txtTrinhDoHocVan.Focus();
+                txtTrinhDoHocVan.Text = string.Empty;
+                valid_tdhv = false;
+                return;
+            }
+            else
+            {
+                valid_tdhv = true;
+            }
+
+            // Kiểm tra xem tất cả các ký tự có phải là số không
+            foreach (char c in txtTrinhDoHocVan.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    // Nếu có ký tự không phải số, thông báo lỗi và xóa nội dung nhập
+                    erP_thongbaoloi.SetError(txtTrinhDoHocVan, "Trình độ học vấn phải là chữ số");
+                    txtTrinhDoHocVan.Focus();
+                    valid_tdhv = false;
+                    return;
+                }
+                else
+                {
+                    valid_tdhv = true;
+                }
+            }
+
+            if (valid_tdhv)
+            {
+                erP_thongbaoloi.SetError(txtTrinhDoHocVan, "Đã hợp lệ");
+            }
+        }
+
+        private void txt_stknganhang_Leave(object sender, EventArgs e)
+        {
+            erP_thongbaoloi = new ErrorProvider();
+
+            // Kiểm tra xem tất cả các ký tự có phải là số không
+            foreach (char c in txt_stknganhang.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    // Nếu có ký tự không phải số, thông báo lỗi và xóa nội dung nhập
+                    erP_thongbaoloi.SetError(txt_stknganhang, "Số tài khoản phải là chữ số");
+                    txt_stknganhang.Focus();
+                    valid_stk = false;
+                    return;
+                }
+                else
+                {
+                    valid_stk = true;
+                }
+            }
+
+            if (valid_stk)
+            {
+                erP_thongbaoloi.SetError(txt_stknganhang, "Đã hợp lệ");
+            }
+        }
+
+        private void txt_sobhxh_Leave(object sender, EventArgs e)
+        {
+            erP_thongbaoloi = new ErrorProvider();
+
+            // Kiểm tra xem tất cả các ký tự có phải là số không
+            foreach (char c in txt_sobhxh.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    // Nếu có ký tự không phải số, thông báo lỗi và xóa nội dung nhập
+                    erP_thongbaoloi.SetError(txt_sobhxh, "BHXH phải là chữ số");
+                    txt_sobhxh.Focus();
+                    valid_bhxh = false;
+                    return;
+                }
+                else
+                {
+                    valid_bhxh = true;
+                }
+            }
+
+            if (valid_bhxh)
+            {
+                erP_thongbaoloi.SetError(txt_sobhxh, "Đã hợp lệ");
+            }
+        }
+
+        private void txt_sobhyt_Leave(object sender, EventArgs e)
+        {
+            erP_thongbaoloi = new ErrorProvider();
+
+            // Kiểm tra xem tất cả các ký tự có phải là số không
+            foreach (char c in txt_sobhyt.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    // Nếu có ký tự không phải số, thông báo lỗi và xóa nội dung nhập
+                    erP_thongbaoloi.SetError(txt_sobhyt, "Số tài khoản phải là chữ số");
+                    txt_sobhyt.Focus();
+                    valid_bhyt = false;
+                    return;
+                }
+                else
+                {
+                    valid_bhyt = true;
+                }
+            }
+
+            if (valid_bhyt)
+            {
+                erP_thongbaoloi.SetError(txt_sobhyt, "Đã hợp lệ");
+            }
+        }
     }
 }

@@ -29,8 +29,9 @@ namespace Human_management
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTiepNhanHoSo));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_anhnhansu = new System.Windows.Forms.TextBox();
             this.btnHienThiAnh = new System.Windows.Forms.Button();
             this.btnTaiAnh = new System.Windows.Forms.Button();
@@ -110,10 +111,13 @@ namespace Human_management
             this.label21 = new System.Windows.Forms.Label();
             this.txtTimMaNhanSu = new System.Windows.Forms.TextBox();
             this.picAnhNhanSu = new System.Windows.Forms.PictureBox();
+            this.erP_thongbaoloi = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dGVNhanSu)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhNhanSu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erP_thongbaoloi)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_anhnhansu
@@ -158,14 +162,14 @@ namespace Human_management
             this.dGVNhanSu.AllowUserToAddRows = false;
             this.dGVNhanSu.AllowUserToDeleteRows = false;
             this.dGVNhanSu.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGVNhanSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVNhanSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dGVNhanSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVNhanSu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -440,6 +444,7 @@ namespace Human_management
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.btnLamMoi);
             this.groupBox2.Controls.Add(this.btnCapNhat);
             this.groupBox2.Controls.Add(this.btnXoa);
@@ -555,6 +560,7 @@ namespace Human_management
             this.txtSoDienThoai.Size = new System.Drawing.Size(189, 34);
             this.txtSoDienThoai.TabIndex = 7;
             this.txtSoDienThoai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSoDienThoai.Leave += new System.EventHandler(this.txtSoDienThoai_Leave);
             // 
             // label10
             // 
@@ -699,6 +705,7 @@ namespace Human_management
             this.txtCCCD.Size = new System.Drawing.Size(245, 34);
             this.txtCCCD.TabIndex = 5;
             this.txtCCCD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCCCD.Leave += new System.EventHandler(this.txtCCCD_Leave);
             // 
             // label4
             // 
@@ -763,6 +770,7 @@ namespace Human_management
             this.txtMaSoThue.Size = new System.Drawing.Size(227, 34);
             this.txtMaSoThue.TabIndex = 13;
             this.txtMaSoThue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMaSoThue.Leave += new System.EventHandler(this.txtMaSoThue_Leave);
             // 
             // txtDCThuongTru
             // 
@@ -820,9 +828,10 @@ namespace Human_management
             this.txtTrinhDoHocVan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTrinhDoHocVan.Location = new System.Drawing.Point(169, 167);
             this.txtTrinhDoHocVan.Name = "txtTrinhDoHocVan";
-            this.txtTrinhDoHocVan.Size = new System.Drawing.Size(176, 34);
+            this.txtTrinhDoHocVan.Size = new System.Drawing.Size(111, 34);
             this.txtTrinhDoHocVan.TabIndex = 15;
             this.txtTrinhDoHocVan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTrinhDoHocVan.Leave += new System.EventHandler(this.txtTrinhDoHocVan_Leave);
             // 
             // label13
             // 
@@ -956,6 +965,19 @@ namespace Human_management
             this.picAnhNhanSu.TabIndex = 42;
             this.picAnhNhanSu.TabStop = false;
             // 
+            // erP_thongbaoloi
+            // 
+            this.erP_thongbaoloi.ContainerControl = this;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(282, 170);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(47, 28);
+            this.label22.TabIndex = 33;
+            this.label22.Text = "/ 12";
+            // 
             // frmTiepNhanHoSo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -982,6 +1004,7 @@ namespace Human_management
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhNhanSu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erP_thongbaoloi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1068,5 +1091,7 @@ namespace Human_management
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtTimMaNhanSu;
         private System.Windows.Forms.PictureBox picAnhNhanSu;
+        private System.Windows.Forms.ErrorProvider erP_thongbaoloi;
+        private System.Windows.Forms.Label label22;
     }
 }

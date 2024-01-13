@@ -22,7 +22,7 @@ namespace Human_management
         public string sql = "";
 
         //Khai báo biến toàn cục cho mục đích upload image to cloudinary
-        protected string fullPath_imageUpload ="";
+        protected string fullPath_imageUpload = "";
 
         //Thiết lập hình ảnh mặc định khi thêm mới một nhân sự
         protected string imageName = "default_account_1024px";
@@ -32,6 +32,9 @@ namespace Human_management
         Account account = new Account("hrmcloudinary", "336624331362197", "HR8ln3AxXVA05sAmpMi7pBLDAHA");
 
         private string _username;
+
+        //--- Biến bool kiểm tra răng buộc dữ liệu
+        bool valid_cccd, valid_sdt, valid_mst, valid_tdhv = false;
 
         public frmTiepNhanHoSo(string username)
         {
@@ -138,30 +141,37 @@ namespace Human_management
                 int id = pgdatabase.getid(Class_connect.connection_pg, sql);
                 if (id == 0)
                 {
-                    //Xử lý upload hình ảnh nhân sự lên cloudinary
-                    if (fullPath_imageUpload != "")
+                    if (valid_cccd && valid_sdt && valid_mst && valid_tdhv && empty_check())
                     {
-                        UploadImageTo_Cloudinary(fullPath_imageUpload, imageName);
+                        //Xử lý upload hình ảnh nhân sự lên cloudinary
+                        if (fullPath_imageUpload != "")
+                        {
+                            UploadImageTo_Cloudinary(fullPath_imageUpload, imageName);
+                        }
+                        //Xử lý lưu dữ liệu vào cơ sở dữ liệu vào postgreSQL
+                        sql = string.Format("INSERT INTO public.tbd_nhansu(manhansu, hoten, gioitinh, ngaysinh, cccd, email, sodienthoai," +
+                            " dantoc, tongiao, quoctich, noisinh, tinhtranghonnhan, masothue, tinhtrangvieclam, trinhdohocvan," +
+                            " chuyenmon, hocham, diachitamtru, diachithuongtru, ghichu, manhanvientaohoso, ngaytao, hostname, anhnhansu, ishienthi) " +
+                            "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}'," +
+                            "'{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', '{21}', '{22}', '{23}', '{24}');", txtMaNhanSu.Text, txtHoTen.Text,
+                            cbbGioiTinh.SelectedValue.ToString(), dateTimePickerNgaySinh.Value, txtCCCD.Text, txtEmail.Text,
+                            txtSoDienThoai.Text, cbbDanToc.SelectedValue.ToString(), cbbTonGiao.SelectedValue.ToString(),
+                            cbbQuocTich.SelectedValue.ToString(), txtNoiSinh.Text, cbbTinhTrangHonNhan.SelectedValue.ToString(),
+                            txtMaSoThue.Text, cbbTinhTrangViecLam.SelectedValue.ToString(), txtTrinhDoHocVan.Text, txtChuyenMon.Text,
+                            txtHocHam.Text, txtDCTamTru.Text, txtDCThuongTru.Text, txtGhiChu.Text, _username, "now()", Dns.GetHostName(), imageName.ToString(), true);
+                        pgdatabase.Runsql(Class_connect.connection_pg, sql);
+
+                        //Cập nhật trạng thái chi tiết
+                        sql = string.Format("INSERT INTO public.tbd_chitietphongvan(manhansu, isnhanvien, machucdanh, maphongban, ishoantatquatrinh)" +
+                            " VALUES('{0}', '{1}', '{2}', '{3}', '{4}'); ", txtMaNhanSu.Text, false, "", "", false);
+                        pgdatabase.Runsql(Class_connect.connection_pg, sql);
+
+                        load_dsnhansu();
                     }
-                    //Xử lý lưu dữ liệu vào cơ sở dữ liệu vào postgreSQL
-                    sql = string.Format("INSERT INTO public.tbd_nhansu(manhansu, hoten, gioitinh, ngaysinh, cccd, email, sodienthoai," +
-                        " dantoc, tongiao, quoctich, noisinh, tinhtranghonnhan, masothue, tinhtrangvieclam, trinhdohocvan," +
-                        " chuyenmon, hocham, diachitamtru, diachithuongtru, ghichu, manhanvientaohoso, ngaytao, hostname, anhnhansu, ishienthi) " +
-                        "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}'," +
-                        "'{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', '{21}', '{22}', '{23}', '{24}');", txtMaNhanSu.Text, txtHoTen.Text,
-                        cbbGioiTinh.SelectedValue.ToString(), dateTimePickerNgaySinh.Value, txtCCCD.Text, txtEmail.Text,
-                        txtSoDienThoai.Text, cbbDanToc.SelectedValue.ToString(), cbbTonGiao.SelectedValue.ToString(),
-                        cbbQuocTich.SelectedValue.ToString(), txtNoiSinh.Text, cbbTinhTrangHonNhan.SelectedValue.ToString(),
-                        txtMaSoThue.Text, cbbTinhTrangViecLam.SelectedValue.ToString(), txtTrinhDoHocVan.Text, txtChuyenMon.Text,
-                        txtHocHam.Text, txtDCTamTru.Text, txtDCThuongTru.Text, txtGhiChu.Text, _username, "now()", Dns.GetHostName(), imageName.ToString(), true);
-                    pgdatabase.Runsql(Class_connect.connection_pg, sql);
-
-                    //Cập nhật trạng thái chi tiết
-                    sql = string.Format("INSERT INTO public.tbd_chitietphongvan(manhansu, isnhanvien, machucdanh, maphongban, ishoantatquatrinh)" +
-                        " VALUES('{0}', '{1}', '{2}', '{3}', '{4}'); ", txtMaNhanSu.Text, false, "", "", false);
-                    pgdatabase.Runsql(Class_connect.connection_pg, sql);
-
-                    load_dsnhansu();
+                    else
+                    {
+                        MessageBox.Show("Vui lòng điền đầy đủ thông tin", "  Thông báo");
+                    }
                 }
                 else
                 {
@@ -174,6 +184,49 @@ namespace Human_management
             }
         }
 
+        private bool empty_check()
+        {
+            if (string.IsNullOrEmpty(txtHoTen.Text))
+            {
+                txtHoTen.Focus();
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                txtEmail.Focus();
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txtNoiSinh.Text))
+            {
+                txtNoiSinh.Focus();
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txtChuyenMon.Text))
+            {
+                txtChuyenMon.Focus();
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txtHocHam.Text))
+            {
+                txtHocHam.Focus();
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txtDCTamTru.Text))
+            {
+                txtDCTamTru.Focus();
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txtDCThuongTru.Text))
+            {
+                txtDCThuongTru.Focus();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
 
@@ -181,29 +234,36 @@ namespace Human_management
             int id = pgdatabase.getid(Class_connect.connection_pg, sql);
             if (id != 0)
             {
-                //Xử lý upload hình ảnh nhân sự lên cloudinary
-                if (fullPath_imageUpload != "")
+                if (valid_cccd && valid_sdt && valid_mst && valid_tdhv)
                 {
-                    UploadImageTo_Cloudinary(fullPath_imageUpload, imageName);
+                    //Xử lý upload hình ảnh nhân sự lên cloudinary
+                    if (fullPath_imageUpload != "")
+                    {
+                        UploadImageTo_Cloudinary(fullPath_imageUpload, imageName);
 
-                    //Xử lý chỉ cập nhật imageName
-                    sql = string.Format("UPDATE public.tbd_nhansu SET anhnhansu = '{0}' WHERE id = '" + id + "' and manhansu = '" + txtMaNhanSu.Text + "';", imageName.ToString());
+                        //Xử lý chỉ cập nhật imageName
+                        sql = string.Format("UPDATE public.tbd_nhansu SET anhnhansu = '{0}' WHERE id = '" + id + "' and manhansu = '" + txtMaNhanSu.Text + "';", imageName.ToString());
+                        pgdatabase.Runsql(Class_connect.connection_pg, sql);
+                    }
+
+                    //Xử lý cập nhật dữ liệu vào cơ sở dữ liệu vào postgreSQL
+                    sql = string.Format("UPDATE public.tbd_nhansu SET hoten = '{0}', gioitinh = '{1}', ngaysinh = '{2}'," +
+                        " cccd = '{3}', email = '{4}', sodienthoai = '{5}', dantoc = '{6}', tongiao = '{7}', quoctich = '{8}', noisinh = '{9}'," +
+                        " tinhtranghonnhan = '{10}', masothue = '{11}', tinhtrangvieclam = '{12}', trinhdohocvan = '{13}', chuyenmon = '{14}'," +
+                        " hocham = '{15}', diachitamtru = '{16}', diachithuongtru = '{17}', ghichu = '{18}'" +
+                        " WHERE id = '" + id + "' and manhansu = '" + txtMaNhanSu.Text + "';", txtHoTen.Text, cbbGioiTinh.SelectedValue.ToString(),
+                        dateTimePickerNgaySinh.Value, txtCCCD.Text, txtEmail.Text, txtSoDienThoai.Text, cbbDanToc.SelectedValue.ToString(),
+                        cbbTonGiao.SelectedValue.ToString(), cbbQuocTich.SelectedValue.ToString(), txtNoiSinh.Text, cbbTinhTrangHonNhan.SelectedValue.ToString(),
+                        txtMaSoThue.Text, cbbTinhTrangViecLam.SelectedValue.ToString(), txtTrinhDoHocVan.Text, txtChuyenMon.Text,
+                        txtHocHam.Text, txtDCTamTru.Text, txtDCThuongTru.Text, txtGhiChu.Text);
+
                     pgdatabase.Runsql(Class_connect.connection_pg, sql);
+                    load_dsnhansu();
                 }
-
-                //Xử lý cập nhật dữ liệu vào cơ sở dữ liệu vào postgreSQL
-                sql = string.Format("UPDATE public.tbd_nhansu SET hoten = '{0}', gioitinh = '{1}', ngaysinh = '{2}'," +
-                    " cccd = '{3}', email = '{4}', sodienthoai = '{5}', dantoc = '{6}', tongiao = '{7}', quoctich = '{8}', noisinh = '{9}'," +
-                    " tinhtranghonnhan = '{10}', masothue = '{11}', tinhtrangvieclam = '{12}', trinhdohocvan = '{13}', chuyenmon = '{14}'," +
-                    " hocham = '{15}', diachitamtru = '{16}', diachithuongtru = '{17}', ghichu = '{18}'" +
-                    " WHERE id = '"+ id +"' and manhansu = '"+ txtMaNhanSu.Text + "';", txtHoTen.Text, cbbGioiTinh.SelectedValue.ToString(),
-                    dateTimePickerNgaySinh.Value, txtCCCD.Text, txtEmail.Text, txtSoDienThoai.Text, cbbDanToc.SelectedValue.ToString(),
-                    cbbTonGiao.SelectedValue.ToString(), cbbQuocTich.SelectedValue.ToString(), txtNoiSinh.Text, cbbTinhTrangHonNhan.SelectedValue.ToString(),
-                    txtMaSoThue.Text, cbbTinhTrangViecLam.SelectedValue.ToString(), txtTrinhDoHocVan.Text, txtChuyenMon.Text,
-                    txtHocHam.Text, txtDCTamTru.Text, txtDCThuongTru.Text, txtGhiChu.Text);
-
-                pgdatabase.Runsql(Class_connect.connection_pg, sql);
-                load_dsnhansu();
+                else
+                {
+                    MessageBox.Show("Một số trường nhập liệu không hợp lệ", "  Thông báo");
+                }
             }
             else
             {
@@ -275,6 +335,12 @@ namespace Human_management
 
             //Thiết lập trường dữ liệu mã chỉ đọc
             txtMaNhanSu.ReadOnly = true;
+
+            //--
+            valid_cccd = true;
+            valid_sdt = true;
+            valid_mst = true;
+            valid_tdhv = true;
 
         }
 
@@ -394,5 +460,173 @@ namespace Human_management
             txtGhiChu.Text = "";
         }
 
+        private void txtCCCD_Leave(object sender, EventArgs e)
+        {
+            erP_thongbaoloi = new ErrorProvider();
+
+            // Kiểm tra độ dài của chuỗi nhập liệu
+            if (txtCCCD.Text.Trim().Length != 12)
+            {
+                // Nếu độ dài không phù hợp, thông báo lỗi
+                erP_thongbaoloi.SetError(txtCCCD, "Chỉ chứa 12 chữ số");
+                txtCCCD.Focus();
+                txtCCCD.Text = string.Empty;
+                valid_cccd = false;
+                return;
+            }
+            else
+            {
+                valid_cccd = true;
+            }
+
+            // Kiểm tra xem tất cả các ký tự có phải là số không
+            foreach (char c in txtCCCD.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    // Nếu có ký tự không phải số, thông báo lỗi và xóa nội dung nhập
+                    erP_thongbaoloi.SetError(txtCCCD, "CCCD phải là chữ số");
+                    txtCCCD.Focus();
+                    valid_cccd = false;
+                    return;
+                }
+                else
+                {
+                    valid_cccd = true;
+                }
+            }
+
+            if (valid_cccd)
+            {
+                erP_thongbaoloi.SetError(txtCCCD, "Đã hợp lệ");
+            }
+        }
+
+
+        private void txtSoDienThoai_Leave(object sender, EventArgs e)
+        {
+            erP_thongbaoloi = new ErrorProvider();
+
+            // Kiểm tra độ dài của chuỗi nhập liệu
+            if (txtSoDienThoai.Text.Trim().Length < 10 || txtSoDienThoai.Text.Trim().Length > 11)
+            {
+                // Nếu độ dài không phù hợp, thông báo lỗi
+                erP_thongbaoloi.SetError(txtSoDienThoai, "Chỉ chứa 10 tới 11 chữ số");
+                txtSoDienThoai.Focus();
+                txtSoDienThoai.Text = string.Empty;
+                valid_sdt = false;
+                return;
+            }
+            else
+            {
+                valid_sdt = true;
+            }
+
+            // Kiểm tra xem tất cả các ký tự có phải là số không
+            foreach (char c in txtSoDienThoai.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    // Nếu có ký tự không phải số, thông báo lỗi và xóa nội dung nhập
+                    erP_thongbaoloi.SetError(txtSoDienThoai, "Số điện thoại phải là chữ số");
+                    txtSoDienThoai.Focus();
+                    valid_sdt = false;
+                    return;
+                }
+                else
+                {
+                    valid_sdt = true;
+                }
+            }
+
+            if (valid_sdt)
+            {
+                erP_thongbaoloi.SetError(txtSoDienThoai, "Đã hợp lệ");
+            }
+        }
+
+        private void txtMaSoThue_Leave(object sender, EventArgs e)
+        {
+            erP_thongbaoloi = new ErrorProvider();
+
+            // Kiểm tra độ dài của chuỗi nhập liệu
+            if (txtMaSoThue.Text.Trim().Length != 10 && txtMaSoThue.Text.Trim().Length != 13)
+            {
+                // Nếu độ dài không phù hợp, thông báo lỗi
+                erP_thongbaoloi.SetError(txtMaSoThue, "Chỉ chứa 10 hoặc 13 chữ số");
+                txtMaSoThue.Focus();
+                txtMaSoThue.Text = string.Empty;
+                valid_mst = false;
+                return;
+            }
+            else
+            {
+                valid_mst = true;
+            }
+
+            // Kiểm tra xem tất cả các ký tự có phải là số không
+            foreach (char c in txtMaSoThue.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    // Nếu có ký tự không phải số, thông báo lỗi và xóa nội dung nhập
+                    erP_thongbaoloi.SetError(txtMaSoThue, "Mã số thuế phải là chữ số");
+                    txtMaSoThue.Focus();
+                    valid_mst = false;
+                    return;
+                }
+                else
+                {
+                    valid_mst = true;
+                }
+            }
+
+            if (valid_mst)
+            {
+                erP_thongbaoloi.SetError(txtMaSoThue, "Đã hợp lệ");
+            }
+        }
+
+        private void txtTrinhDoHocVan_Leave(object sender, EventArgs e)
+        {
+            erP_thongbaoloi = new ErrorProvider();
+
+            // Kiểm tra độ dài của chuỗi nhập liệu
+            if (txtTrinhDoHocVan.Text.Trim().Length != 2)
+            {
+                // Nếu độ dài không phù hợp, thông báo lỗi
+                erP_thongbaoloi.SetError(txtTrinhDoHocVan, "Chỉ chứa 2 chữ số");
+                txtTrinhDoHocVan.Focus();
+                txtTrinhDoHocVan.Text = string.Empty;
+                valid_tdhv = false;
+                return;
+            }
+            else
+            {
+                valid_tdhv = true;
+            }
+
+            // Kiểm tra xem tất cả các ký tự có phải là số không
+            foreach (char c in txtTrinhDoHocVan.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    // Nếu có ký tự không phải số, thông báo lỗi và xóa nội dung nhập
+                    erP_thongbaoloi.SetError(txtTrinhDoHocVan, "Trình độ học vấn phải là chữ số");
+                    txtTrinhDoHocVan.Focus();
+                    valid_tdhv = false;
+                    return;
+                }
+                else
+                {
+                    valid_tdhv = true;
+                }
+            }
+
+            if (valid_tdhv)
+            {
+                erP_thongbaoloi.SetError(txtTrinhDoHocVan, "Đã hợp lệ");
+            }
+        }
     }
 }

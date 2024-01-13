@@ -29,8 +29,9 @@ namespace Human_management
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongTinNhanSu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_anhnhansu = new System.Windows.Forms.TextBox();
             this.btnHienThiAnh = new System.Windows.Forms.Button();
             this.btnTaiAnh = new System.Windows.Forms.Button();
@@ -138,6 +139,8 @@ namespace Human_management
             this.btn_quatrinhlamviec = new System.Windows.Forms.Button();
             this.btn_hopdonglaodong = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.erP_thongbaoloi = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label28 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dGVNhanSu)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhNhanSu)).BeginInit();
@@ -145,6 +148,7 @@ namespace Human_management
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erP_thongbaoloi)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_anhnhansu
@@ -189,14 +193,14 @@ namespace Human_management
             this.dGVNhanSu.AllowUserToAddRows = false;
             this.dGVNhanSu.AllowUserToDeleteRows = false;
             this.dGVNhanSu.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGVNhanSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVNhanSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dGVNhanSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVNhanSu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -715,9 +719,10 @@ namespace Human_management
             this.txtTrinhDoHocVan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTrinhDoHocVan.Location = new System.Drawing.Point(169, 167);
             this.txtTrinhDoHocVan.Name = "txtTrinhDoHocVan";
-            this.txtTrinhDoHocVan.Size = new System.Drawing.Size(176, 34);
+            this.txtTrinhDoHocVan.Size = new System.Drawing.Size(111, 34);
             this.txtTrinhDoHocVan.TabIndex = 15;
             this.txtTrinhDoHocVan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTrinhDoHocVan.Leave += new System.EventHandler(this.txtTrinhDoHocVan_Leave);
             // 
             // label18
             // 
@@ -778,6 +783,7 @@ namespace Human_management
             this.txtMaSoThue.Size = new System.Drawing.Size(227, 34);
             this.txtMaSoThue.TabIndex = 13;
             this.txtMaSoThue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMaSoThue.Leave += new System.EventHandler(this.txtMaSoThue_Leave);
             // 
             // label14
             // 
@@ -842,6 +848,7 @@ namespace Human_management
             this.txtCCCD.Size = new System.Drawing.Size(245, 34);
             this.txtCCCD.TabIndex = 5;
             this.txtCCCD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCCCD.Leave += new System.EventHandler(this.txtCCCD_Leave);
             // 
             // label2
             // 
@@ -993,10 +1000,12 @@ namespace Human_management
             this.txtSoDienThoai.Size = new System.Drawing.Size(189, 34);
             this.txtSoDienThoai.TabIndex = 7;
             this.txtSoDienThoai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSoDienThoai.Leave += new System.EventHandler(this.txtSoDienThoai_Leave);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.groupBox2.Controls.Add(this.label28);
             this.groupBox2.Controls.Add(this.txtSoDienThoai);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtNoiSinh);
@@ -1080,6 +1089,7 @@ namespace Human_management
             this.txt_stknganhang.Size = new System.Drawing.Size(250, 34);
             this.txt_stknganhang.TabIndex = 3;
             this.txt_stknganhang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_stknganhang.Leave += new System.EventHandler(this.txt_stknganhang_Leave);
             // 
             // label26
             // 
@@ -1116,6 +1126,7 @@ namespace Human_management
             this.txt_sobhxh.Size = new System.Drawing.Size(250, 34);
             this.txt_sobhxh.TabIndex = 5;
             this.txt_sobhxh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_sobhxh.Leave += new System.EventHandler(this.txt_sobhxh_Leave);
             // 
             // label27
             // 
@@ -1134,6 +1145,7 @@ namespace Human_management
             this.txt_sobhyt.Size = new System.Drawing.Size(250, 34);
             this.txt_sobhyt.TabIndex = 6;
             this.txt_sobhyt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_sobhyt.Leave += new System.EventHandler(this.txt_sobhyt_Leave);
             // 
             // label23
             // 
@@ -1271,6 +1283,19 @@ namespace Human_management
             this.groupBox3.TabIndex = 50;
             this.groupBox3.TabStop = false;
             // 
+            // erP_thongbaoloi
+            // 
+            this.erP_thongbaoloi.ContainerControl = this;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(282, 170);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(47, 28);
+            this.label28.TabIndex = 34;
+            this.label28.Text = "/ 12";
+            // 
             // frmThongTinNhanSu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -1301,6 +1326,7 @@ namespace Human_management
             this.panel4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erP_thongbaoloi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1414,5 +1440,7 @@ namespace Human_management
         private System.Windows.Forms.Button btn_quatrinhlamviec;
         private System.Windows.Forms.Button btn_hopdonglaodong;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ErrorProvider erP_thongbaoloi;
+        private System.Windows.Forms.Label label28;
     }
 }
