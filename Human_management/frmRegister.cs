@@ -20,6 +20,8 @@ namespace Human_management
         //Thiết lập hình ảnh mặc định khi thêm mới một nhân sự
         protected string imageName = "default_account_1024px";
 
+        bool valid_sdt = false;
+
         public frmRegister()
         {
             InitializeComponent();
@@ -69,31 +71,34 @@ namespace Human_management
                 pgdatabase = new Class_pgdatabase();
 
                 //Lưu thông tin người dùng
-                sql = "SELECT id FROM public.tbl_users WHERE username = '"+ txtUsername.Text +"';";
+                sql = "SELECT id FROM public.tbl_users WHERE username = '" + txtUsername.Text + "';";
                 int id = pgdatabase.getid(Class_connect.connection_pg, sql);
                 if (id == 0)
                 {
-                    //Tạo người dùng
-                    sql = string.Format("INSERT INTO public.tbl_users(username, password, hovaten, gioitinh, ngaysinh, sodienthoai, email, diachi, avatar)" +
-                        " VALUES( '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}');", txtUsername.Text, txtPassword.Text, txtHoTen.Text,
-                            cbbGioiTinh.SelectedValue.ToString(), dTP_ngaysinh.Value, txtSoDienThoai.Text, txtEmail.Text, txtDiaChi.Text, imageName);
-                    bool kqua =  pgdatabase.Runsql(Class_connect.connection_pg, sql);
-
-                    if (kqua)
+                    if (valid_sdt)
                     {
-                        MessageBox.Show("Đăng ký thành công");
+                        //Tạo người dùng
+                        sql = string.Format("INSERT INTO public.tbl_users(username, password, hovaten, gioitinh, ngaysinh, sodienthoai, email, diachi, avatar)" +
+                            " VALUES( '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}');", txtUsername.Text, txtPassword.Text, txtHoTen.Text,
+                                cbbGioiTinh.SelectedValue.ToString(), dTP_ngaysinh.Value, txtSoDienThoai.Text, txtEmail.Text, txtDiaChi.Text, imageName);
+                        bool kqua = pgdatabase.Runsql(Class_connect.connection_pg, sql);
 
-                        //Tạo bảng phân quyền cho người dùng
-                        sql = string.Format("INSERT INTO public.tbd_chitietphanquyen(username_ctpq) VALUES ('{0}');", txtUsername.Text);
-                        pgdatabase.Runsql(Class_connect.connection_pg, sql);
+                        if (kqua)
+                        {
+                            MessageBox.Show("Đăng ký thành công");
 
-                        this.Close();
+                            //Tạo bảng phân quyền cho người dùng
+                            sql = string.Format("INSERT INTO public.tbd_chitietphanquyen(username_ctpq) VALUES ('{0}');", txtUsername.Text);
+                            pgdatabase.Runsql(Class_connect.connection_pg, sql);
+
+                            this.Close();
+                        }
                     }
                 }
                 else
                 {
                     MessageBox.Show("'username' đã tồn tại, hãy thử lại", "Thông báo");
-                } 
+                }
             }
         }
 
@@ -117,6 +122,51 @@ namespace Human_management
             this.Close();
         }
 
+        private void txtTrinhDoHocVan_Leave(object sender, EventArgs e)
+        {
 
+        }
+
+        private void txtSoDienThoai_Leave(object sender, EventArgs e)
+        {
+            erP_thongbaoloi = new ErrorProvider();
+
+            // Kiểm tra độ dài của chuỗi nhập liệu
+            if (txtSoDienThoai.Text.Trim().Length < 10 || txtSoDienThoai.Text.Trim().Length > 11)
+            {
+                // Nếu độ dài không phù hợp, thông báo lỗi
+                erP_thongbaoloi.SetError(txtSoDienThoai, "Chỉ chứa 10 tới 11 chữ số");
+                txtSoDienThoai.Focus();
+                txtSoDienThoai.Text = string.Empty;
+                valid_sdt = false;
+                return;
+            }
+            else
+            {
+                valid_sdt = true;
+            }
+
+            // Kiểm tra xem tất cả các ký tự có phải là số không
+            foreach (char c in txtSoDienThoai.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    // Nếu có ký tự không phải số, thông báo lỗi và xóa nội dung nhập
+                    erP_thongbaoloi.SetError(txtSoDienThoai, "Số điện thoại phải là chữ số");
+                    txtSoDienThoai.Focus();
+                    valid_sdt = false;
+                    return;
+                }
+                else
+                {
+                    valid_sdt = true;
+                }
+            }
+
+            if (valid_sdt)
+            {
+                erP_thongbaoloi.SetError(txtSoDienThoai, "Đã hợp lệ");
+            }
+        }
     }
 }

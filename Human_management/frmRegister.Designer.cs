@@ -56,11 +56,13 @@ namespace Human_management
             this.txtSoDienThoai = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.erP_thongbaoloi = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.erPRegister)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.returnLogin)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erP_thongbaoloi)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -275,6 +277,7 @@ namespace Human_management
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(205, 34);
             this.txtSoDienThoai.TabIndex = 4;
+            this.txtSoDienThoai.Leave += new System.EventHandler(this.txtSoDienThoai_Leave);
             // 
             // groupBox1
             // 
@@ -319,6 +322,10 @@ namespace Human_management
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "THÔNG TIN CÁ NHÂN";
             // 
+            // erP_thongbaoloi
+            // 
+            this.erP_thongbaoloi.ContainerControl = this;
+            // 
             // frmRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -341,6 +348,7 @@ namespace Human_management
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erP_thongbaoloi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -371,5 +379,6 @@ namespace Human_management
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ErrorProvider erP_thongbaoloi;
     }
 }
