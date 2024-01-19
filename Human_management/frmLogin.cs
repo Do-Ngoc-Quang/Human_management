@@ -103,8 +103,8 @@ namespace Human_management
         }
         public void resetValue()
         {
-            txtUsername.Text = "admin";
-            txtPassword.Text = "admin";
+            txtUsername.Text = "";
+            txtPassword.Text = "";
         }
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
